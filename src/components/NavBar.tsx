@@ -27,7 +27,7 @@ export default function NavBar() {
     >
       <Container>
         <Navbar.Brand as={Link} to="/">
-          <img src={logo} alt="Logo" width="90" height="50" />
+          <img src={logo} alt="Logo" width="70" height="45" />
         </Navbar.Brand>
 
         <Navbar.Toggle
