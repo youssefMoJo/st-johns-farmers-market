@@ -6,11 +6,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import faceBookIcon from "../assets/fbIcon.png";
+import instaIcon from "../assets/instaIcon.png";
 
 export default function NavBar() {
-  const [navBarExpanded, setNavBarExpanded] = useState(false);
+  const [navBarExpanded, setNavBarExpanded] = useState<boolean>(false);
 
-  const handleNavClick = () => {
+  const handleNavClick: () => void = () => {
     setNavBarExpanded(false);
   };
 
@@ -27,7 +29,7 @@ export default function NavBar() {
     >
       <Container>
         <Navbar.Brand as={Link} to="/">
-          <img src={logo} alt="Logo" width="70" height="45" />
+          <img src={logo} alt="Logo" width={70} height={45} />
         </Navbar.Brand>
 
         <Navbar.Toggle
@@ -110,6 +112,22 @@ export default function NavBar() {
               Plan your visit
             </Nav.Link>
           </Nav>
+          <a
+            target="_blank"
+            href="https://www.facebook.com/sjfmnl"
+            className="text-white mx-2"
+            rel="noopener noreferrer"
+          >
+            <img src={faceBookIcon} alt="Facebook" width="30" height="30" />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.instagram.com/sjfmnl"
+            className="text-white mx-2"
+            rel="noopener noreferrer"
+          >
+            <img src={instaIcon} alt="Instagram" width="35" height="35" />
+          </a>
         </Navbar.Collapse>
       </Container>
     </Navbar>
