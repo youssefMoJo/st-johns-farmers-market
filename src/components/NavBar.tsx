@@ -3,11 +3,11 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "bootstrap/dist/css/bootstrap.min.css";
-import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import faceBookIcon from "../assets/fbIcon.png";
-import instaIcon from "../assets/instaIcon.png";
+import faceBookIcon from "../assets/fb-Icon.png";
+import instaIcon from "../assets/insta-icon.png";
+import logo from "../assets/logo.png";
 
 export default function NavBar() {
   const [navBarExpanded, setNavBarExpanded] = useState<boolean>(false);
