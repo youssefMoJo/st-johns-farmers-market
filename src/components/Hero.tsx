@@ -31,7 +31,6 @@ export default function Hero() {
           className="hero-title"
           style={{
             fontFamily: "Yanone Kaffeesatz",
-            // fontSize: 40,
             fontSize: "4vw",
             fontWeight: "bolder",
             color: "white",
