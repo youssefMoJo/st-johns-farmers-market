@@ -1,0 +1,34 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.word {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.word1 {
+  animation-delay: 0.2s;
+}
+.word2 {
+  animation-delay: 0.4s;
+}
+.word3 {
+  animation-delay: 0.6s;
+}
+.word4 {
+  animation-delay: 0.8s;
+}
+.word5 {
+  animation-delay: 1s;
+}
+.word6 {
+  animation-delay: 1.2s;
+}
