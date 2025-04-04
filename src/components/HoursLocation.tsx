@@ -36,17 +36,23 @@ export default function HoursLocation() {
           }}
         >
           <h3
-            className="title fw-bold"
-            style={{ fontFamily: "Caveat Brush", marginBottom: "15px" }}
+            className="title caveat-brush-regular"
+            style={{ marginBottom: "15px" }}
           >
             📅 Hours of Operation
           </h3>
+
           <div className="info">
-            <p className="fs-5" style={{ marginBottom: "5px" }}>
-              🕘 Saturdays (Year-Round): 9:00 AM – 4:00 PM
+            <p style={{ marginBottom: "5px" }}>
+              🕘{" "}
+              <span style={{ fontWeight: "bold" }}>
+                Saturdays (Year-Round):{" "}
+              </span>{" "}
+              9:00 AM – 4:00 PM
             </p>
-            <p className="fs-5">
-              🌟 Select Sundays: Check our social media for updates!
+            <p>
+              🌟 <span style={{ fontWeight: "bold" }}>Select Sundays: </span>
+              Check our social media for updates!
             </p>
           </div>
         </div>
@@ -60,11 +66,14 @@ export default function HoursLocation() {
             flexBasis: "48%",
           }}
         >
-          <h3 className="title fw-bold" style={{ marginBottom: "15px" }}>
+          <h3
+            className="title caveat-brush-regular"
+            style={{ marginBottom: "15px" }}
+          >
             🗺️ Location
           </h3>
           <div className="info">
-            <p className="fs-5" style={{ marginBottom: "5px" }}>
+            <p style={{ marginBottom: "5px", fontWeight: "bold" }}>
               245 Freshwater Rd St. John's, NL A1B 1B3
             </p>
 
@@ -79,7 +88,6 @@ export default function HoursLocation() {
                 gap: "5px",
                 justifyContent: "center",
                 alignItems: "center",
-                fontSize: "1.25rem",
               }}
             >
               <img
