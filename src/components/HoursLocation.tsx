@@ -80,6 +80,7 @@ export default function HoursLocation() {
             <a
               href="https://www.google.com/maps?q=245+Freshwater+Rd+St.+John's,+NL+A1B+1B3"
               target="_blank"
+              rel="noreferrer"
               style={{
                 color: "white",
                 padding: "1px 1px",
