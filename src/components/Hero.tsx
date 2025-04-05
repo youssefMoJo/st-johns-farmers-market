@@ -2,8 +2,6 @@ import Image from "react-bootstrap/Image";
 import homeHeroImg from "../assets/home-hero.jpg";
 import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
-import Nav from "react-bootstrap/Nav";
-import { Link } from "react-router-dom";
 import "../styles/Hero.css";
 
 export default function Hero() {
@@ -58,7 +56,8 @@ export default function Hero() {
 
         <div style={{ display: "flex", gap: "10px" }}>
           <Button
-            variant="secondary"
+            href="/meet-our-vendors"
+            variant="dark"
             style={{
               backgroundColor: "#143C5D",
               fontFamily: "Yanone Kaffeesatz",
@@ -66,12 +65,11 @@ export default function Hero() {
               fontWeight: "bold",
             }}
           >
-            <Nav.Link as={Link} to="/meet-our-vendors">
-              View Our Vendors
-            </Nav.Link>
+            View Our Vendors
           </Button>
           <Button
-            variant="secondary"
+            href="/see-our-events"
+            variant="light"
             style={{
               backgroundColor: "#F2F5D5",
               color: "#AC1C21",
@@ -80,9 +78,7 @@ export default function Hero() {
               fontWeight: "bold",
             }}
           >
-            <Nav.Link as={Link} to="/see-our-events">
-              See Upcoming Events
-            </Nav.Link>
+            See Upcoming Events
           </Button>
         </div>
       </Container>
