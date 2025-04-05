@@ -1,5 +1,5 @@
-import rightArrow from "../assets/arrow-right.png";
-import locationIcon from "../assets/location-icon.png";
+import rightArrowIcon from "../assets/Icons/white-right-arrow-icon.png";
+import locationIcon from "../assets/Icons/location-icon.png";
 
 export default function HoursLocation() {
   return (
@@ -107,7 +107,12 @@ export default function HoursLocation() {
                 height={22}
               />
               Get Directions
-              <img src={rightArrow} alt="rightArrow" width={22} height={22} />
+              <img
+                src={rightArrowIcon}
+                alt="rightArrow"
+                width={22}
+                height={22}
+              />
             </a>
           </div>
         </div>

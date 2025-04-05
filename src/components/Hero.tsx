@@ -29,7 +29,7 @@ export default function Hero() {
           className="hero-title"
           style={{
             fontFamily: "Yanone Kaffeesatz",
-            fontSize: "4vw",
+            fontSize: "5vw",
             fontWeight: "bolder",
             color: "white",
             textShadow:
@@ -61,7 +61,6 @@ export default function Hero() {
             style={{
               backgroundColor: "#143C5D",
               fontFamily: "Yanone Kaffeesatz",
-              width: "auto",
               fontWeight: "bold",
             }}
           >
@@ -74,7 +73,6 @@ export default function Hero() {
               backgroundColor: "#F2F5D5",
               color: "#AC1C21",
               fontFamily: "Yanone Kaffeesatz",
-              width: "auto",
               fontWeight: "bold",
             }}
           >

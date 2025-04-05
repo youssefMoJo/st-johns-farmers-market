@@ -5,8 +5,8 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import faceBookIcon from "../assets/fb-Icon.png";
-import instaIcon from "../assets/insta-icon.png";
+import faceBookIcon from "../assets/Icons/fb-Icon.png";
+import instaIcon from "../assets/Icons/insta-icon.png";
 import logo from "../assets/logo.png";
 
 export default function NavBar() {
