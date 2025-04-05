@@ -28,12 +28,14 @@ export default function HoursLocation() {
         {/* Left Section - Hours of Operation */}
         <div
           className="section text-white"
-          style={{
-            flexGrow: 1,
-            alignItems: "flex-start",
-            marginBottom: "20px",
-            flexBasis: "48%",
-          }}
+          style={
+            {
+              // flexGrow: 1,
+              // alignItems: "flex-start",
+              // marginBottom: "20px",
+              // flexBasis: "48%",
+            }
+          }
         >
           <h3
             className="title caveat-brush-regular"
@@ -60,11 +62,13 @@ export default function HoursLocation() {
         {/* Right Section - Location */}
         <div
           className="section text-white"
-          style={{
-            flexGrow: 1,
-            alignItems: "flex-start",
-            flexBasis: "48%",
-          }}
+          style={
+            {
+              // flexGrow: 1,
+              // alignItems: "flex-start",
+              // flexBasis: "48%",
+            }
+          }
         >
           <h3
             className="title caveat-brush-regular"
@@ -73,7 +77,12 @@ export default function HoursLocation() {
             🗺️ Location
           </h3>
           <div className="info">
-            <p style={{ marginBottom: "5px", fontWeight: "bold" }}>
+            <p
+              style={{
+                marginBottom: "5px",
+                fontWeight: "bold",
+              }}
+            >
               245 Freshwater Rd St. John's, NL A1B 1B3
             </p>
 
