@@ -1,5 +1,5 @@
-import EventCard from "./EventCard";
 import rightArrowIcon from "../assets/Icons/black-right-arrow-icon.svg";
+import EventGrid from "./EventGrid";
 
 export default function UpcomingEvents() {
   return (
@@ -13,7 +13,7 @@ export default function UpcomingEvents() {
         <span style={{ color: "#47C3F7" }}>EVENTS</span>
       </h2>
 
-      <EventCard />
+      <EventGrid />
 
       {/* Explore All Events Button */}
       <a
