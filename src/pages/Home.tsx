@@ -1,6 +1,6 @@
 import Hero from "../components/Hero";
 import HoursLocation from "../components/HoursLocation";
-import UpcommingEvents from "../components/UpcommingEvents";
+import UpcommingEvents from "../components/events/UpcomingEvents";
 
 export default function Home() {
   return (

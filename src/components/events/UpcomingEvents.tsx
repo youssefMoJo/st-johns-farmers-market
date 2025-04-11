@@ -1,6 +1,6 @@
-import rightArrowIcon from "../assets/Icons/black-right-arrow-icon.svg";
+import rightArrowIcon from "../../assets/Icons/black-right-arrow-icon.svg";
 import EventGrid from "./EventGrid";
-import SectionTitle from "./SectionTitle";
+import SectionTitle from "../SectionTitle";
 
 export default function UpcomingEvents() {
   return (

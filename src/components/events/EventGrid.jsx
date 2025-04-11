@@ -1,8 +1,8 @@
 import { Row } from "react-bootstrap";
 import EventCard from "./EventCard";
 
-import eventPic from "../assets/event.png";
-import eventPic1 from "../assets/event1.png";
+import eventPic from "../../assets/event.png";
+import eventPic1 from "../../assets/event1.png";
 
 const sampleEvents = [
   {

@@ -1,7 +1,7 @@
 import { Card, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import comingSoonEvent from "../assets/lottie-files/comingSoonEvent.lottie";
+import comingSoonEvent from "../../assets/lottie-files/comingSoonEvent.lottie";
 
 type EventProps = {
   event: {
