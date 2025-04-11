@@ -3,15 +3,15 @@ import EventGrid from "./EventGrid";
 
 export default function UpcomingEvents() {
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px", textAlign: "center" }}>
       {/* Title */}
-      <h2
+      <h1
         className="title caveat-brush-regular"
         style={{ textAlign: "center" }}
       >
         <span style={{ color: "#143C5D" }}>UPCOMING</span>{" "}
         <span style={{ color: "#47C3F7" }}>EVENTS</span>
-      </h2>
+      </h1>
 
       <EventGrid />
 
