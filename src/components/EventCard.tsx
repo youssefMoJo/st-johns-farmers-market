@@ -1,5 +1,7 @@
 import { Card, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import comingSoonEvent from "../assets/lottie-files/comingSoonEvent.lottie";
 
 type EventProps = {
   event: {
@@ -25,16 +27,43 @@ export default function EventCard({ event }: EventProps) {
         }}
       >
         <Card.Body>
-          <div style={{ position: "relative", width: "100%" }}>
-            <img
-              style={{
-                borderRadius: "5px",
-                marginBottom: "10px",
-                width: "100%",
-              }}
-              src={event.image}
-              alt={event.title}
-            />
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              height: "200px",
+              marginBottom: "10px",
+              overflow: "hidden",
+              borderRadius: "5px",
+              backgroundColor: "#f3f3f3",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {event.image.length === 0 ? (
+              <DotLottieReact
+                src={comingSoonEvent}
+                loop
+                autoplay
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                }}
+              />
+            ) : (
+              <img
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "fill",
+                }}
+                src={event.image}
+                alt={event.title}
+              />
+            )}
+
             {event.multipleDates && (
               <div
                 style={{
