@@ -1,17 +1,16 @@
 import rightArrowIcon from "../assets/Icons/black-right-arrow-icon.svg";
 import EventGrid from "./EventGrid";
+import SectionTitle from "./SectionTitle";
 
 export default function UpcomingEvents() {
   return (
     <div style={{ padding: "20px", textAlign: "center" }}>
-      {/* Title */}
-      <h1
-        className="title caveat-brush-regular"
-        style={{ textAlign: "center" }}
-      >
-        <span style={{ color: "#143C5D" }}>UPCOMING</span>{" "}
-        <span style={{ color: "#47C3F7" }}>EVENTS</span>
-      </h1>
+      <SectionTitle
+        parts={[
+          { text: "UPCOMING", color: "#143C5D" },
+          { text: "EVENTS", color: "#47C3F7" },
+        ]}
+      />
 
       <EventGrid />
 
