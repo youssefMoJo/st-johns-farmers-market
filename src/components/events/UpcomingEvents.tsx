@@ -1,5 +1,5 @@
 import rightArrowIcon from "../../assets/Icons/black-right-arrow-icon.svg";
-import EventGrid from "./EventGrid";
+import EventsGrid from "./EventsGrid";
 import SectionTitle from "../SectionTitle";
 
 export default function UpcomingEvents() {
@@ -12,7 +12,7 @@ export default function UpcomingEvents() {
         ]}
       />
 
-      <EventGrid />
+      <EventsGrid />
 
       {/* Explore All Events Button */}
       <a
@@ -26,6 +26,7 @@ export default function UpcomingEvents() {
           gap: "5px",
           justifyContent: "center",
           alignItems: "center",
+          fontWeight: "bolder",
         }}
       >
         🔍 Explore All Events

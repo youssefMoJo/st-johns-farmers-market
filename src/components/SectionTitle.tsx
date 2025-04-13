@@ -13,11 +13,14 @@ export default function SectionTitle({
   align = "center",
 }: SectionTitleProps) {
   return (
-    <h1 className={className} style={{ textAlign: align }}>
+    <h1
+      className={className}
+      style={{ textAlign: align, marginBottom: "20px" }}
+    >
       {parts.map((part, idx) => (
         <span
           key={idx}
-          style={{ color: part.color || "inherit", marginRight: "5px" }}
+          style={{ color: part.color || "inherit", marginRight: "10px" }}
         >
           {part.text}
         </span>
