@@ -1,6 +1,5 @@
 import Image from "react-bootstrap/Image";
 import homeHeroImg from "../assets/home-hero.jpg";
-import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
 import "../styles/Hero.css";
 import CustomButton from "./ui/CustomButton";
