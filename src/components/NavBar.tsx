@@ -8,6 +8,8 @@ import { useState } from "react";
 import faceBookIcon from "../assets/Icons/fb-Icon.png";
 import instaIcon from "../assets/Icons/insta-icon.png";
 import logo from "../assets/logo.png";
+import ROUTES from "../routes";
+import { EXTERNAL_LINKS } from "../constants/externalLinks";
 
 export default function NavBar() {
   const [navBarExpanded, setNavBarExpanded] = useState<boolean>(false);
@@ -28,7 +30,7 @@ export default function NavBar() {
       sticky="top"
     >
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to={ROUTES.HOME}>
           <img src={logo} alt="Logo" width={70} height={45} />
         </Navbar.Brand>
 
@@ -38,41 +40,41 @@ export default function NavBar() {
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto">
-            <Nav.Link as={Link} to="/" onClick={handleNavClick}>
+            <Nav.Link as={Link} to={ROUTES.HOME} onClick={handleNavClick}>
               Home
             </Nav.Link>
             <NavDropdown title="Vendors" id="basic-nav-dropdown">
               <NavDropdown.Item
                 as={Link}
-                to="/meet-our-vendors"
+                to={ROUTES.MEET_OUR_VENDORS}
                 onClick={handleNavClick}
               >
                 Meet our vendors
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/become-a-vendor"
+                to={ROUTES.BECOME_A_VENDOR}
                 onClick={handleNavClick}
               >
                 Become a vendor
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/become-a-busker"
+                to={ROUTES.BECOME_A_BUSKER}
                 onClick={handleNavClick}
               >
                 Become a Busker
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/community-table"
+                to={ROUTES.COMMUNITY_TABLE}
                 onClick={handleNavClick}
               >
                 Community Table
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/market-map"
+                to={ROUTES.MARKET_MAP}
                 onClick={handleNavClick}
               >
                 Market Map
@@ -82,39 +84,35 @@ export default function NavBar() {
             <NavDropdown title="Events" id="basic-nav-dropdown">
               <NavDropdown.Item
                 as={Link}
-                to="/see-our-events"
+                to={ROUTES.SEE_EVENTS}
                 onClick={handleNavClick}
               >
                 See our Events
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/event-center"
+                to={ROUTES.EVENT_CENTER}
                 onClick={handleNavClick}
               >
                 Event Center
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} to="/our-story" onClick={handleNavClick}>
+            <Nav.Link as={Link} to={ROUTES.OUR_STORY} onClick={handleNavClick}>
               Our story
             </Nav.Link>
-            <Nav.Link as={Link} to="/contact-us" onClick={handleNavClick}>
+            <Nav.Link as={Link} to={ROUTES.CONTACT_US} onClick={handleNavClick}>
               Contact Us
             </Nav.Link>
-            <Nav.Link as={Link} to="/faqs" onClick={handleNavClick}>
+            <Nav.Link as={Link} to={ROUTES.FAQ} onClick={handleNavClick}>
               FAQ
             </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="/plan-your-visit  "
-              onClick={handleNavClick}
-            >
+            <Nav.Link as={Link} to={ROUTES.PLAN_VISIT} onClick={handleNavClick}>
               Plan your visit
             </Nav.Link>
           </Nav>
           <a
             target="_blank"
-            href="https://www.facebook.com/sjfmnl"
+            href={EXTERNAL_LINKS.facebook}
             className="text-white mx-2"
             rel="noopener noreferrer"
           >
@@ -122,7 +120,7 @@ export default function NavBar() {
           </a>
           <a
             target="_blank"
-            href="https://www.instagram.com/sjfmnl"
+            href={EXTERNAL_LINKS.instagram}
             className="text-white mx-2"
             rel="noopener noreferrer"
           >

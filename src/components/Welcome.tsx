@@ -1,5 +1,6 @@
 import SectionTitle from "./SectionTitle";
 import CustomButton from "./ui/CustomButton";
+import ROUTES from "../routes";
 
 export default function Welcome() {
   return (
@@ -47,10 +48,10 @@ export default function Welcome() {
           </p>
 
           <div style={{ display: "flex", gap: "10px" }}>
-            <CustomButton href="/meet-our-vendors">
+            <CustomButton href={ROUTES.MEET_OUR_VENDORS}>
               View Our Vendors
             </CustomButton>
-            <CustomButton variant="outline" href="/our-story">
+            <CustomButton variant="outline" href={ROUTES.OUR_STORY}>
               Read Our Story
             </CustomButton>
           </div>

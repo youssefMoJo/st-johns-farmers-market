@@ -1,6 +1,7 @@
 import rightArrowIcon from "../../assets/Icons/black-right-arrow-icon.svg";
 import EventsGrid from "./EventsGrid";
 import SectionTitle from "../SectionTitle";
+import ROUTES from "../../routes";
 
 export default function UpcomingEvents() {
   return (
@@ -16,7 +17,7 @@ export default function UpcomingEvents() {
 
       {/* Explore All Events Button */}
       <a
-        href="/see-our-events"
+        href={ROUTES.SEE_EVENTS}
         rel="noreferrer"
         style={{
           color: "black",

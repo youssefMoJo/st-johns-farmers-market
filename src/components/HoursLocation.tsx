@@ -1,5 +1,6 @@
 import rightArrowIcon from "../assets/Icons/white-right-arrow-icon.png";
 import locationIcon from "../assets/Icons/location-icon.png";
+import { EXTERNAL_LINKS } from "../constants/externalLinks";
 
 export default function HoursLocation() {
   return (
@@ -26,17 +27,7 @@ export default function HoursLocation() {
         }}
       >
         {/* Left Section - Hours of Operation */}
-        <div
-          className="section text-white"
-          style={
-            {
-              // flexGrow: 1,
-              // alignItems: "flex-start",
-              // marginBottom: "20px",
-              // flexBasis: "48%",
-            }
-          }
-        >
+        <div className="section text-white">
           <h3
             className="title caveat-brush-regular"
             style={{ marginBottom: "15px" }}
@@ -60,16 +51,7 @@ export default function HoursLocation() {
         </div>
 
         {/* Right Section - Location */}
-        <div
-          className="section text-white"
-          style={
-            {
-              // flexGrow: 1,
-              // alignItems: "flex-start",
-              // flexBasis: "48%",
-            }
-          }
-        >
+        <div className="section text-white">
           <h3
             className="title caveat-brush-regular"
             style={{ marginBottom: "15px" }}
@@ -87,7 +69,7 @@ export default function HoursLocation() {
             </p>
 
             <a
-              href="https://www.google.com/maps?q=245+Freshwater+Rd+St.+John's,+NL+A1B+1B3"
+              href={EXTERNAL_LINKS.marketGoogleMap}
               target="_blank"
               rel="noreferrer"
               style={{

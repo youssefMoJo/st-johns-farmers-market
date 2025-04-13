@@ -3,6 +3,7 @@ import homeHeroImg from "../assets/home-hero.jpg";
 import { Container } from "react-bootstrap";
 import "../styles/Hero.css";
 import CustomButton from "./ui/CustomButton";
+import ROUTES from "../routes";
 
 export default function Hero() {
   return (
@@ -55,8 +56,10 @@ export default function Hero() {
         </h1>
 
         <div style={{ display: "flex", gap: "10px" }}>
-          <CustomButton href="/meet-our-vendors">View Our Vendors</CustomButton>
-          <CustomButton variant={"outline-alt"} href="/see-our-events">
+          <CustomButton href={ROUTES.MEET_OUR_VENDORS}>
+            View Our Vendors
+          </CustomButton>
+          <CustomButton variant={"outline-alt"} href={ROUTES.SEE_EVENTS}>
             See Upcoming Events
           </CustomButton>
         </div>
