@@ -1,0 +1,33 @@
+.buttonBase {
+  font-family: "Yanone Kaffeesatz";
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 5px 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Solid style */
+.solidButton {
+  composes: buttonBase;
+  background-color: #143c5d;
+  color: white;
+}
+
+.solidButton:hover {
+  background-color: #0f2f4a;
+}
+
+/* Outline style */
+.outlineButton {
+  composes: buttonBase;
+  background-color: white;
+  color: #143c5d;
+  border: 1px solid #143c5d;
+}
+
+.outlineButton:hover {
+  background-color: #143c5d;
+  color: white;
+}
