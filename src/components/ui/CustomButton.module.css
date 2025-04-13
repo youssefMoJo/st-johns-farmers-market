@@ -31,3 +31,29 @@
   background-color: #143c5d;
   color: white;
 }
+
+/* Additional Solid (cream background, red text) */
+.solidAltButton {
+  composes: buttonBase;
+  background-color: #f2f5d5;
+  color: #ac1c21;
+  border: none;
+}
+
+.solidAltButton:hover {
+  background-color: #ac1c21;
+  color: #f2f5d5;
+}
+
+/* Additional Outline (white background, red border/text) */
+.outlineAltButton {
+  composes: buttonBase;
+  background-color: white;
+  color: #ac1c21;
+  border: 1px solid #ac1c21;
+}
+
+.outlineAltButton:hover {
+  background-color: #ac1c21;
+  color: white;
+}
