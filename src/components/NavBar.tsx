@@ -39,7 +39,7 @@ export default function NavBar() {
           onClick={() => setNavBarExpanded(!navBarExpanded)}
         />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mx-auto">
+          <Nav className="mx-auto text-center w-100 d-lg-flex justify-content-lg-center">
             <Nav.Link as={Link} to={ROUTES.HOME} onClick={handleNavClick}>
               Home
             </Nav.Link>

@@ -2,12 +2,18 @@ import rightArrowIcon from "../assets/Icons/white-right-arrow-icon.png";
 import locationIcon from "../assets/Icons/location-icon.png";
 import { EXTERNAL_LINKS } from "../constants/externalLinks";
 
-export default function HoursLocation() {
+type HoursLocationProps = {
+  bgColor?: string;
+};
+
+export default function HoursLocation({
+  bgColor = "#AC1C21",
+}: HoursLocationProps) {
   return (
     <div
       className="hours-location"
       style={{
-        backgroundColor: "#AC1C21",
+        backgroundColor: bgColor,
         padding: "20px",
         display: "flex",
         justifyContent: "center",
