@@ -70,6 +70,8 @@ export default function EventCard({ review }: EventProps) {
           boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
           borderRadius: "8px",
           border: "1px solid #D9D9D9",
+          maxWidth: "350px",
+          margin: "0 auto",
         }}
       >
         <Card.Body>
