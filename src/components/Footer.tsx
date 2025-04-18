@@ -24,7 +24,7 @@ export default function Footer() {
           </div>
 
           {/* Right Side - Newsletter */}
-          <div style={{ flex: 1, minWidth: "300px" }}>
+          {/* <div style={{ flex: 1, minWidth: "300px" }}>
             <h2
               className="caveat-brush-regular"
               style={{ fontSize: "2rem", marginBottom: "10px" }}
@@ -84,7 +84,7 @@ export default function Footer() {
                 Sign Up
               </button>
             </form>
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Note */}
@@ -98,7 +98,26 @@ export default function Footer() {
         >
           St. John’s Farmers’ Market © All rights reserved
           <br />
-          Developed by Youssef Mohamed
+          Developed by{" "}
+          <a
+            target="_blank"
+            href="https://youssefmohamed.ca/"
+            style={{
+              color: "#49d3f5",
+              textDecoration: "none",
+              transition: "color 0.2s ease, text-decoration 0.2s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.textDecoration = "underline";
+              e.currentTarget.style.color = "#49d3f5";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.textDecoration = "none";
+              e.currentTarget.style.color = "#49d3f5";
+            }}
+          >
+            Youssef Mohamed
+          </a>
         </div>
       </div>
     </footer>
