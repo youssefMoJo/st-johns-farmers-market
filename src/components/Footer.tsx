@@ -101,6 +101,7 @@ export default function Footer() {
           Developed by{" "}
           <a
             target="_blank"
+            rel="noreferrer"
             href="https://youssefmohamed.ca/"
             style={{
               color: "#49d3f5",
