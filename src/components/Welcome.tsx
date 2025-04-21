@@ -35,9 +35,9 @@ export default function Welcome() {
           <p
             style={{
               width: "100%",
-              color: "#131111",
-              fontFamily: "Yaldevi Colombo",
-              fontSize: "17px",
+              color: "#201d1e",
+              fontFamily: "Yanone Kaffeesatz",
+              fontSize: "25px",
               margin: 0,
             }}
           >
