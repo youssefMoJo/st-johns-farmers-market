@@ -13,7 +13,6 @@ export default function Home() {
       <UpcommingEvents />
       <Reviews />
       <Welcome />
-      <Footer />
     </div>
   );
 }
