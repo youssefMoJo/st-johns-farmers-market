@@ -209,11 +209,25 @@ const BecomeVendor: React.FC = () => {
         >
           <h2 style={{ fontSize: "2rem" }}>📅 Application Status</h2>
 
-          <p style={{ fontSize: "1.1rem", lineHeight: "1.6" }}>
-            Applications are currently <strong>closed</strong>. We are excited
-            to announce that vendor applications will reopen in early{" "}
-            <strong>2025</strong>! Stay tuned for updates.
-          </p>
+          <div style={{ fontSize: "1.1rem", lineHeight: "1.6" }}>
+            <h5>Applications for 2024 are now closed.</h5>
+            <p>
+              Vendor applications for the Saturday St. John’s Farmers’ Market
+              are closed as of March 1, 2024.
+            </p>
+            <h5>Still a Farmer or Primary Producer?</h5>
+            <p>
+              We accept farmers and primary producers year-round. Please contact
+              the Market Manager directly at{" "}
+              <a href="mailto:marketmanager@sjfm.ca"> marketmanager@sjfm.ca </a>
+              to get started.
+            </p>
+            <h5>Food Vendors & Artisans</h5>
+            <p>
+              Applications for food vendors and craft artisans are closed until
+              2025. Please check back in early 2025 for updates on how to apply.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -253,8 +267,7 @@ const BecomeVendor: React.FC = () => {
                 cursor: "pointer",
                 borderBottom: "2px solid #D46540",
                 transition: "all 0.3s ease",
-                padding: "3px",
-                borderRadius: "10px",
+                padding: "1px 5px",
               }}
               onMouseEnter={(e) => {
                 const target = e.target as HTMLAnchorElement;
@@ -271,11 +284,19 @@ const BecomeVendor: React.FC = () => {
             >
               Vendor Handbook
             </a>{" "}
-            to understand:{" "}
-            <span style={{ color: "rgb(19, 81, 131)", fontWeight: "bold" }}>
-              {" "}
-              Selection criteria - Market policies - Operational details{" "}
-            </span>
+            We strongly recommend reviewing it before applying to understand:
+            <ul style={{ color: "rgb(19, 81, 131)", fontWeight: "bold" }}>
+              <li> Selection criteria</li>
+              <li> Market policies</li>
+              <li>Operational details</li>
+            </ul>
+            After submitting your application, you’ll be contacted by the Market
+            Manager within 2 weeks. We’ll provide initial feedback and outline
+            the next steps based on your product category.{" "}
+            <span style={{ fontWeight: "bold" }}>Please note: </span>
+            applications are not accepted on a first-come, first-served basis—we
+            assess each submission carefully to ensure a diverse and balanced
+            market.
           </p>
         </div>
         <VendorHandbookModal
@@ -284,7 +305,7 @@ const BecomeVendor: React.FC = () => {
         />
       </div>
 
-      {/* Vendor Categories */}
+      {/* Vendor Guidelines */}
       <div
         style={{ background: "#f8f8f8", padding: "2rem 1rem", color: "#333" }}
       >
@@ -297,13 +318,73 @@ const BecomeVendor: React.FC = () => {
             gap: "1rem",
           }}
         >
-          <h2 style={{ fontSize: "2rem" }}>🛍️ Vendor Categories</h2>
+          <h2 style={{ fontSize: "2rem" }}>📋 Vendor Guidelines</h2>
+          <ul style={{ fontSize: "1.1rem", lineHeight: "1.6" }}>
+            <li>
+              {" "}
+              All products sold must be handmade, grown, or produced in
+              Newfoundland and Labrador. If you don’t{" "}
+              <span style={{ fontWeight: "bold" }}>
+                “Make it, Bake it, or Grow it,”{" "}
+              </span>{" "}
+              you can’t sell it.
+            </li>
+            <li>
+              All vendors must follow the policies outlined in the{" "}
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setModalShow(true);
 
-          <p style={{ fontSize: "1.1rem", lineHeight: "1.6" }}>
-            Applications are currently <strong>closed</strong>. We are excited
-            to announce that vendor applications will reopen in early{" "}
-            <strong>2025</strong>! Stay tuned for updates.
-          </p>
+                  const target = e.target as HTMLAnchorElement;
+                  target.style.color = "#D46540";
+                  target.style.fontWeight = "bold";
+                  target.style.textDecoration = "none";
+                  target.style.cursor = "pointer";
+                  target.style.borderBottom = "2px solid #D46540";
+                }}
+                style={{
+                  color: "#D46540",
+                  fontWeight: "bold",
+                  textDecoration: "none",
+                  cursor: "pointer",
+                  borderBottom: "2px solid #D46540",
+                  transition: "all 0.3s ease",
+                  padding: "1px 5px",
+                }}
+                onMouseEnter={(e) => {
+                  const target = e.target as HTMLAnchorElement;
+                  target.style.color = "#fff";
+                  target.style.backgroundColor = "#D46540";
+                  target.style.borderBottom = "2px solid #fff";
+                }}
+                onMouseLeave={(e) => {
+                  const target = e.target as HTMLAnchorElement;
+                  target.style.color = "#D46540";
+                  target.style.backgroundColor = "transparent";
+                  target.style.borderBottom = "2px solid #D46540";
+                }}
+              >
+                Vendor Handbook
+              </a>{" "}
+              , with a focus on safety, food safety, and product suitability. A
+              paper copy is available upon request from the Market Manager.
+            </li>
+            <li>
+              The Market Manager and Board reserve the right to deny vendor
+              participation if Vendor Handbook policies are not followed.
+            </li>
+            <li>
+              While we strive to accommodate as many vendors as possible, high
+              demand means we cannot guarantee a spot at any specific market.
+              Vendors selected to attend will receive an email confirmation at
+              least 4 weeks in advance. You must confirm your attendance by
+              responding no later than 72 hours before your scheduled date. Late
+              responses or cancellations made after this 72-hour window may
+              incur a fee, as outlined in our policy.
+            </li>
+          </ul>
         </div>
       </div>
     </div>
