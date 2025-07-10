@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import BecomeVendor from "./pages/BecomeVendor";
 import BecomeBusker from "./pages/BecomeBusker";
 import CommunityTable from "./pages/CommunityTable";
+import OurStory from "./pages/OurStory";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path={ROUTES.BECOME_A_VENDOR} element={<BecomeVendor />} />
           <Route path={ROUTES.BECOME_A_BUSKER} element={<BecomeBusker />} />
           <Route path={ROUTES.COMMUNITY_TABLE} element={<CommunityTable />} />
+          <Route path={ROUTES.OUR_STORY} element={<OurStory />} />
         </Routes>
         <Footer />
       </div>

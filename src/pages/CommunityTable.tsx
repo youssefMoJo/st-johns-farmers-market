@@ -19,7 +19,7 @@ const CommunityTable: React.FC = () => {
               parts={[{ text: "🤝 The Community Table", color: "white" }]}
               align="left"
             />
-            <p style={{ fontSize: "1.25rem", lineHeight: "1.6" }}>
+            <p style={{ lineHeight: "1.6" }}>
               The St. John’s Farmers’ Market is proud to offer our dedicated
               <span className="bold"> Community Table</span>—a high-visibility
               space at our Saturday Markets for local groups, non-profits,
