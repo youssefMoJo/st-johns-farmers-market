@@ -9,6 +9,7 @@ import BecomeVendor from "./pages/BecomeVendor";
 import BecomeBusker from "./pages/BecomeBusker";
 import CommunityTable from "./pages/CommunityTable";
 import OurStory from "./pages/OurStory";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path={ROUTES.BECOME_A_BUSKER} element={<BecomeBusker />} />
           <Route path={ROUTES.COMMUNITY_TABLE} element={<CommunityTable />} />
           <Route path={ROUTES.OUR_STORY} element={<OurStory />} />
+          <Route path={ROUTES.CONTACT_US} element={<Contact />} />
         </Routes>
         <Footer />
       </div>
