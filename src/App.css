@@ -8,3 +8,7 @@
   font-style: normal;
   letter-spacing: 1px;
 }
+
+.bold {
+  font-weight: bold;
+}
