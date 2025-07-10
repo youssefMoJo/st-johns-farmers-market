@@ -2,9 +2,12 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import NavBar from "../src/components/NavBar";
-import BecomeVendor from "./pages/BecomeVendor";
 import ROUTES from "./routes";
 import Footer from "./components/Footer";
+
+import BecomeVendor from "./pages/BecomeVendor";
+import BecomeBusker from "./pages/BecomeBusker";
+import CommunityTable from "./pages/CommunityTable";
 
 function App() {
   return (
@@ -14,6 +17,8 @@ function App() {
         <Routes>
           <Route path={ROUTES.HOME} element={<Home />} />
           <Route path={ROUTES.BECOME_A_VENDOR} element={<BecomeVendor />} />
+          <Route path={ROUTES.BECOME_A_BUSKER} element={<BecomeBusker />} />
+          <Route path={ROUTES.COMMUNITY_TABLE} element={<CommunityTable />} />
         </Routes>
         <Footer />
       </div>
