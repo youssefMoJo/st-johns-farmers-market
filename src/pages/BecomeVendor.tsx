@@ -185,7 +185,7 @@ const BecomeVendor: React.FC = () => {
               autoplay
               style={{
                 width: "100%",
-                maxWidth: "450px",
+                // maxWidth: "450px",
                 height: "auto",
                 objectFit: "contain",
               }}
