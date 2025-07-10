@@ -1,5 +1,5 @@
 import Image from "react-bootstrap/Image";
-import homeHeroImg from "../assets/home-hero.jpg";
+import homeHeroImg from "../assets/home-hero44.jpg";
 import { Container } from "react-bootstrap";
 import "../styles/Hero.css";
 import CustomButton from "./ui/CustomButton";
@@ -49,10 +49,8 @@ export default function Hero() {
           <span className="word word4" style={{ marginRight: "10px" }}>
             of
           </span>
-          <span className="word word5" style={{ marginRight: "10px" }}>
-            St.
-          </span>
-          <span className="word word6">John’s</span>
+          <span className="word word5" style={{ marginRight: "10px" }}></span>
+          <span className="word word6">St. John’s</span>
         </h1>
 
         <div style={{ display: "flex", gap: "10px" }}>
