@@ -37,7 +37,7 @@ export default function Welcome() {
               width: "100%",
               color: "#201d1e",
               fontFamily: "Yanone Kaffeesatz",
-              fontSize: "25px",
+              fontSize: "20px",
               margin: 0,
             }}
           >
