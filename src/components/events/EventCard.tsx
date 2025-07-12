@@ -2,21 +2,26 @@ import { Card, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import comingSoonEvent from "../../assets/lottie-files/comingSoonEvent.lottie";
+import eventPic from "../../assets/event.png";
 
 type EventProps = {
   event: {
+    id: string;
     title: string;
+    shortDescription: string;
     date: string;
     time: string;
-    image: string;
+    imageUrl: string;
     multipleDates: boolean;
-    link: string;
+    location: string;
+    tags: string[];
   };
 };
 
 export default function EventCard({ event }: EventProps) {
   return (
-    <Col xs={12} sm={6} md={3} className="mb-2 mb-md-0">
+    // <Col xs={12} sm={6} md={6} lg={4} className="mb-4">
+    <Col xs={12} sm={6} md={6} lg={4} xl={4} className="mb-4">
       <Card
         className="h-100"
         style={{
@@ -28,87 +33,114 @@ export default function EventCard({ event }: EventProps) {
           margin: "0 auto",
         }}
       >
-        <Card.Body>
-          <div
-            style={{
-              position: "relative",
-              width: "100%",
-              height: "200px",
-              marginBottom: "10px",
-              overflow: "hidden",
-              borderRadius: "5px",
-              backgroundColor: "#f3f3f3",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            {event.image.length === 0 ? (
-              <DotLottieReact
-                src={comingSoonEvent}
-                loop
-                autoplay
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "contain",
-                }}
-              />
-            ) : (
-              <img
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "fill",
-                }}
-                src={event.image}
-                alt={event.title}
-              />
-            )}
+        <Card.Body
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+          }}
+        >
+          <div>
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                height: "200px",
+                marginBottom: "10px",
+                overflow: "hidden",
+                borderRadius: "5px",
+                backgroundColor: "#f3f3f3",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              {event.imageUrl.length === 0 ? (
+                <DotLottieReact
+                  src={comingSoonEvent}
+                  loop
+                  autoplay
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
+                />
+              ) : (
+                <img
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                  src={eventPic}
+                  alt={event.title}
+                />
+              )}
 
-            {event.multipleDates && (
-              <div
+              {event.multipleDates && (
+                <div
+                  style={{
+                    backgroundColor: "#17A0DB",
+                    color: "white",
+                    padding: "5px 10px",
+                    position: "absolute",
+                    top: "10px",
+                    right: "10px",
+                    borderRadius: "5px",
+                    fontWeight: "bold",
+                    fontSize: "13px",
+                    zIndex: 1,
+                  }}
+                >
+                  Multiple Dates
+                </div>
+              )}
+            </div>
+
+            <div style={{ textAlign: "left", marginBottom: "10px" }}>
+              <Card.Title style={{ fontWeight: "bold" }}>
+                {event.title}
+              </Card.Title>
+              <Card.Subtitle
                 style={{
-                  backgroundColor: "#17A0DB",
-                  color: "white",
-                  padding: "5px 10px",
-                  position: "absolute",
-                  top: "10px",
-                  right: "10px",
-                  borderRadius: "5px",
-                  fontWeight: "bold",
-                  fontSize: "13px",
-                  zIndex: 1,
+                  color: "#666",
+                  fontSize: "0.9rem",
+                  marginBottom: "0.5rem",
                 }}
               >
-                Multiple Dates
-              </div>
-            )}
+                {event.location}
+              </Card.Subtitle>
+              <Card.Text>
+                <div>{event.date}</div>
+                <div>{event.time}</div>
+                <div
+                  style={{
+                    marginTop: "0.5rem",
+                    fontStyle: "italic",
+                    color: "#555",
+                  }}
+                >
+                  {event.shortDescription}
+                </div>
+              </Card.Text>
+            </div>
           </div>
 
-          <div style={{ textAlign: "left", marginBottom: "10px" }}>
-            <Card.Title style={{ fontWeight: "bold" }}>
-              {event.title}
-            </Card.Title>
-            <Card.Text>
-              <div>{event.date}</div>
-              <div>{event.time}</div>
-            </Card.Text>
-          </div>
-
-          <div style={{ textAlign: "left", marginBottom: "10px" }}>
+          {/* <div style={{ marginTop: "auto", textAlign: "left" }}>
             <Button
-              href={event.link}
+              href={`/events/${event.id}`}
               variant="dark"
               style={{
                 backgroundColor: "#2C2C2C",
                 fontFamily: "Yanone Kaffeesatz",
                 fontWeight: "bold",
+                width: "100%",
               }}
             >
               Learn more
             </Button>
-          </div>
+          </div> */}
         </Card.Body>
       </Card>
     </Col>

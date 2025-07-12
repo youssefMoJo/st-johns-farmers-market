@@ -11,6 +11,7 @@ import CommunityTable from "./pages/CommunityTable";
 import OurStory from "./pages/OurStory";
 import Contact from "./pages/Contact";
 import FAQS from "./pages/FAQs";
+import EventsPage from "./pages/EventsPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path={ROUTES.OUR_STORY} element={<OurStory />} />
           <Route path={ROUTES.CONTACT_US} element={<Contact />} />
           <Route path={ROUTES.FAQ} element={<FAQS />} />
+          <Route path={ROUTES.SEE_EVENTS} element={<EventsPage />} />
         </Routes>
         <Footer />
       </div>

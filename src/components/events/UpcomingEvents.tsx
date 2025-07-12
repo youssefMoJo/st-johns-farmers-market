@@ -13,7 +13,7 @@ export default function UpcomingEvents() {
         ]}
       />
 
-      <EventsGrid />
+      <EventsGrid limit={3} />
 
       {/* Explore All Events Button */}
       <a
