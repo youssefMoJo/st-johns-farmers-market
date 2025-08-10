@@ -106,14 +106,22 @@ const FAQs: React.FC = () => {
             filteredFaqs.map((item, index) => (
               <div
                 key={index}
-                style={{ ...faqStyles.card }}
-                onClick={() => toggleQuestion(index)}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.background = "#f0f0f0")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.background = "#f9f9f9")
-                }
+                style={{
+                  ...faqStyles.card,
+                  cursor: openIndex === index ? "default" : "pointer",
+                  userSelect: openIndex === index ? "text" : "none",
+                }}
+                onClick={() => openIndex !== index && toggleQuestion(index)}
+                onMouseEnter={(e) => {
+                  if (openIndex !== index) {
+                    e.currentTarget.style.background = "#f0f0f0";
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (openIndex !== index) {
+                    e.currentTarget.style.background = "#f9f9f9";
+                  }
+                }}
               >
                 <div style={faqStyles.header}>
                   <h3 style={faqStyles.question}>
@@ -168,6 +176,7 @@ const faqStyles = {
     padding: "1rem",
     background: "#fff",
     borderTop: "1px solid #eee",
+    cursor: "text",
   } as React.CSSProperties,
   answer: {
     fontSize: "1.1rem",
