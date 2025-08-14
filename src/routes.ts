@@ -6,7 +6,7 @@ const ROUTES = {
   COMMUNITY_TABLE: "/community-table",
   MARKET_MAP: "/market-map",
   SEE_EVENTS: "/see-our-events",
-  EVENT_CENTER: "/event-center",
+  RENTAL_SPACES: "/rental-spaces",
   OUR_STORY: "/our-story",
   CONTACT_US: "/contact-us",
   FAQ: "/faqs",

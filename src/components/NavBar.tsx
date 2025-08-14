@@ -82,22 +82,16 @@ export default function NavBar() {
               </NavDropdown.Item>
             </NavDropdown>
 
-            <NavDropdown title="Events" id="basic-nav-dropdown">
-              <NavDropdown.Item
-                as={Link}
-                to={ROUTES.SEE_EVENTS}
-                onClick={handleNavClick}
-              >
-                See our Events
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                as={Link}
-                to={ROUTES.EVENT_CENTER}
-                onClick={handleNavClick}
-              >
-                Event Center
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link
+              as={Link}
+              to={ROUTES.RENTAL_SPACES}
+              onClick={handleNavClick}
+            >
+              Rental Spaces
+            </Nav.Link>
+            <Nav.Link as={Link} to={ROUTES.SEE_EVENTS} onClick={handleNavClick}>
+              Events
+            </Nav.Link>
             <Nav.Link as={Link} to={ROUTES.OUR_STORY} onClick={handleNavClick}>
               Our story
             </Nav.Link>
