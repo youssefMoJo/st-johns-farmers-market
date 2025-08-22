@@ -11,6 +11,7 @@ const ROUTES = {
   CONTACT_US: "/contact-us",
   FAQ: "/faqs",
   PLAN_VISIT: "/plan-your-visit",
+  MainMarketHall: "/rental-spaces/main-market-hall",
 };
 
 export default ROUTES;

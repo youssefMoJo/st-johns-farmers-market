@@ -12,3 +12,13 @@
 .bold {
   font-weight: bold;
 }
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+table th {
+  background: #1b5a7a;
+  color: white;
+}

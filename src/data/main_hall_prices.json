@@ -1,0 +1,38 @@
+[
+  {
+    "space": "Market Café",
+    "capacity": "Tables & chairs – 75\nStanding – 100",
+    "forProfit": "$385 Half Day\n$550 Full Day/Evening",
+    "nonProfit": "$220 Half Day\n$385 Full Day/Evening"
+  },
+  {
+    "space": "Half-Hall (West)",
+    "capacity": "Tables & chairs – 200\nStanding – 300",
+    "forProfit": "$550 Half Day\n$825 Full Day/Evening",
+    "nonProfit": "$385 Half Day\n$550 Full Day/Evening"
+  },
+  {
+    "space": "Half-Hall (East, excl. Hot Food)",
+    "capacity": "Tables & chairs – 200\nStanding – 300",
+    "forProfit": "$550 Half Day\n$825 Full Day/Evening",
+    "nonProfit": "$385 Half Day\n$550 Full Day/Evening"
+  },
+  {
+    "space": "Half-Hall (East, incl. Hot Food)",
+    "capacity": "Tables & chairs – 300\nStanding – 400",
+    "forProfit": "$660 Half Day\n$935 Full Day/Evening",
+    "nonProfit": "$440 Half Day\n$660 Full Day/Evening"
+  },
+  {
+    "space": "Full Hall (excl. Hot Food)",
+    "capacity": "Tables & chairs – 400\nStanding – 600",
+    "forProfit": "$825 Half Day\n$1100 Full Day/Evening",
+    "nonProfit": "$550 Half Day\n$825 Full Day/Evening"
+  },
+  {
+    "space": "Full Hall (incl. Hot Food)",
+    "capacity": "Tables & chairs – 500\nStanding – 700",
+    "forProfit": "$935 Half Day\n$1200 Full Day/Evening",
+    "nonProfit": "$660 Half Day\n$935 Full Day/Evening"
+  }
+]

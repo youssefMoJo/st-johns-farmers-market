@@ -12,6 +12,8 @@ import OurStory from "./pages/OurStory";
 import Contact from "./pages/Contact";
 import FAQS from "./pages/FAQs";
 import EventsPage from "./pages/EventsPage";
+import RentalSpaces from "./pages/RentalSpaces";
+import MainMarketHallDetails from "./pages/MainMarketHall";
 
 function App() {
   return (
@@ -27,6 +29,11 @@ function App() {
           <Route path={ROUTES.CONTACT_US} element={<Contact />} />
           <Route path={ROUTES.FAQ} element={<FAQS />} />
           <Route path={ROUTES.SEE_EVENTS} element={<EventsPage />} />
+          <Route path={ROUTES.RENTAL_SPACES} element={<RentalSpaces />} />
+          <Route
+            path={ROUTES.MainMarketHall}
+            element={<MainMarketHallDetails />}
+          />
         </Routes>
         <Footer />
       </div>
