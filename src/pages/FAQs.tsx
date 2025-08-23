@@ -8,6 +8,7 @@ type FAQ = {
   question: string;
   answer: string;
   tags: string[];
+  link?: string;
 };
 
 const allTags = ["All", "Main Market Hall", "Kitchen", "Community Room"];
@@ -133,7 +134,23 @@ const FAQs: React.FC = () => {
                 </div>
                 {openIndex === index && (
                   <div style={faqStyles.body}>
-                    <p style={faqStyles.answer}>{item.answer}</p>
+                    <p style={faqStyles.answer}>
+                      {item.answer}
+                      {item.link && (
+                        <>
+                          {" "}
+                          <a
+                            href={item.link}
+                            style={{
+                              color: "#12646C",
+                              textDecoration: "underline",
+                            }}
+                          >
+                            Learn more
+                          </a>
+                        </>
+                      )}
+                    </p>
                   </div>
                 )}
               </div>
@@ -182,6 +199,7 @@ const faqStyles = {
     fontSize: "1.1rem",
     margin: 0,
     lineHeight: "1.6",
+    whiteSpace: "pre-line",
   } as React.CSSProperties,
 };
 

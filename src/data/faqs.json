@@ -1,42 +1,23 @@
 [
   {
-    "question": "What are the Market’s hours of operation?",
-    "answer": "The Market is open every Saturday year-round from 9:00 AM to 4:00 PM. Some Sundays are also open—check our social media for details.",
+    "question": "Can I bring outside food in?",
+    "answer": "Renters may bring their own food for events. However, as a great alternative, some of our Market vendors are able to cater. This includes everything from meeting snacks to full meals and desserts. Check with us for available options.",
     "tags": ["main market hall"]
   },
   {
-    "question": "Where is the Market located?",
-    "answer": "We’re located at 245 Freshwater Road, St. John’s, NL, A1B 1B3—inside the St. John’s Community Market building.",
+    "question": "What about alcohol?",
+    "answer": "SJFM does not have a permanent liquor license. If you would like to host an event that includes alcohol, please contact us.",
     "tags": ["main market hall"]
   },
   {
-    "question": "Is there parking available?",
-    "answer": "Yes! Free parking is available on-site. Additional street parking is also nearby.",
+    "question": "Do you have A/V equipment on site?",
+    "answer": "Microphone and speakers available upon request. These are adequate for small events or as a PA system only.",
     "tags": ["main market hall"]
   },
   {
-    "question": "Is the Market accessible?",
-    "answer": "Absolutely. The Market is wheelchair accessible and includes accessible washrooms.",
+    "question": "What parking is available?",
+    "answer": "Parking is free and plentiful at the Farmers’ Market!\n\n On regular business days, public parking is available in front of the Market Building and in the Terra Nova Road lot.\n There is also ample street-side parking in the immediate neighbourhood.\n\n The renter is responsible for ensuring parking management. SJFM will go over this with potential renters related to scope of event.\n\n ",
+    "link": "/plan-your-visit",
     "tags": ["main market hall"]
-  },
-  {
-    "question": "Can I bring my dog?",
-    "answer": "Service animals are welcome inside the Market. Pets are welcome in our outdoor spaces when weather permits.",
-    "tags": ["main market hall"]
-  },
-  {
-    "question": "How can I become a vendor?",
-    "answer": "You can apply via our 'Become a Vendor' page. We accept applications year-round and assess them based on product diversity and space availability.",
-    "tags": ["main market hall"]
-  },
-  {
-    "question": "Do you take debit or credit?",
-    "answer": "Many vendors accept debit and credit. Some are cash-only, so it’s good to bring some cash as a backup. There's an ATM on-site for your convenience.",
-    "tags": ["main market hall"]
-  },
-  {
-    "question": "How can I volunteer?",
-    "answer": "We’d love to have you! Visit our Contact or Volunteer section and email us at volunteer@sjfm.ca to get started.",
-    "tags": ["community room"]
   }
 ]
