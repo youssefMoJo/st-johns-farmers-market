@@ -32,7 +32,7 @@ const WorkshopRoomDetails: React.FC = () => (
       <div style={styles.contentWrapper}>
         <div style={styles.textWrapper}>
           <SectionTitle
-            parts={[{ text: "🤝 Community Room", color: "white" }]}
+            parts={[{ text: "🤝 Workshop Room", color: "white" }]}
             align="left"
           />
           <p style={styles.description}>
