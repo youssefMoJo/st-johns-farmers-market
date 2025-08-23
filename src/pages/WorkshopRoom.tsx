@@ -78,21 +78,63 @@ const WorkshopRoomDetails: React.FC = () => (
         </Carousel>
       </div>
 
-      {/* Community Room Activities */}
+      {/* Types of Use */}
       <div
         style={{
           maxWidth: "1000px",
-          padding: "1rem 1.25rem",
-          backgroundColor: "#FFF8E1", // soft warm yellow
-          borderLeft: "5px solid #F9A825", // accent color
-          borderRadius: "5px",
-          fontSize: "1.1rem",
-          lineHeight: "1.5",
-          color: "#6B4C00",
+          padding: "1.5rem 1.25rem",
+          backgroundColor: "#F5F9FF", // subtle light background
+          borderRadius: "8px",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+          color: "#143C5D",
+          lineHeight: "1.6",
         }}
       >
-        🎨 <strong>Ideal for:</strong> Workshops, board meetings, classes, small
-        performances, movie nights, and more.
+        <h2
+          style={{
+            fontSize: "1.8rem",
+            fontWeight: "bold",
+            marginBottom: "1rem",
+            color: "#1B5A7A",
+          }}
+        >
+          🎨 Types of Use
+        </h2>
+        <p style={{ marginBottom: "1rem", fontSize: "1.1rem" }}>
+          Our Workshop Room is a flexible space designed for a variety of
+          activities, including:
+        </p>
+
+        <ul style={{ padding: 0, listStyleType: "none", marginBottom: "1rem" }}>
+          {[
+            "🖌️ Workshops and hands-on learning sessions",
+            "📚 Board meetings and classes",
+            "🎶 Small performances and movie nights",
+            "✨ And more collaborative and creative activities—share your ideas with us!",
+          ].map((item, idx) => (
+            <li
+              key={idx}
+              style={{
+                backgroundColor: "#EAF2FF",
+                marginBottom: "0.5rem",
+                padding: "0.5rem 1rem",
+                borderRadius: "5px",
+                fontWeight: "500",
+              }}
+              dangerouslySetInnerHTML={{
+                __html:
+                  idx === 3
+                    ? "✨ And more collaborative and creative activities — <a href='mailto:eventsmanager@sjfm.ca' style='color:#12646C; text-decoration:underline;'>Contact our Events Manager</a> to share your ideas!"
+                    : item,
+              }}
+            ></li>
+          ))}
+        </ul>
+
+        <p style={{ fontSize: "1rem", fontStyle: "italic", color: "#555" }}>
+          👉 Ideal for small groups, community-focused events, and creative
+          projects.
+        </p>
       </div>
 
       {/* Pricing Table */}
