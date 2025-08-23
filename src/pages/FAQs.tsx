@@ -11,7 +11,7 @@ type FAQ = {
   link?: string;
 };
 
-const allTags = ["All", "Main Market Hall", "Kitchen", "Community Room"];
+const allTags = ["All", "Main Market Hall", "Kitchen", "Workshop Room"];
 
 const FAQs: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -78,7 +78,10 @@ const FAQs: React.FC = () => {
           {allTags.map((tag) => (
             <button
               key={tag}
-              onClick={() => setSelectedTag(tag)}
+              onClick={() => {
+                setSelectedTag(tag);
+                setOpenIndex(null); // close all FAQ cards
+              }}
               style={{
                 margin: "0.5rem",
                 padding: "0.5rem 1rem",
@@ -125,12 +128,10 @@ const FAQs: React.FC = () => {
                 }}
               >
                 <div style={faqStyles.header}>
-                  <h3 style={faqStyles.question}>
-                    {item.question}
-                    <span style={faqStyles.toggle}>
-                      {openIndex === index ? "−" : "+"}
-                    </span>
-                  </h3>
+                  <span style={{ flex: 1 }}>{item.question}</span>
+                  <span style={faqStyles.toggle}>
+                    {openIndex === index ? "−" : "+"}
+                  </span>
                 </div>
                 {openIndex === index && (
                   <div style={faqStyles.body}>

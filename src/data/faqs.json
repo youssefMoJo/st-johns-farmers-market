@@ -19,5 +19,20 @@
     "answer": "Parking is free and plentiful at the Farmers’ Market!\n\n On regular business days, public parking is available in front of the Market Building and in the Terra Nova Road lot.\n There is also ample street-side parking in the immediate neighbourhood.\n\n The renter is responsible for ensuring parking management. SJFM will go over this with potential renters related to scope of event.\n\n ",
     "link": "/plan-your-visit",
     "tags": ["main market hall"]
+  },
+  {
+    "question": "Is there a projector and a screen in the space?",
+    "answer": "There is a projector available (stored in the Market Coffee shop) and a blank white wall to project on.  The Community Room has an HDMI compatible large screen that can be utilized for meetings.",
+    "tags": ["Workshop Room"]
+  },
+  {
+    "question": "Do you have any other workshop equipment such as flip charts and markers?",
+    "answer": "No – renters must provide their own.",
+    "tags": ["Workshop Room"]
+  },
+  {
+    "question": "Can we bring outside food into a meeting?",
+    "answer": "Renters may bring their own food for events. However, as a great alternative, some of our vendors are able to cater. This includes everything from meeting snacks to full meals and desserts. Check with us for available options.",
+    "tags": ["Workshop Room"]
   }
 ]
