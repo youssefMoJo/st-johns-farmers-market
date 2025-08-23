@@ -34,5 +34,30 @@
     "question": "Can we bring outside food into a meeting?",
     "answer": "Renters may bring their own food for events. However, as a great alternative, some of our vendors are able to cater. This includes everything from meeting snacks to full meals and desserts. Check with us for available options.",
     "tags": ["Workshop Room"]
+  },
+  {
+    "question": "What equipment does the kitchen come with?",
+    "answer": "Stoves, ovens, convection oven, commercial microwaves, fridges, ice machine, blender/mixer, counters, commercial dishwasher, and two double sinks among other features.",
+    "tags": ["Kitchen"]
+  },
+  {
+    "question": "Do I need to bring my own pots and pans?",
+    "answer": "We have a basic stock but we would encourage bringing small supplies or utensils. We will keep adding more items gradually as kitchen operations establish themselves.",
+    "tags": ["Kitchen"]
+  },
+  {
+    "question": "Is there cold storage?",
+    "answer": "There are fridges and freezers in the kitchen that renters can use during food preparation, but not for long-term storage.",
+    "tags": ["Kitchen"]
+  },
+  {
+    "question": "Is it accessible?",
+    "answer": "Yes – it is at-grade, with push-button doors and several accessible counters.",
+    "tags": ["Kitchen"]
+  },
+  {
+    "question": "Can I rent it when other things are happening in the building?",
+    "answer": "Sometimes – not during Market Days, though. Ask staff for more information.",
+    "tags": ["Kitchen"]
   }
 ]
