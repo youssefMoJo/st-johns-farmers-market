@@ -17,6 +17,7 @@ import RentalSpaces from "./pages/RentalSpaces";
 import MainMarketHallDetails from "./pages/MainMarketHall";
 import WorkshopRoomDetails from "./pages/WorkshopRoom";
 import KitchenDetails from "./pages/Kitchen";
+import PlanYourVisit from "./pages/PlanYourVisit";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           />
           <Route path={ROUTES.WorkshopRoom} element={<WorkshopRoomDetails />} />
           <Route path={ROUTES.Kitchen} element={<KitchenDetails />} />
+          <Route path={ROUTES.PLAN_VISIT} element={<PlanYourVisit />} />
         </Routes>
         <Footer />
       </div>
