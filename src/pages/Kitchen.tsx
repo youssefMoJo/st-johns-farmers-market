@@ -54,7 +54,7 @@ const WorkshopRoomDetails: React.FC = () => (
       }}
     >
       {/* Image Carousel */}
-      <div style={{ maxWidth: "900px", margin: "2rem auto" }}>
+      <div style={{ maxWidth: "900px" }}>
         <Carousel>
           {[kitchen_1, kitchen_2, kitchen_3, kitchen_4].map((src, idx) => (
             <Carousel.Item key={idx} interval={3000}>
