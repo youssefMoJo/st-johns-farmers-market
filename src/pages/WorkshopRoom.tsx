@@ -54,7 +54,7 @@ const WorkshopRoomDetails: React.FC = () => (
       }}
     >
       {/* Image Carousel */}
-      <div style={{ maxWidth: "900px", margin: "2rem auto" }}>
+      <div style={{ maxWidth: "900px" }}>
         <Carousel>
           {[
             community_rooom_4,
