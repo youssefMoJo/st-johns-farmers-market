@@ -15,6 +15,7 @@ import FAQS from "./pages/FAQs";
 import EventsPage from "./pages/EventsPage";
 import RentalSpaces from "./pages/RentalSpaces";
 import MainMarketHallDetails from "./pages/MainMarketHall";
+import WorkshopRoomDetails from "./pages/WorkshopRoom";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             path={ROUTES.MainMarketHall}
             element={<MainMarketHallDetails />}
           />
+          <Route path={ROUTES.WorkshopRoom} element={<WorkshopRoomDetails />} />
         </Routes>
         <Footer />
       </div>
