@@ -128,7 +128,39 @@ const FAQs: React.FC = () => {
                 }}
               >
                 <div style={faqStyles.header}>
-                  <span style={{ flex: 1 }}>{item.question}</span>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      flex: 1,
+                    }}
+                  >
+                    {item.tags.length > 0 && (
+                      <span
+                        style={{
+                          backgroundColor:
+                            item.tags[0] === "Main Market Hall"
+                              ? "#157D77"
+                              : item.tags[0] === "Workshop Room"
+                              ? "#F57C00"
+                              : item.tags[0] === "Kitchen"
+                              ? "#12646C"
+                              : "#8B5CF6",
+                          color: "white",
+                          padding: "0.15rem 0.5rem",
+                          borderRadius: "12px",
+                          fontSize: "0.8rem",
+                          marginBottom: "0.25rem",
+                          display: "inline-block",
+                          whiteSpace: "nowrap",
+                          width: "fit-content",
+                        }}
+                      >
+                        {item.tags[0]}
+                      </span>
+                    )}
+                    <span>{item.question}</span>
+                  </div>
                   <span style={faqStyles.toggle}>
                     {openIndex === index ? "−" : "+"}
                   </span>
