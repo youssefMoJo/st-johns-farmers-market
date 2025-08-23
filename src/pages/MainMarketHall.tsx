@@ -79,38 +79,62 @@ const MainMarketHallDetails: React.FC = () => (
           ))}
         </Carousel>
       </div>
-      {/* Details Section */}
-      <div style={styles.details}>
+
+      {/* Types of Use */}
+      <div
+        style={{
+          maxWidth: "1000px",
+          padding: "1.5rem 1.25rem",
+          backgroundColor: "#F5F9FF", // subtle light background
+          borderRadius: "8px",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+          color: "#143C5D",
+          lineHeight: "1.6",
+        }}
+      >
         <h2
           style={{
-            fontSize: "1.6rem",
+            fontSize: "1.8rem",
             fontWeight: "bold",
+            marginBottom: "1rem",
             color: "#1B5A7A",
-            marginBottom: "0.75rem",
           }}
         >
           🎭 Types of Use
         </h2>
-        <p style={{ fontSize: "1.1rem", lineHeight: "1.6" }}>
+        <p style={{ marginBottom: "1rem", fontSize: "1.1rem" }}>
           Our Main Market Hall is a flexible venue for a wide variety of events,
           including:
         </p>
-        <ul
-          style={{
-            margin: "0.75rem 0 0 1.5rem",
-            padding: 0,
-            fontSize: "1.05rem",
-            lineHeight: "1.6",
-            listStyleType: "none",
-          }}
-        >
-          <li>🍽️ Large dinners & banquets</li>
-          <li>🎶 Performances & concerts</li>
-          <li>🎭 Rehearsals & art productions</li>
-          <li>📊 Conferences & community gatherings</li>
-          <li>✨ And much more—share your vision with us!</li>
+
+        <ul style={{ padding: 0, listStyleType: "none", marginBottom: "1rem" }}>
+          {[
+            "🍽️ Large dinners & banquets",
+            "🎶 Performances & concerts",
+            "🎭 Rehearsals & art productions",
+            "📊 Conferences & community gatherings",
+            "✨ And much more—share your vision with us!",
+          ].map((item, idx) => (
+            <li
+              key={idx}
+              style={{
+                backgroundColor: "#EAF2FF",
+                marginBottom: "0.5rem",
+                padding: "0.5rem 1rem",
+                borderRadius: "5px",
+                fontWeight: "500",
+              }}
+              dangerouslySetInnerHTML={{
+                __html:
+                  idx === 4
+                    ? "✨ And much more — <a href='mailto:eventsmanager@sjfm.ca' style='color:#12646C; text-decoration:underline;'>Contact our Events Manager</a> to share your vision!"
+                    : item,
+              }}
+            ></li>
+          ))}
         </ul>
-        <p style={{ marginTop: "0.75rem", fontSize: "1rem", color: "#444" }}>
+
+        <p style={{ fontSize: "1rem", fontStyle: "italic", color: "#555" }}>
           👉 Food-focused and community-building events are given priority.
         </p>
       </div>
