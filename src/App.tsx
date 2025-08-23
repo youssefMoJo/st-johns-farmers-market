@@ -16,6 +16,7 @@ import EventsPage from "./pages/EventsPage";
 import RentalSpaces from "./pages/RentalSpaces";
 import MainMarketHallDetails from "./pages/MainMarketHall";
 import WorkshopRoomDetails from "./pages/WorkshopRoom";
+import KitchenDetails from "./pages/Kitchen";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
             element={<MainMarketHallDetails />}
           />
           <Route path={ROUTES.WorkshopRoom} element={<WorkshopRoomDetails />} />
+          <Route path={ROUTES.Kitchen} element={<KitchenDetails />} />
         </Routes>
         <Footer />
       </div>

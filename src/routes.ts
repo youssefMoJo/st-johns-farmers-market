@@ -13,6 +13,7 @@ const ROUTES = {
   PLAN_VISIT: "/plan-your-visit",
   MainMarketHall: "/rental-spaces/main-market-hall",
   WorkshopRoom: "/rental-spaces/workshop-room",
+  Kitchen: "/rental-spaces/commercial-kitchen",
 };
 
 export default ROUTES;
