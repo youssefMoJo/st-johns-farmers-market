@@ -4,6 +4,8 @@ import Image from "react-bootstrap/Image";
 import main_hall_1 from "../assets/main_hall/main-hall-1.jpg";
 import main_hall_2 from "../assets/main_hall/main-hall-2.jpg";
 import main_hall_3 from "../assets/main_hall/main-hall-3.jpg";
+import main_hall_4 from "../assets/main_hall/main-hall-4.jpg";
+import main_hall_5 from "../assets/main_hall/main-hall-5.jpg";
 import Carousel from "react-bootstrap/Carousel";
 import pricesData from "../data/main_hall_prices.json";
 
@@ -55,7 +57,13 @@ const MainMarketHallDetails: React.FC = () => (
       {/* Image Carousel */}
       <div style={{ maxWidth: "900px", margin: "2rem auto" }}>
         <Carousel>
-          {[main_hall_1, main_hall_2, main_hall_3].map((src, idx) => (
+          {[
+            main_hall_1,
+            main_hall_2,
+            main_hall_3,
+            main_hall_4,
+            main_hall_5,
+          ].map((src, idx) => (
             <Carousel.Item key={idx} interval={3000}>
               <Image
                 src={src}
