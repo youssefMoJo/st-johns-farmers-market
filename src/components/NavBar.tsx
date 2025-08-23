@@ -15,8 +15,8 @@ export default function NavBar() {
   const [navBarExpanded, setNavBarExpanded] = useState<boolean>(false);
 
   const handleNavClick: () => void = () => {
-    setNavBarExpanded(false);
-    window.scrollTo(0, 0);
+    // setNavBarExpanded(false);
+    // window.scrollTo(0, 0);
   };
 
   return (
