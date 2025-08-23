@@ -140,47 +140,105 @@ const MainMarketHallDetails: React.FC = () => (
       </div>
 
       {/* Food and Beverage Information */}
-      <div style={styles.details}>
-        <h2 style={styles.tableTitle}>🍴 Food & Beverage Information</h2>
-        <ul
-          style={{
-            margin: "0.75rem 0 0 1.5rem",
-            padding: 0,
-            fontSize: "1.05rem",
-            lineHeight: "1.6",
-            listStyleType: "none",
-          }}
-        >
-          <li>
-            ☕ <strong>Café:</strong> If you would like the Market café opened
-            during your event for coffee and snacks, please contact the
-            operator, <em>Cheddar’s Café by Oh My Cheeses</em> at{" "}
-            <a href="mailto:ohmycheesesnl@gmail.com">ohmycheesesnl@gmail.com</a>
-            .
-          </li>
-          <li>
-            🍷 <strong>Alcohol:</strong> The SJFM does not have a permanent
-            liquor license. If you would like to host an event with alcohol,
-            please review our licensing requirements.
-          </li>
-          <li>
-            🔥 <strong>Hot Food Area:</strong> Vendors in the Hot Food Area are
-            semi-permanent booths and cannot be removed for events.
-          </li>
-          <li>
-            🏛️ <strong>Space Setup:</strong> The rest of the Market Hall can be
-            emptied and arranged to meet your needs.
-          </li>
-          <li>
-            🍵 <strong>Coffee/Tea Service:</strong> Available for events. Please
-            check with us about pricing.
-          </li>
-          <li>
-            🥗 <strong>Catering Options:</strong> Renters may bring their own
-            food, but as a great alternative, many Market Vendors can cater—from
-            snacks to full meals and desserts. Ask us about available options.
-          </li>
-        </ul>
+      <div
+        style={{
+          ...styles.details,
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "1rem",
+          justifyContent: "flex-start",
+        }}
+      >
+        <h2 style={{ ...styles.tableTitle, width: "100%" }}>
+          🍴 Food & Beverage Information
+        </h2>
+        {[
+          {
+            icon: "☕",
+            title: "Café",
+            content: (
+              <>
+                If you would like the Market café opened during your event for
+                coffee and snacks, please contact the operator,{" "}
+                <em>Cheddar’s Café by Oh My Cheeses</em> at{" "}
+                <a href="mailto:ohmycheesesnl@gmail.com">
+                  ohmycheesesnl@gmail.com
+                </a>
+                .
+              </>
+            ),
+          },
+          {
+            icon: "🍷",
+            title: "Alcohol",
+            content: (
+              <>
+                The SJFM does not have a permanent liquor license. If you would
+                like to host an event with alcohol, please review our licensing
+                requirements.
+              </>
+            ),
+          },
+          {
+            icon: "🔥",
+            title: "Hot Food Area",
+            content: (
+              <>
+                Vendors in the Hot Food Area are semi-permanent booths and
+                cannot be removed for events.
+              </>
+            ),
+          },
+          {
+            icon: "🏛️",
+            title: "Space Setup",
+            content: (
+              <>
+                The rest of the Market Hall can be emptied and arranged to meet
+                your needs.
+              </>
+            ),
+          },
+          {
+            icon: "🍵",
+            title: "Coffee/Tea Service",
+            content: (
+              <>Available for events. Please check with us about pricing.</>
+            ),
+          },
+          {
+            icon: "🥗",
+            title: "Catering Options",
+            content: (
+              <>
+                Renters may bring their own food, but as a great alternative,
+                many Market Vendors can cater—from snacks to full meals and
+                desserts. Ask us about available options.
+              </>
+            ),
+          },
+        ].map(({ icon, title, content }, idx) => (
+          <div
+            key={idx}
+            style={{
+              backgroundColor: "#F5F9FF",
+              borderRadius: "8px",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+              padding: "1rem",
+              flex: "1 1 300px",
+              display: "flex",
+              alignItems: "flex-start",
+              gap: "0.75rem",
+              color: "#143C5D",
+              lineHeight: "1.4",
+            }}
+          >
+            <div style={{ fontSize: "1.8rem", lineHeight: "1" }}>{icon}</div>
+            <div>
+              <strong>{title}:</strong> <span>{content}</span>
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* Pricing Table */}
