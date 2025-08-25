@@ -210,10 +210,10 @@ const BecomeVendor: React.FC = () => {
           <h2 style={{ fontSize: "2rem" }}>📅 Application Status</h2>
 
           <div style={{ fontSize: "1.1rem", lineHeight: "1.6" }}>
-            <h5>Applications for 2024 are now closed.</h5>
+            <h5>Applications for 2025 are now closed.</h5>
             <p>
               Vendor applications for the Saturday St. John’s Farmers’ Market
-              are closed as of March 1, 2024.
+              are closed as of March 1, 2025.
             </p>
             <h5>Still a Farmer or Primary Producer?</h5>
             <p>
