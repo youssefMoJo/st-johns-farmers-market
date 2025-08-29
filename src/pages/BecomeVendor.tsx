@@ -4,6 +4,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import cooking from "../assets/lottie-files/cooking.lottie";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { Card, Row, Col } from "react-bootstrap";
 
 function VendorHandbookModal(props: { show: boolean; onHide: () => void }) {
   return (
@@ -208,26 +209,81 @@ const BecomeVendor: React.FC = () => {
           }}
         >
           <h2 style={{ fontSize: "2rem" }}>📅 Application Status</h2>
-
-          <div style={{ fontSize: "1.1rem", lineHeight: "1.6" }}>
-            <h5>Applications for 2025 are now closed.</h5>
-            <p>
-              Vendor applications for the Saturday St. John’s Farmers’ Market
-              are closed as of March 1, 2025.
-            </p>
-            <h5>Still a Farmer or Primary Producer?</h5>
-            <p>
-              We accept farmers and primary producers year-round. Please contact
-              the Market Manager directly at{" "}
-              <a href="mailto:marketmanager@sjfm.ca"> marketmanager@sjfm.ca </a>
-              to get started.
-            </p>
-            <h5>Food Vendors & Artisans</h5>
-            <p>
-              Applications for food vendors and craft artisans are closed until
-              2025. Please check back in early 2025 for updates on how to apply.
-            </p>
-          </div>
+          <Row xs={1} md={3} className="g-4" style={{ width: "100%" }}>
+            <Col>
+              <Card
+                style={{
+                  background: "#e6f9ed",
+                  border: "none",
+                  minHeight: 220,
+                  boxShadow: "0 2px 8px rgba(60,180,80,0.08)",
+                }}
+                className="h-100"
+              >
+                <Card.Body>
+                  <div style={{ fontSize: "2.4rem" }}>🌾</div>
+                  <Card.Title style={{ color: "#228B22", fontWeight: "bold" }}>
+                    Farmers & Primary Producers
+                  </Card.Title>
+                  <Card.Text>
+                    Applications open <b>year-round</b>! Contact the Market
+                    Manager at{" "}
+                    <a
+                      href="mailto:marketmanager@sjfm.ca"
+                      style={{ color: "#228B22", fontWeight: "bold" }}
+                    >
+                      marketmanager@sjfm.ca
+                    </a>{" "}
+                    to get started.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card
+                style={{
+                  background: "#fff6f6",
+                  border: "none",
+                  minHeight: 220,
+                  boxShadow: "0 2px 8px rgba(200,0,0,0.06)",
+                }}
+                className="h-100"
+              >
+                <Card.Body>
+                  <div style={{ fontSize: "2.4rem" }}>🍞</div>
+                  <Card.Title style={{ color: "#D46540", fontWeight: "bold" }}>
+                    Food Vendors
+                  </Card.Title>
+                  <Card.Text>
+                    <b>2025 applications are closed.</b> Please check back in
+                    early 2025 for updates.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card
+                style={{
+                  background: "#fffbe6",
+                  border: "none",
+                  minHeight: 220,
+                  boxShadow: "0 2px 8px rgba(200,180,0,0.07)",
+                }}
+                className="h-100"
+              >
+                <Card.Body>
+                  <div style={{ fontSize: "2.4rem" }}>🎨</div>
+                  <Card.Title style={{ color: "#C19A3B", fontWeight: "bold" }}>
+                    Artisans & Makers
+                  </Card.Title>
+                  <Card.Text>
+                    <b>2025 applications are closed.</b> Please revisit in 2025
+                    for new opportunities!
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
         </div>
       </div>
 
@@ -237,67 +293,72 @@ const BecomeVendor: React.FC = () => {
           style={{
             ...styles.contentWrapper,
             flexDirection: "column",
-            alignItems: "flex-start",
+            alignItems: "center",
             textAlign: "left",
-            gap: "1rem",
+            gap: "1.5rem",
+            width: "100%",
           }}
         >
-          <h2 style={{ fontSize: "2rem" }}>📘 Vendor Handbook</h2>
-
-          <p style={{ fontSize: "1.1rem", lineHeight: "1.6" }}>
-            Everything you need to know about becoming a vendor is outlined in
-            our{" "}
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                setModalShow(true);
-
-                const target = e.target as HTMLAnchorElement;
-                target.style.color = "#D46540";
-                target.style.fontWeight = "bold";
-                target.style.textDecoration = "none";
-                target.style.cursor = "pointer";
-                target.style.borderBottom = "2px solid #D46540";
-              }}
+          <Card
+            style={{
+              width: "100%",
+              maxWidth: 800,
+              margin: "0 auto",
+              background: "#e7f0fa",
+              border: "2px solid #1976d2",
+              borderRadius: "1.5rem",
+              boxShadow: "0 4px 24px rgba(25,118,210,0.10)",
+              cursor: "pointer",
+              transition: "box-shadow 0.2s",
+              padding: "1.5rem 0.5rem",
+            }}
+            onClick={() => setModalShow(true)}
+            className="vendor-handbook-card"
+          >
+            <Card.Body
               style={{
-                color: "#D46540",
-                fontWeight: "bold",
-                textDecoration: "none",
-                cursor: "pointer",
-                borderBottom: "2px solid #D46540",
-                transition: "all 0.3s ease",
-                padding: "1px 5px",
-              }}
-              onMouseEnter={(e) => {
-                const target = e.target as HTMLAnchorElement;
-                target.style.color = "#fff";
-                target.style.backgroundColor = "#D46540";
-                target.style.borderBottom = "2px solid #fff";
-              }}
-              onMouseLeave={(e) => {
-                const target = e.target as HTMLAnchorElement;
-                target.style.color = "#D46540";
-                target.style.backgroundColor = "transparent";
-                target.style.borderBottom = "2px solid #D46540";
+                display: "flex",
+                alignItems: "center",
+                gap: "1.5rem",
+                flexWrap: "wrap",
               }}
             >
-              Vendor Handbook
-            </a>{" "}
-            We strongly recommend reviewing it before applying to understand:
-            <ul style={{ color: "rgb(19, 81, 131)", fontWeight: "bold" }}>
-              <li> Selection criteria</li>
-              <li> Market policies</li>
-              <li>Operational details</li>
-            </ul>
-            After submitting your application, you’ll be contacted by the Market
-            Manager within 2 weeks. We’ll provide initial feedback and outline
-            the next steps based on your product category.{" "}
-            <span className="bold">Please note: </span>
-            applications are not accepted on a first-come, first-served basis—we
-            assess each submission carefully to ensure a diverse and balanced
-            market.
-          </p>
+              <div style={{ fontSize: "3rem", flex: "0 0 64px" }}>📘</div>
+              <div style={{ flex: "1 1 300px" }}>
+                <Card.Title
+                  style={{
+                    fontSize: "2rem",
+                    color: "#1976d2",
+                    fontWeight: 700,
+                  }}
+                >
+                  Vendor Handbook
+                </Card.Title>
+                <Card.Text style={{ fontSize: "1.15rem", color: "#234b70" }}>
+                  Everything you need to know about becoming a vendor: selection
+                  criteria, market policies, and operational details.{" "}
+                  <span style={{ fontWeight: 600 }}>
+                    Click to view the full handbook!
+                  </span>
+                </Card.Text>
+                <Button
+                  variant="primary"
+                  style={{
+                    marginTop: "0.5rem",
+                    fontWeight: 600,
+                    background: "#1976d2",
+                    border: "none",
+                  }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setModalShow(true);
+                  }}
+                >
+                  View Handbook
+                </Button>
+              </div>
+            </Card.Body>
+          </Card>
         </div>
         <VendorHandbookModal
           show={modalShow}
@@ -319,70 +380,104 @@ const BecomeVendor: React.FC = () => {
           }}
         >
           <h2 style={{ fontSize: "2rem" }}>📋 Vendor Guidelines</h2>
-          <ul style={{ fontSize: "1.1rem", lineHeight: "1.6" }}>
-            <li>
-              {" "}
-              All products sold must be handmade, grown, or produced in
-              Newfoundland and Labrador. If you don’t{" "}
-              <span className="bold">“Make it, Bake it, or Grow it,” </span> you
-              can’t sell it.
-            </li>
-            <li>
-              All vendors must follow the policies outlined in the{" "}
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setModalShow(true);
-
-                  const target = e.target as HTMLAnchorElement;
-                  target.style.color = "#D46540";
-                  target.style.fontWeight = "bold";
-                  target.style.textDecoration = "none";
-                  target.style.cursor = "pointer";
-                  target.style.borderBottom = "2px solid #D46540";
-                }}
+          <Row xs={1} md={2} className="g-3" style={{ width: "100%" }}>
+            <Col>
+              <Card
+                className="h-100"
                 style={{
-                  color: "#D46540",
-                  fontWeight: "bold",
-                  textDecoration: "none",
-                  cursor: "pointer",
-                  borderBottom: "2px solid #D46540",
-                  transition: "all 0.3s ease",
-                  padding: "1px 5px",
-                }}
-                onMouseEnter={(e) => {
-                  const target = e.target as HTMLAnchorElement;
-                  target.style.color = "#fff";
-                  target.style.backgroundColor = "#D46540";
-                  target.style.borderBottom = "2px solid #fff";
-                }}
-                onMouseLeave={(e) => {
-                  const target = e.target as HTMLAnchorElement;
-                  target.style.color = "#D46540";
-                  target.style.backgroundColor = "transparent";
-                  target.style.borderBottom = "2px solid #D46540";
+                  borderLeft: "6px solid #1976d2",
+                  background: "#f8fbff",
                 }}
               >
-                Vendor Handbook
-              </a>{" "}
-              , with a focus on safety, food safety, and product suitability. A
-              paper copy is available upon request from the Market Manager.
-            </li>
-            <li>
-              The Market Manager and Board reserve the right to deny vendor
-              participation if Vendor Handbook policies are not followed.
-            </li>
-            <li>
-              While we strive to accommodate as many vendors as possible, high
-              demand means we cannot guarantee a spot at any specific market.
-              Vendors selected to attend will receive an email confirmation at
-              least 4 weeks in advance. You must confirm your attendance by
-              responding no later than 72 hours before your scheduled date. Late
-              responses or cancellations made after this 72-hour window may
-              incur a fee, as outlined in our policy.
-            </li>
-          </ul>
+                <Card.Body
+                  style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+                >
+                  <span style={{ fontSize: "2rem" }}>✅</span>
+                  <span style={{ fontSize: "1.12rem" }}>
+                    All products must be <b>handmade, grown, or produced</b> in
+                    Newfoundland and Labrador. If you don’t{" "}
+                    <b>“Make it, Bake it, or Grow it,”</b> you can’t sell it.
+                  </span>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card
+                className="h-100"
+                style={{
+                  borderLeft: "6px solid #C19A3B",
+                  background: "#fffbe6",
+                }}
+              >
+                <Card.Body
+                  style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+                >
+                  <span style={{ fontSize: "2rem" }}>⚠️</span>
+                  <span style={{ fontSize: "1.12rem" }}>
+                    Due to high demand, we <b>cannot guarantee</b> a spot at
+                    every market. Confirm your attendance <b>within 72 hours</b>{" "}
+                    of receiving your invitation. Late responses or
+                    cancellations may incur a fee.
+                  </span>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card
+                className="h-100"
+                style={{
+                  borderLeft: "6px solid #228B22",
+                  background: "#f7fcf8",
+                }}
+              >
+                <Card.Body
+                  style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+                >
+                  <span style={{ fontSize: "2rem" }}>✅</span>
+                  <span style={{ fontSize: "1.12rem" }}>
+                    All vendors must follow policies in the{" "}
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setModalShow(true);
+                      }}
+                      style={{
+                        color: "#1976d2",
+                        fontWeight: "bold",
+                        textDecoration: "underline",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Vendor Handbook
+                    </a>{" "}
+                    with a focus on safety, food safety, and product
+                    suitability.
+                  </span>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card
+                className="h-100"
+                style={{
+                  borderLeft: "6px solid #D46540",
+                  background: "#fff9f7",
+                }}
+              >
+                <Card.Body
+                  style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+                >
+                  <span style={{ fontSize: "2rem" }}>⚠️</span>
+                  <span style={{ fontSize: "1.12rem" }}>
+                    The Market Manager and Board reserve the right to{" "}
+                    <b>deny participation</b> if Vendor Handbook policies are
+                    not followed.
+                  </span>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
         </div>
       </div>
 
@@ -398,113 +493,170 @@ const BecomeVendor: React.FC = () => {
           }}
         >
           <h2 style={{ fontSize: "2rem" }}>🍎 Food Vendors & Licensing</h2>
-          <div>
-            <h5>For All Food Vendors</h5>
-            <p>To sell food at the St. John’s Farmers’ Market, vendors must:</p>
-            <ol style={{ fontSize: "1.1rem", lineHeight: "1.6" }}>
-              <li>
-                <span className="bold">
-                  Hold a Seasonal Food Establishment License{" "}
-                </span>{" "}
-                specific to this market.
-              </li>
-              <ul>
-                <li>Your existing business license does not apply.</li>
-              </ul>
-              <li>
-                <span className="bold">
-                  {" "}
-                  Complete an approved food safety course.
-                </span>
-              </li>
-              <li>
-                {" "}
-                <span className="bold">Display your food license </span>
-                at your booth once approved.
-              </li>
-            </ol>
-          </div>
-          <div>
-            <h5>Need a licensed kitchen?</h5>
-            <p>Ask the Market Manager about renting our licensed kitchen.</p>
-          </div>
-          <div>
-            <h5>Steps to Obtain Your Food License with Us</h5>
-            <p>
-              To begin the process of securing your food license, please follow
-              the steps below:
-            </p>
-            <ol>
-              <li className="bold">Complete the Vendor Application</li>
-              <ul>
-                <li>
-                  Submit the Vendor Application form available on our website.
-                  Once submitted, you will automatically receive a confirmation
-                  email.
-                </li>
-              </ul>
-              <li className="bold">Application Review & Required Forms</li>
-              <ul>
-                <li>
-                  After reviewing your application, the Market Manager will
-                  contact you via email within two weeks. If your product aligns
-                  with our market’s selection criteria and demand, you will
-                  receive the necessary forms to proceed.
-                </li>
-                <ul>
-                  <li>
-                    If your product does not meet our current needs, the Market
-                    Manager will notify you. You may revise and resubmit your
-                    application or withdraw it.
-                  </li>
-                </ul>
-              </ul>
-              <li className="bold">Conditional Approval Letter</li>
-              <ul>
-                <li>
-                  If your application is successful, you will receive a
-                  Conditional Approval Letter from the Market Manager. This
-                  letter is required for your food license application and
-                  confirms our interest in having you as a vendor.
-                </li>
-              </ul>
-              <li className="bold">Submit Documentation to Food Inspector</li>
-              <ul>
-                <li>
-                  Email the completed forms and your Conditional Approval Letter
-                  to our food inspector at{" "}
-                  <a href="mailto:ehaa@gov.nl.ca"> ehaa@gov.nl.ca </a>.
-                </li>
-              </ul>
-              <li className="bold">Processing by Service NL</li>
-              <ul>
-                <li>
-                  Service NL will review and process your food license. This
-                  step may take several weeks depending on demand. You may
-                  contact Service NL directly for updates. You will be notified
-                  by them once your license is approved.
-                </li>
-              </ul>
-              <li className="bold">Scheduling Your Food Inspection</li>
-              <ul>
-                <li>
-                  After your food license is approved, the Market Manager will
-                  reach out to schedule your on-site food inspection for your
-                  first market day.
-                </li>
-              </ul>
-              <li className="bold">Final License Issuance</li>
-              <ul>
-                <li>
-                  Once you pass your inspection, Service NL will mail you the
-                  final food license. This license must be displayed at your
-                  booth at all times during the market.
-                </li>
-              </ul>
-            </ol>
-          </div>
-          <p>
-            <span className="bold"> Note: </span>If you plan to introduce new
+          <Row xs={1} md={3} className="g-3" style={{ width: "100%" }}>
+            <Col>
+              <Card
+                className="h-100"
+                style={{ background: "#f8fbff", minHeight: 160 }}
+              >
+                <Card.Body>
+                  <div style={{ fontSize: "2rem" }}>📝</div>
+                  <Card.Title style={{ fontWeight: "bold" }}>
+                    1. Apply Online
+                  </Card.Title>
+                  <Card.Text>
+                    Complete the Vendor Application form on our website. Receive
+                    an automatic confirmation email.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card
+                className="h-100"
+                style={{ background: "#fffbe6", minHeight: 160 }}
+              >
+                <Card.Body>
+                  <div style={{ fontSize: "2rem" }}>📩</div>
+                  <Card.Title style={{ fontWeight: "bold" }}>
+                    2. Application Review
+                  </Card.Title>
+                  <Card.Text>
+                    Market Manager reviews and contacts you within 2 weeks. If
+                    eligible, you’ll receive required forms.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card
+                className="h-100"
+                style={{ background: "#f8f8f8", minHeight: 160 }}
+              >
+                <Card.Body>
+                  <div style={{ fontSize: "2rem" }}>📄</div>
+                  <Card.Title style={{ fontWeight: "bold" }}>
+                    3. Conditional Approval
+                  </Card.Title>
+                  <Card.Text>
+                    Receive a Conditional Approval Letter, needed for your food
+                    license application.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+          <Row
+            xs={1}
+            md={3}
+            className="g-3"
+            style={{ width: "100%", marginTop: "0.5rem" }}
+          >
+            <Col>
+              <Card
+                className="h-100"
+                style={{ background: "#e6f9ed", minHeight: 160 }}
+              >
+                <Card.Body>
+                  <div style={{ fontSize: "2rem" }}>📧</div>
+                  <Card.Title style={{ fontWeight: "bold" }}>
+                    4. Submit to Inspector
+                  </Card.Title>
+                  <Card.Text>
+                    Email forms and approval letter to{" "}
+                    <a href="mailto:ehaa@gov.nl.ca">ehaa@gov.nl.ca</a>.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card
+                className="h-100"
+                style={{ background: "#fff6f6", minHeight: 160 }}
+              >
+                <Card.Body>
+                  <div style={{ fontSize: "2rem" }}>🏛</div>
+                  <Card.Title style={{ fontWeight: "bold" }}>
+                    5. Service NL Review
+                  </Card.Title>
+                  <Card.Text>
+                    Service NL processes your license. You’ll be notified when
+                    approved.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card
+                className="h-100"
+                style={{ background: "#e7f0fa", minHeight: 160 }}
+              >
+                <Card.Body>
+                  <div style={{ fontSize: "2rem" }}>🧑‍🍳</div>
+                  <Card.Title style={{ fontWeight: "bold" }}>
+                    6. Food Inspection
+                  </Card.Title>
+                  <Card.Text>
+                    Market Manager schedules your on-site food inspection for
+                    your first market date.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+          <Row
+            xs={1}
+            md={1}
+            className="g-3"
+            style={{ width: "100%", marginTop: "0.5rem" }}
+          >
+            <Col>
+              <Card
+                className="h-100"
+                style={{
+                  background: "#e6f9ed",
+                  borderLeft: "6px solid #228B22",
+                }}
+              >
+                <Card.Body>
+                  <div
+                    style={{
+                      fontSize: "2rem",
+                      display: "inline-block",
+                      marginRight: "0.5rem",
+                    }}
+                  >
+                    🏅
+                  </div>
+                  <span style={{ fontWeight: "bold" }}>
+                    7. Final License Issuance:
+                  </span>{" "}
+                  Once you pass inspection, Service NL mails you the license.{" "}
+                  <b>Display it at your booth at all times.</b>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+          <Card
+            className="h-100"
+            style={{
+              background: "#fffbe6",
+              borderLeft: "6px solid #C19A3B",
+              marginTop: "1.5rem",
+            }}
+          >
+            <Card.Body
+              style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+            >
+              <span style={{ fontSize: "2rem" }}>🍳</span>
+              <span>
+                <b>Need a licensed kitchen?</b> Ask the Market Manager about
+                renting our on-site licensed kitchen!
+              </span>
+            </Card.Body>
+          </Card>
+          <p style={{ marginTop: "1rem" }}>
+            <span className="bold">Note:</span> If you plan to introduce new
             food products that differ significantly from your original
             offerings, please consult with both the Market Manager and Service
             NL for approval.
@@ -526,34 +678,95 @@ const BecomeVendor: React.FC = () => {
           }}
         >
           <h2 style={{ fontSize: "2rem" }}>🧑‍🍳 Food Quality Standards</h2>
-          <div>
-            <p>
-              To ensure the highest quality of food at the St. John’s Farmers’
-              Market, all food vendors are subject to on-site adjudication by
-              market staff. Each food product will be reviewed by a minimum of
-              two staff members, who will then provide constructive feedback to
-              help vendors meet or exceed our quality expectations.
-            </p>
-            <p>
-              {" "}
-              If any concerns are noted during adjudication, vendors will have
-              one additional market date to make the necessary improvements.
-              Should more time be required, we ask that the affected products be
-              temporarily removed from your offerings until they meet the
-              expected standard.
-            </p>
-            <p>
-              All food vendors will be juried at least once per season. New
-              vendors will be reviewed at least twice during their first season.
-              If products consistently fall below our standards and feedback is
-              not followed, the vendor may be asked to leave the market.
-            </p>
-            <p>
-              For full details on our quality standards, please contact the
-              Market Manager directly at{" "}
-              <a href="mailto:marketmanager@sjfm.ca"> marketmanager@sjfm.ca </a>
-              .
-            </p>
+          <Row xs={1} md={3} className="g-4" style={{ width: "100%" }}>
+            <Col>
+              <Card
+                className="h-100"
+                style={{
+                  background: "#e7f0fa",
+                  borderLeft: "6px solid #1976d2",
+                  minHeight: 170,
+                }}
+              >
+                <Card.Body>
+                  <div style={{ fontSize: "2rem" }}>🍲</div>
+                  <Card.Title style={{ fontWeight: "bold" }}>
+                    On-Site Adjudication
+                  </Card.Title>
+                  <Card.Text>
+                    All food vendors are reviewed by at least two staff members
+                    to ensure quality and receive constructive feedback.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card
+                className="h-100"
+                style={{
+                  background: "#fffbe6",
+                  borderLeft: "6px solid #C19A3B",
+                  minHeight: 170,
+                }}
+              >
+                <Card.Body>
+                  <div style={{ fontSize: "2rem" }}>⏳</div>
+                  <Card.Title style={{ fontWeight: "bold" }}>
+                    Improvement Window
+                  </Card.Title>
+                  <Card.Text>
+                    Vendors have one additional market date to address any
+                    concerns. More time? Temporarily remove affected products
+                    until standards are met.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card
+                className="h-100"
+                style={{
+                  background: "#f8fbff",
+                  borderLeft: "6px solid #228B22",
+                  minHeight: 170,
+                }}
+              >
+                <Card.Body>
+                  <div style={{ fontSize: "2rem" }}>📝</div>
+                  <Card.Title style={{ fontWeight: "bold" }}>
+                    Seasonal Reviews
+                  </Card.Title>
+                  <Card.Text>
+                    All food vendors are juried at least once per season; new
+                    vendors are reviewed twice in their first year.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+          <blockquote
+            style={{
+              borderLeft: "6px solid #1976d2",
+              background: "#f1f6fa",
+              margin: "1.5rem 0 0 0",
+              padding: "1.2rem 1.5rem",
+              fontStyle: "italic",
+              color: "#234b70",
+              fontSize: "1.12rem",
+              // maxWidth: 700,
+            }}
+          >
+            “Our goal is to work with vendors to uphold the highest quality
+            standards. Feedback is always constructive and intended to help you
+            succeed at the Market.” <br />
+            <span style={{ fontWeight: 600, color: "#1976d2" }}>
+              – SJFM Market Team
+            </span>
+          </blockquote>
+          <div style={{ marginTop: "1rem" }}>
+            For full details on our quality standards, please contact the Market
+            Manager directly at{" "}
+            <a href="mailto:marketmanager@sjfm.ca">marketmanager@sjfm.ca</a>.
           </div>
         </div>
       </div>
@@ -585,46 +798,104 @@ const BecomeVendor: React.FC = () => {
               required.
             </p>
             <h5>How to Apply:</h5>
-            <ol>
-              <li className="bold">Submit the Vendor Application</li>
-              <p>
-                Complete the Vendor Application form on our website. You will
-                receive an automatic confirmation email once it has been
-                successfully submitted.
-              </p>
-              <li className="bold">Receive the Artisan Craft Application</li>
-              <p>
-                Within two weeks of receiving your vendor application, the
-                Market Manager will review your submission and email you the
-                Artisan Craft Application Form. If your products do not meet our
-                market criteria or current demand, the Market Manager will
-                contact you with options to revise and resubmit, or to withdraw
-                your application.
-              </p>
-              <li className="bold">Complete the Artisan Craft Application</li>
-              <p>
-                Fill out the Artisan Craft Application Form and return it to the
-                Market Manager for review.
-              </p>
-              <li className="bold">Initial Market Date & Adjudication</li>
-              <p>
-                If your products meet our standards, you will be invited to
-                attend your first market date. During this debut, at least two
-                staff or board members will adjudicate your products. Feedback
-                will be provided for any items not meeting expectations, along
-                with a timeframe to make improvements if necessary.
-              </p>
-              <li className="bold">Post-Adjudication Approval</li>
-              <p>
-                Upon successful adjudication, the Market Manager will provide
-                you with details on how to book future market dates.
-              </p>
-            </ol>
-            <p>
-              <span className="bold"> Please note </span>that periodic
-              inspections may occur throughout the season. If the quality of
-              your products appears to decline, further adjudication may be
-              required.
+            <Row xs={1} md={4} className="g-3" style={{ width: "100%" }}>
+              <Col>
+                <Card
+                  className="h-100"
+                  style={{
+                    background: "#e7f0fa",
+                    textAlign: "center",
+                    minHeight: 180,
+                  }}
+                >
+                  <Card.Body>
+                    <div style={{ fontSize: "2.2rem" }}>📝</div>
+                    <Card.Title
+                      style={{ fontWeight: "bold", marginTop: "0.5rem" }}
+                    >
+                      Apply
+                    </Card.Title>
+                    <Card.Text>
+                      Submit the Vendor Application form. Receive a confirmation
+                      email.
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card
+                  className="h-100"
+                  style={{
+                    background: "#fffbe6",
+                    textAlign: "center",
+                    minHeight: 180,
+                  }}
+                >
+                  <Card.Body>
+                    <div style={{ fontSize: "2.2rem" }}>🎨</div>
+                    <Card.Title
+                      style={{ fontWeight: "bold", marginTop: "0.5rem" }}
+                    >
+                      Artisan Form
+                    </Card.Title>
+                    <Card.Text>
+                      Receive the Artisan Craft Application by email. Complete
+                      and return it.
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card
+                  className="h-100"
+                  style={{
+                    background: "#e6f9ed",
+                    textAlign: "center",
+                    minHeight: 180,
+                  }}
+                >
+                  <Card.Body>
+                    <div style={{ fontSize: "2.2rem" }}>👩‍⚖️</div>
+                    <Card.Title
+                      style={{ fontWeight: "bold", marginTop: "0.5rem" }}
+                    >
+                      Adjudication
+                    </Card.Title>
+                    <Card.Text>
+                      Attend your first market date. Two staff/board members
+                      adjudicate your products.
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card
+                  className="h-100"
+                  style={{
+                    background: "#fff6f6",
+                    textAlign: "center",
+                    minHeight: 180,
+                  }}
+                >
+                  <Card.Body>
+                    <div style={{ fontSize: "2.2rem" }}>✅</div>
+                    <Card.Title
+                      style={{ fontWeight: "bold", marginTop: "0.5rem" }}
+                    >
+                      Approved
+                    </Card.Title>
+                    <Card.Text>
+                      Upon successful adjudication, you can book future market
+                      dates.
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+            <p style={{ marginTop: "1rem" }}>
+              <span className="bold">Please note:</span> Periodic inspections
+              may occur throughout the season. If your product quality declines,
+              further adjudication may be required.
             </p>
           </div>
         </div>
