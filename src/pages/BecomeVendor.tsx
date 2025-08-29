@@ -4,7 +4,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import cooking from "../assets/lottie-files/cooking.lottie";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { Card, Row, Col } from "react-bootstrap";
+import { Card, Row, Col, Table, Accordion } from "react-bootstrap";
 
 function VendorHandbookModal(props: { show: boolean; onHide: () => void }) {
   return (
@@ -897,6 +897,521 @@ const BecomeVendor: React.FC = () => {
               may occur throughout the season. If your product quality declines,
               further adjudication may be required.
             </p>
+          </div>
+        </div>
+      </div>
+
+      {/* 2025 Vendor Fees */}
+      <div
+        style={{ background: "#f8f8f8", padding: "2.5rem 1rem", color: "#333" }}
+      >
+        <div
+          style={{
+            ...styles.contentWrapper,
+            flexDirection: "column",
+            alignItems: "flex-start",
+            textAlign: "left",
+            gap: "1.5rem",
+            width: "100%",
+          }}
+        >
+          <h2 style={{ fontSize: "2rem" }}>💰 2025 Indoor Booth Fees</h2>
+          <p style={{ fontSize: "1.15rem", maxWidth: 700 }}>
+            Booth fees for the 2025 Market season are based on vendor category
+            and booth size. All fees are per market date. Please review the
+            pricing below for each vendor type and booth size. Non-profit
+            organizations can participate for free!
+          </p>
+          <Row xs={1} md={4} className="g-4" style={{ width: "100%" }}>
+            <Col>
+              <Card
+                style={{
+                  background: "#e6f9ed",
+                  border: "none",
+                  minHeight: 250,
+                  boxShadow: "0 2px 8px rgba(60,180,80,0.08)",
+                }}
+                className="h-100 text-center shadow-sm"
+              >
+                <Card.Body>
+                  <div style={{ fontSize: "2.4rem" }}>🌾</div>
+                  <Card.Title style={{ color: "#228B22", fontWeight: "bold" }}>
+                    Farmers
+                  </Card.Title>
+                  <div className="d-flex justify-content-between mt-3">
+                    <span>28 sq.ft (7×4)</span>
+                    <span>
+                      <b>$40.04</b>
+                    </span>
+                  </div>
+                  <div className="d-flex justify-content-between mt-2">
+                    <span>48 sq.ft (6×8)</span>
+                    <span>
+                      <b>$68.64</b>
+                    </span>
+                  </div>
+                  <div className="d-flex justify-content-between mt-2">
+                    <span>80 sq.ft</span>
+                    <span>
+                      <b>N/A</b>
+                    </span>
+                  </div>
+                  <small className="text-muted d-block mt-3">
+                    One table included
+                  </small>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card
+                style={{
+                  background: "#fffbe6",
+                  border: "none",
+                  minHeight: 250,
+                  boxShadow: "0 2px 8px rgba(200,180,0,0.07)",
+                }}
+                className="h-100 text-center shadow-sm"
+              >
+                <Card.Body>
+                  <div style={{ fontSize: "2.4rem" }}>🛍️</div>
+                  <Card.Title style={{ color: "#C19A3B", fontWeight: "bold" }}>
+                    Vendors
+                  </Card.Title>
+                  <div className="d-flex justify-content-between mt-3">
+                    <span>28 sq.ft (7×4)</span>
+                    <span>
+                      <b>$47.74</b>
+                    </span>
+                  </div>
+                  <div className="d-flex justify-content-between mt-2">
+                    <span>48 sq.ft (6×8)</span>
+                    <span>
+                      <b>$81.84</b>
+                    </span>
+                  </div>
+                  <div className="d-flex justify-content-between mt-2">
+                    <span>80 sq.ft</span>
+                    <span>
+                      <b>N/A</b>
+                    </span>
+                  </div>
+                  <small className="text-muted d-block mt-3">
+                    One table included
+                  </small>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card
+                style={{
+                  background: "#e7f0fa",
+                  border: "none",
+                  minHeight: 250,
+                  boxShadow: "0 2px 8px rgba(25,118,210,0.10)",
+                }}
+                className="h-100 text-center shadow-sm"
+              >
+                <Card.Body>
+                  <div style={{ fontSize: "2.4rem" }}>🍳</div>
+                  <Card.Title style={{ color: "#1976d2", fontWeight: "bold" }}>
+                    Prepared Food / Heavy Equipment
+                  </Card.Title>
+                  <div className="d-flex justify-content-between mt-3">
+                    <span>28 sq.ft (7×4)</span>
+                    <span>
+                      <b>N/A</b>
+                    </span>
+                  </div>
+                  <div className="d-flex justify-content-between mt-2">
+                    <span>48 sq.ft (6×8)</span>
+                    <span>
+                      <b>N/A</b>
+                    </span>
+                  </div>
+                  <div className="d-flex justify-content-between mt-2">
+                    <span>80 sq.ft</span>
+                    <span>
+                      <b>$136.40</b>
+                    </span>
+                  </div>
+                  <small className="text-muted d-block mt-3">
+                    One table included
+                  </small>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card
+                style={{
+                  background: "#fff6f6",
+                  border: "none",
+                  minHeight: 250,
+                  boxShadow: "0 2px 8px rgba(200,0,0,0.06)",
+                  position: "relative",
+                }}
+                className="h-100 text-center shadow-sm"
+              >
+                <Card.Body>
+                  <div style={{ fontSize: "2.4rem" }}>❤️</div>
+                  <Card.Title
+                    style={{
+                      color: "#D46540",
+                      fontWeight: "bold",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "0.5rem",
+                    }}
+                  >
+                    Non-Profit{" "}
+                    <span
+                      style={{
+                        color: "green",
+                        fontWeight: 700,
+                        fontSize: "1rem",
+                        marginLeft: "0.25em",
+                      }}
+                    >
+                      FREE
+                    </span>
+                  </Card.Title>
+                  <div className="d-flex justify-content-between mt-3">
+                    <span>28 sq.ft (7×4)</span>
+                    <span style={{ color: "green", fontWeight: 700 }}>
+                      FREE
+                    </span>
+                  </div>
+                  <div className="d-flex justify-content-between mt-2">
+                    <span>48 sq.ft (6×8)</span>
+                    <span style={{ color: "green", fontWeight: 700 }}>
+                      FREE
+                    </span>
+                  </div>
+                  <div className="d-flex justify-content-between mt-2">
+                    <span>80 sq.ft</span>
+                    <span style={{ color: "green", fontWeight: 700 }}>
+                      FREE
+                    </span>
+                  </div>
+                  <small className="text-muted d-block mt-3">
+                    One booth per Saturday
+                  </small>
+                </Card.Body>
+              </Card>
+            </Col>
+            <small className="text-muted d-block mt-3">
+              * HST will be added to all applicable rates
+            </small>
+          </Row>
+
+          <div style={{ width: "100%", marginTop: "2rem" }}>
+            <Accordion>
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>View Detailed Fees</Accordion.Header>
+                <Accordion.Body>
+                  <Table striped bordered hover responsive>
+                    <thead>
+                      <tr>
+                        <th>Category</th>
+                        <th>28 sq.ft (7×4)</th>
+                        <th>48 sq.ft (6×8)</th>
+                        <th>80 sq.ft</th>
+                        <th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <b>Farmers</b>
+                        </td>
+                        <td>$40.04</td>
+                        <td>$68.64</td>
+                        <td>N/A</td>
+                        <td>Primary producers only</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b>Vendors</b>
+                        </td>
+                        <td>$47.74</td>
+                        <td>$81.84</td>
+                        <td>N/A</td>
+                        <td>Artisans, crafts, makers, specialty food</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b>Prepared Food / Heavy Equipment</b>
+                        </td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>$136.40</td>
+                        <td>Hot foods, food trucks, large setups</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b>Non-Profit</b>{" "}
+                          <span
+                            style={{
+                              background: "#D46540",
+                              color: "#fff",
+                              fontWeight: 700,
+                              padding: "0.2em 0.6em",
+                              borderRadius: "1em",
+                              fontSize: "0.85rem",
+                              marginLeft: "0.25em",
+                            }}
+                          >
+                            FREE
+                          </span>
+                        </td>
+                        <td>$0</td>
+                        <td>$0</td>
+                        <td>$0</td>
+                        <td>Registered non-profit organizations</td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+          </div>
+
+          {/* 2025 Outdoor Booth Fees */}
+          <div style={{ marginTop: "3rem", width: "100%" }}>
+            <h2 style={{ fontSize: "2rem" }}>🏞️ 2025 Outdoor Booth Fees</h2>
+            <p style={{ fontSize: "1.15rem", maxWidth: 700 }}>
+              Outdoor booth spaces are available during the 2025 season for
+              farmers, vendors, and non-profit organizations. All outdoor booth
+              fees are per market date and include one table.
+            </p>
+            <Row xs={1} md={3} className="g-4" style={{ width: "100%" }}>
+              <Col>
+                <Card
+                  style={{
+                    background: "#e6f9ed",
+                    border: "none",
+                    minHeight: 180,
+                    boxShadow: "0 2px 8px rgba(60,180,80,0.08)",
+                  }}
+                  className="h-100 text-center shadow-sm"
+                >
+                  <Card.Body>
+                    <div style={{ fontSize: "2.4rem" }}>🌾</div>
+                    <Card.Title
+                      style={{ color: "#228B22", fontWeight: "bold" }}
+                    >
+                      Farmer
+                    </Card.Title>
+                    <div className="mt-3" style={{ fontSize: "1.5rem" }}>
+                      <b>$35</b>{" "}
+                      <span className="text-muted" style={{ fontSize: "1rem" }}>
+                        + HST
+                      </span>
+                    </div>
+                    <small className="text-muted d-block mt-2">
+                      One table included
+                    </small>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card
+                  style={{
+                    background: "#fffbe6",
+                    border: "none",
+                    minHeight: 180,
+                    boxShadow: "0 2px 8px rgba(200,180,0,0.07)",
+                  }}
+                  className="h-100 text-center shadow-sm"
+                >
+                  <Card.Body>
+                    <div style={{ fontSize: "2.4rem" }}>🛍️</div>
+                    <Card.Title
+                      style={{ color: "#C19A3B", fontWeight: "bold" }}
+                    >
+                      Vendor
+                    </Card.Title>
+                    <div className="mt-3" style={{ fontSize: "1.5rem" }}>
+                      <b>$50</b>{" "}
+                      <span className="text-muted" style={{ fontSize: "1rem" }}>
+                        + HST
+                      </span>
+                    </div>
+                    <small className="text-muted d-block mt-2">
+                      One table included
+                    </small>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card
+                  style={{
+                    background: "#fff6f6",
+                    border: "none",
+                    minHeight: 180,
+                    boxShadow: "0 2px 8px rgba(200,0,0,0.06)",
+                  }}
+                  className="h-100 text-center shadow-sm"
+                >
+                  <Card.Body>
+                    <div style={{ fontSize: "2.4rem" }}>❤️</div>
+                    <Card.Title
+                      style={{
+                        color: "#D46540",
+                        fontWeight: "bold",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: "0.5rem",
+                      }}
+                    >
+                      Non-Profit{" "}
+                      <span
+                        style={{
+                          color: "green",
+                          fontWeight: 700,
+                          fontSize: "1rem",
+                          marginLeft: "0.25em",
+                        }}
+                      >
+                        FREE
+                      </span>
+                    </Card.Title>
+                    <div
+                      className="mt-3"
+                      style={{
+                        color: "green",
+                        fontWeight: 700,
+                        fontSize: "1.5rem",
+                      }}
+                    >
+                      FREE
+                    </div>
+                    <small className="text-muted d-block mt-2">
+                      One table included
+                    </small>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+            <div>
+              <small className="text-muted d-block mt-3">
+                * HST will be added to all applicable rates
+              </small>
+            </div>
+            <div style={{ width: "100%", marginTop: "2rem" }}>
+              <Accordion>
+                <Accordion.Item eventKey="1">
+                  <Accordion.Header>
+                    View Detailed Outdoor Booth Fees
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    <Table striped bordered hover responsive>
+                      <thead>
+                        <tr>
+                          <th>Category</th>
+                          <th>Price</th>
+                          <th>Notes</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <b>Farmers</b>
+                          </td>
+                          <td>$35 + HST</td>
+                          <td>One table included</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <b>Vendors</b>
+                          </td>
+                          <td>$50 + HST</td>
+                          <td>One table included</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <b>Non-Profit</b>{" "}
+                            <span
+                              style={{
+                                background: "#D46540",
+                                color: "#fff",
+                                fontWeight: 700,
+                                padding: "0.2em 0.6em",
+                                borderRadius: "1em",
+                                fontSize: "0.85rem",
+                                marginLeft: "0.25em",
+                              }}
+                            >
+                              FREE
+                            </span>
+                          </td>
+                          <td>FREE</td>
+                          <td>One table included</td>
+                        </tr>
+                      </tbody>
+                    </Table>
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+            </div>
+          </div>
+
+          {/* Other Vendor Fees & Discounts */}
+          <div style={{ marginTop: "3rem", width: "100%" }}>
+            <h2 style={{ fontSize: "2rem" }}>
+              📌 Other Vendor Fees & Discounts
+            </h2>
+            <Row xs={1} md={3} className="g-4" style={{ width: "100%" }}>
+              <Col>
+                <Card className="h-100 text-center shadow-sm">
+                  <Card.Body>
+                    <div style={{ fontSize: "2.4rem" }}>⚡</div>
+                    <Card.Title style={{ fontWeight: "bold" }}>
+                      Utility Fee
+                    </Card.Title>
+                    <div className="mt-2" style={{ fontSize: "1.25rem" }}>
+                      $10{" "}
+                      <span className="text-muted" style={{ fontSize: "1rem" }}>
+                        per market date
+                      </span>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card className="h-100 text-center shadow-sm">
+                  <Card.Body>
+                    <div style={{ fontSize: "2.4rem" }}>📦</div>
+                    <Card.Title style={{ fontWeight: "bold" }}>
+                      Storage Room Fee
+                    </Card.Title>
+                    <div className="mt-2" style={{ fontSize: "1.25rem" }}>
+                      $3.75 + HST{" "}
+                      <span className="text-muted" style={{ fontSize: "1rem" }}>
+                        per sq.ft per month
+                      </span>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card className="h-100 text-center shadow-sm">
+                  <Card.Body>
+                    <div style={{ fontSize: "2.4rem" }}>🎉</div>
+                    <Card.Title style={{ fontWeight: "bold" }}>
+                      Senior Discount (65+)
+                    </Card.Title>
+                    <div className="mt-2" style={{ fontSize: "1.25rem" }}>
+                      $5 off vendor fee{" "}
+                      <span className="text-muted" style={{ fontSize: "1rem" }}>
+                        (year round)
+                      </span>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
           </div>
         </div>
       </div>
