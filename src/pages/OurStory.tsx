@@ -1,6 +1,7 @@
 import SectionTitle from "../components/SectionTitle";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import farmersLottie from "../assets/lottie-files/Farmers.lottie";
+import { Row, Col } from "react-bootstrap";
 
 const OurStory: React.FC = () => {
   return (
@@ -43,97 +44,218 @@ const OurStory: React.FC = () => {
         </div>
       </div>
 
-      <div style={{ background: "white", padding: "2rem 1rem", color: "#333" }}>
+      <div style={{ background: "#f7fafb", padding: "2.5rem 1rem" }}>
         <div
           style={{
             ...styles.contentWrapper,
             flexDirection: "column",
             alignItems: "flex-start",
             textAlign: "left",
-            gap: "2rem",
+            gap: "2.5rem",
+            maxWidth: "900px",
           }}
         >
-          <h2 style={{ fontSize: "2rem" }}>🌿 Land Acknowledgement</h2>
-          <p style={paragraphStyle}>
-            We respectfully acknowledge the land on which we gather as the
-            ancestral homelands of the Beothuk, whose culture has been erased
-            forever. We also acknowledge the island of Ktaqmkuk (Newfoundland)
-            as the unceded, traditional territory of the Beothuk and the
-            Mi’kmaq. Labrador is the traditional and ancestral homelands of the
-            Innu of Nitassinan, the Inuit of Nunatsiavut, and the Inuit of
-            NunatuKavut.
-          </p>
-          <p style={paragraphStyle}>
-            We recognize all First Peoples who were here before us, those who
-            live with us now, and the seven generations to come. As First
-            Peoples have done since time immemorial, we strive to be responsible
-            stewards of the land and to respect the cultures, ceremonies, and
-            traditions of all who call it home.
-          </p>
-          <p style={paragraphStyle}>
-            At the St. John’s Farmers’ Market, we acknowledge that all we do
-            here is built on the foundation of those who came before us. We grow
-            our crops and craft our goods on land that was not originally ours.
-            We strive to create an open and welcoming environment for everyone,
-            including those who are part of the Two-Spirit community. As we open
-            our hearts and minds to the past, we commit ourselves to working in
-            a spirit of truth and reconciliation to build a better future for
-            all.
-          </p>
+          {/* Quick Facts Card */}
+          <div
+            style={{
+              background: "white",
+              borderRadius: "18px",
+              boxShadow: "0 2px 16px 0 rgba(27,90,122,0.07)",
+              padding: "1.5rem 2rem",
+              marginBottom: "1.5rem",
+              width: "100%",
+            }}
+          >
+            <Row className="align-items-center">
+              <Col xs={12} md={9} className="mb-3 mb-md-0">
+                <h3
+                  style={{
+                    margin: 0,
+                    color: "#1B5A7A",
+                    fontWeight: 700,
+                    fontSize: "1.2rem",
+                  }}
+                >
+                  At a Glance
+                </h3>
+                <ul
+                  style={{
+                    margin: "0.7rem 0 0 1.2rem",
+                    padding: 0,
+                    color: "#333",
+                    fontSize: "1.07rem",
+                    lineHeight: 1.7,
+                  }}
+                >
+                  <li>Founded in 2007, Co-op since 2010</li>
+                  <li>Home to 100+ local vendors</li>
+                  <li>Located at 245 Freshwater Road since 2018</li>
+                  <li>Open year-round, every Saturday</li>
+                </ul>
+              </Col>
+              <Col xs={12} md={3} className="text-center">
+                <span
+                  style={{
+                    display: "inline-block",
+                    background:
+                      "linear-gradient(135deg, #1B5A7A 60%, #4fc3f7 100%)",
+                    color: "white",
+                    borderRadius: "50%",
+                    width: "80px",
+                    height: "80px",
+                    fontSize: "2.5rem",
+                    lineHeight: "80px",
+                    fontWeight: 700,
+                  }}
+                >
+                  🌱
+                </span>
+              </Col>
+            </Row>
+          </div>
 
-          <h2 style={{ fontSize: "2rem" }}>🏛️ Our Space</h2>
-          <p style={paragraphStyle}>
-            Since 2018, we have called the former Metrobus depot on Freshwater
-            Road our home. At 14,000 sq ft—seven times the size of our previous
-            location—our facility offers a welcoming, accessible, and
-            community-focused space for everyone.
-          </p>
-          <p style={paragraphStyle}>
-            The larger space allows us to welcome more vendors and provides
-            customers room to socialize, enjoy delicious local food, shop for
-            fresh produce, and discover unique local art. It's much more than
-            our old market could offer—without losing any of the charm and
-            energy that made it special.
-          </p>
-          <p style={paragraphStyle}>
-            Our vision is to create a true community space, complete with a
-            community kitchen, public square, playground, and other amenities.
-            We see this as an essential gathering place in a city that lacks
-            welcoming public spaces.
-          </p>
+          {/* Land Acknowledgement */}
+          <div
+            style={{
+              background: "white",
+              borderRadius: "16px",
+              boxShadow: "0 2px 12px 0 rgba(27,90,122,0.06)",
+              padding: "2rem 2.2rem",
+              width: "100%",
+            }}
+          >
+            <h2
+              style={{
+                fontSize: "1.6rem",
+                color: "#1B5A7A",
+                marginTop: 0,
+                marginBottom: "1.1rem",
+              }}
+            >
+              🌿 Land Acknowledgement
+            </h2>
+            <p style={paragraphStyle}>
+              We respectfully acknowledge the land on which we gather as the
+              ancestral homelands of the Beothuk, whose culture has been erased
+              forever. We also acknowledge the island of Ktaqmkuk (Newfoundland)
+              as the unceded, traditional territory of the Beothuk and the
+              Mi’kmaq. Labrador is the traditional and ancestral homelands of
+              the Innu of Nitassinan, the Inuit of Nunatsiavut, and the Inuit of
+              NunatuKavut.
+            </p>
+            <p style={paragraphStyle}>
+              We recognize all First Peoples who were here before us, those who
+              live with us now, and the seven generations to come. As First
+              Peoples have done since time immemorial, we strive to be
+              responsible stewards of the land and to respect the cultures,
+              ceremonies, and traditions of all who call it home.
+            </p>
+            <p style={paragraphStyle}>
+              At the St. John’s Farmers’ Market, we acknowledge that all we do
+              here is built on the foundation of those who came before us. We
+              grow our crops and craft our goods on land that was not originally
+              ours. We strive to create an open and welcoming environment for
+              everyone, including those who are part of the Two-Spirit
+              community. As we open our hearts and minds to the past, we commit
+              ourselves to working in a spirit of truth and reconciliation to
+              build a better future for all.
+            </p>
+          </div>
 
-          <h2 style={{ fontSize: "2rem" }}>📜 Our History</h2>
-          <p style={paragraphStyle}>
-            The St. John’s Farmers’ Market began in Fall 2007 with a single
-            local organic farmer renting the Masonic Temple in downtown St.
-            John’s to sell surplus crops. She invited other vendors, and the
-            event was a huge success, attracting over 500 customers with minimal
-            advertising. That initial spark led to more markets that same fall,
-            and a dedicated group of community members formed a Steering
-            Committee in January 2008 to make a regular market a reality.
-          </p>
-          <p style={paragraphStyle}>
-            Throughout 2008, this volunteer committee organized weekly markets
-            every Saturday from July to November. Later that year, they
-            appointed a Consulting Team to help develop a sustainable plan,
-            which recommended adopting a Co-op structure to support both
-            economic and social goals.
-          </p>
-          <p style={paragraphStyle}>
-            In 2009, the Steering Committee formally incorporated as the Friends
-            of the St. John’s Farmers’ Market, hired its first Market Manager,
-            and continued to manage the market through 2010. During this time,
-            they developed the St. John’s Farmers’ Market Co-op, consulting the
-            community, researching best practices, and drafting by-laws and a
-            business plan.
-          </p>
-          <p style={paragraphStyle}>
-            The Co-op was officially formed in November 2010 with 25 founding
-            members and held its first AGM in May 2011. Since then, the St.
-            John’s Farmers’ Market Co-op has managed the market, while the
-            Friends of the St. John’s Farmers’ Market continue to support its
-            mission.
-          </p>
+          {/* Our Space */}
+          <div
+            style={{
+              background: "white",
+              borderRadius: "16px",
+              boxShadow: "0 2px 12px 0 rgba(27,90,122,0.06)",
+              padding: "2rem 2.2rem",
+              width: "100%",
+            }}
+          >
+            <h2
+              style={{
+                fontSize: "1.6rem",
+                color: "#1B5A7A",
+                marginTop: 0,
+                marginBottom: "1.1rem",
+              }}
+            >
+              🏛️ Our Space
+            </h2>
+            <p style={paragraphStyle}>
+              Since 2018, we have called the former Metrobus depot on Freshwater
+              Road our home. At 14,000 sq ft—seven times the size of our
+              previous location—our facility offers a welcoming, accessible, and
+              community-focused space for everyone.
+            </p>
+            <p style={paragraphStyle}>
+              The larger space allows us to welcome more vendors and provides
+              customers room to socialize, enjoy delicious local food, shop for
+              fresh produce, and discover unique local art. It's much more than
+              our old market could offer—without losing any of the charm and
+              energy that made it special.
+            </p>
+            <p style={paragraphStyle}>
+              Our vision is to create a true community space, complete with a
+              community kitchen, public square, playground, and other amenities.
+              We see this as an essential gathering place in a city that lacks
+              welcoming public spaces.
+            </p>
+          </div>
+
+          {/* Our History */}
+          <div
+            style={{
+              background: "white",
+              borderRadius: "16px",
+              boxShadow: "0 2px 12px 0 rgba(27,90,122,0.06)",
+              padding: "2rem 2.2rem",
+              width: "100%",
+            }}
+          >
+            <h2
+              style={{
+                fontSize: "1.6rem",
+                color: "#1B5A7A",
+                marginTop: 0,
+                marginBottom: "1.1rem",
+              }}
+            >
+              📜 Our History
+            </h2>
+            <p style={paragraphStyle}>
+              The St. John’s Farmers’ Market began in Fall 2007 with a single
+              local organic farmer renting the Masonic Temple in downtown St.
+              John’s to sell surplus crops. She invited other vendors, and the
+              event was a huge success, attracting over 500 customers with
+              minimal advertising. That initial spark led to more markets that
+              same fall, and a dedicated group of community members formed a
+              Steering Committee in January 2008 to make a regular market a
+              reality.
+            </p>
+            <p style={paragraphStyle}>
+              Throughout 2008, this volunteer committee organized weekly markets
+              every Saturday from July to November. Later that year, they
+              appointed a Consulting Team to help develop a sustainable plan,
+              which recommended adopting a Co-op structure to support both
+              economic and social goals.
+            </p>
+            <p style={paragraphStyle}>
+              In 2009, the Steering Committee formally incorporated as the
+              Friends of the St. John’s Farmers’ Market, hired its first Market
+              Manager, and continued to manage the market through 2010. During
+              this time, they developed the St. John’s Farmers’ Market Co-op,
+              consulting the community, researching best practices, and drafting
+              by-laws and a business plan.
+            </p>
+            <p style={paragraphStyle}>
+              The Co-op was officially formed in November 2010 with 25 founding
+              members and held its first AGM in May 2011. Since then, the St.
+              John’s Farmers’ Market Co-op has managed the market, while the
+              Friends of the St. John’s Farmers’ Market continue to support its
+              mission.
+            </p>
+          </div>
         </div>
       </div>
     </div>
