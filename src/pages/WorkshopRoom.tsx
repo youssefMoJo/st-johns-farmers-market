@@ -54,7 +54,7 @@ const WorkshopRoomDetails: React.FC = () => (
       }}
     >
       {/* Image Carousel */}
-      <div style={{ maxWidth: "900px" }}>
+      <div>
         <Carousel>
           {[
             community_rooom_4,
@@ -81,7 +81,7 @@ const WorkshopRoomDetails: React.FC = () => (
       {/* Types of Use */}
       <div
         style={{
-          maxWidth: "1000px",
+          width: "100%",
           padding: "1.5rem 1.25rem",
           backgroundColor: "#F5F9FF", // subtle light background
           borderRadius: "8px",
@@ -203,60 +203,160 @@ const WorkshopRoomDetails: React.FC = () => (
       </div>
 
       {/* Additional Information */}
-      <div style={styles.details}>
-        <h2 style={styles.tableTitle}>ℹ️ Additional Information</h2>
-        <ul
+      <div
+        style={{
+          background: "white",
+          borderRadius: "16px",
+          boxShadow: "0 4px 18px 0 rgba(27,90,122,0.09)",
+          padding: "2rem 2rem 1.5rem 2rem",
+          margin: "2rem 0",
+          maxWidth: "100%",
+        }}
+      >
+        <h2
           style={{
-            margin: "0.75rem 0 0 1.5rem",
-            padding: 0,
-            fontSize: "1.05rem",
-            lineHeight: "1.6",
-            listStyleType: "none",
+            ...styles.tableTitle,
+            marginBottom: "1.5rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.5rem",
           }}
         >
-          <li>
-            🖥️ The Community Room has an HDMI-compatible large screen that can
-            be utilized for meetings.
-          </li>
-          <li>
-            🏢 The SJFM is a non-profit organization that rents the St. John’s
-            Community Market building from the City of St. John’s.
-          </li>
-          <li>💲 HST will be added to all invoice totals.</li>
-          <li>📶 Public WIFI is available at no cost.</li>
-          <li>
-            🏧 Two ATMs are on-site. Fees from the ATMs support further
-            developments of the SJFM.
-          </li>
-          <li>
-            ♿ We are a fully accessible space with 11 gender neutral washrooms.
-          </li>
-          <li>
-            🍳 Interested in renting the Commercial Kitchen? Ask us about adding
-            the kitchen onto your rental.
-          </li>
-        </ul>
+          <span style={{ fontSize: "2rem" }}>ℹ️</span> Additional Information
+        </h2>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gap: "1.25rem",
+          }}
+        >
+          {[
+            {
+              icon: "🖥️",
+              text: "The Community Room has an HDMI-compatible large screen for meetings.",
+            },
+            {
+              icon: "🏢",
+              text: "The SJFM is a non-profit organization that rents the St. John’s Community Market building from the City of St. John’s.",
+            },
+            {
+              icon: "💲",
+              text: "HST will be added to all invoice totals.",
+            },
+            {
+              icon: "📶",
+              text: "Public WIFI is available at no cost.",
+            },
+            {
+              icon: "🏧",
+              text: "Two ATMs are on-site. Fees from the ATMs support further developments of the SJFM.",
+            },
+            {
+              icon: "♿",
+              text: "We are a fully accessible space with 11 gender neutral washrooms.",
+            },
+            {
+              icon: "🍳",
+              text: "Interested in renting the Commercial Kitchen? Ask us about adding the kitchen onto your rental.",
+            },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              style={{
+                background: "#F5F9FF",
+                borderRadius: "10px",
+                boxShadow: "0 2px 8px rgba(27,90,122,0.06)",
+                padding: "1.1rem 1rem",
+                display: "flex",
+                alignItems: "flex-start",
+                gap: "0.9rem",
+                minHeight: "80px",
+              }}
+            >
+              <span style={{ fontSize: "1.7rem", flexShrink: 0 }}>
+                {item.icon}
+              </span>
+              <span style={{ fontSize: "1.07rem", color: "#143C5D" }}>
+                {item.text}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Staff Support */}
-      <div style={styles.details}>
-        <h2 style={styles.tableTitle}>👷 Staff Support</h2>
-        <ul
+      <div
+        style={{
+          background: "white",
+          borderRadius: "14px",
+          boxShadow: "0 2px 12px 0 rgba(27,90,122,0.08)",
+          padding: "1.7rem 1.5rem",
+          width: "100%",
+          display: "flex",
+          alignItems: "flex-start",
+          gap: "1.2rem",
+        }}
+      >
+        <span
           style={{
-            margin: "0.75rem 0 0 1.25rem",
-            fontSize: "1.05rem",
-            lineHeight: "1.6",
+            fontSize: "2.2rem",
+            background: "linear-gradient(135deg, #1B5A7A 60%, #4fc3f7 100%)",
+            color: "white",
+            borderRadius: "50%",
+            width: "54px",
+            height: "54px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexShrink: 0,
+            boxShadow: "0 2px 8px rgba(27,90,122,0.10)",
+            marginRight: "0.5rem",
           }}
         >
-          <li>
-            All rental rates include one employee on-site during the event.
-          </li>
-          <li>
-            Depending on the size and nature of your event, additional staff may
-            be required. This will be discussed prior to signing the rental
-            contract. Additional staffing rates are $18 per person per hour.
-          </li>
-        </ul>
+          👷
+        </span>
+        <div>
+          <h2
+            style={{
+              ...styles.tableTitle,
+              fontSize: "1.3rem",
+              marginBottom: "0.7rem",
+              color: "#1B5A7A",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+            }}
+          >
+            Staff Support
+          </h2>
+          <ul
+            style={{
+              margin: 0,
+              paddingLeft: "1.2em",
+              fontSize: "1.07rem",
+              lineHeight: "1.7",
+              color: "#143C5D",
+            }}
+          >
+            <li>
+              <strong>Included:</strong> All rental rates include one employee
+              on-site during your event.
+            </li>
+            <li>
+              <strong>Additional staff:</strong> Depending on the size and
+              nature of your event, extra staff may be required. This will be
+              discussed prior to signing the rental contract.
+            </li>
+            <li>
+              <strong>Staffing rates:</strong> Additional staff are billed at{" "}
+              <span style={{ color: "#1B5A7A", fontWeight: 600 }}>
+                $18 per person per hour
+              </span>
+              .
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 

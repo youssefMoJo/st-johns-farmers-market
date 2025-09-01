@@ -54,7 +54,7 @@ const WorkshopRoomDetails: React.FC = () => (
       }}
     >
       {/* Image Carousel */}
-      <div style={{ maxWidth: "900px" }}>
+      <div>
         <Carousel>
           {[kitchen_1, kitchen_2, kitchen_3, kitchen_4].map((src, idx) => (
             <Carousel.Item key={idx} interval={3000}>
@@ -245,24 +245,77 @@ const WorkshopRoomDetails: React.FC = () => (
       </div>
 
       {/* Staff Support */}
-      <div style={styles.details}>
-        <h2 style={styles.tableTitle}>👷 Staff Support</h2>
-        <ul
+      <div
+        style={{
+          background: "white",
+          borderRadius: "14px",
+          boxShadow: "0 2px 12px 0 rgba(27,90,122,0.08)",
+          padding: "1.7rem 1.5rem",
+          width: "100%",
+          display: "flex",
+          alignItems: "flex-start",
+          gap: "1.2rem",
+        }}
+      >
+        <span
           style={{
-            margin: "0.75rem 0 0 1.25rem",
-            fontSize: "1.05rem",
-            lineHeight: "1.6",
+            fontSize: "2.2rem",
+            background: "linear-gradient(135deg, #1B5A7A 60%, #4fc3f7 100%)",
+            color: "white",
+            borderRadius: "50%",
+            width: "54px",
+            height: "54px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexShrink: 0,
+            boxShadow: "0 2px 8px rgba(27,90,122,0.10)",
+            marginRight: "0.5rem",
           }}
         >
-          <li>
-            All rental rates include one employee on-site during the event.
-          </li>
-          <li>
-            Depending on the size and nature of your event, additional staff may
-            be required. This will be discussed prior to signing the rental
-            contract. Additional staffing rates are $18 per person per hour.
-          </li>
-        </ul>
+          👷
+        </span>
+        <div>
+          <h2
+            style={{
+              ...styles.tableTitle,
+              fontSize: "1.3rem",
+              marginBottom: "0.7rem",
+              color: "#1B5A7A",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+            }}
+          >
+            Staff Support
+          </h2>
+          <ul
+            style={{
+              margin: 0,
+              paddingLeft: "1.2em",
+              fontSize: "1.07rem",
+              lineHeight: "1.7",
+              color: "#143C5D",
+            }}
+          >
+            <li>
+              <strong>Included:</strong> All rental rates include one employee
+              on-site during your event.
+            </li>
+            <li>
+              <strong>Additional staff:</strong> Depending on the size and
+              nature of your event, extra staff may be required. This will be
+              discussed prior to signing the rental contract.
+            </li>
+            <li>
+              <strong>Staffing rates:</strong> Additional staff are billed at{" "}
+              <span style={{ color: "#1B5A7A", fontWeight: 600 }}>
+                $18 per person per hour
+              </span>
+              .
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
