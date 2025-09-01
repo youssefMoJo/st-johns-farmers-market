@@ -43,21 +43,20 @@ const Contact: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div style={{ background: "white", padding: "2rem 1rem", color: "#333" }}>
+      <div style={{ background: "#f7fafb", padding: "3rem 1rem 4rem 1rem" }}>
         <div
           style={{
-            maxWidth: "1000px",
+            maxWidth: "1100px",
             margin: "0 auto",
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "2rem",
-            justifyContent: "center",
-            alignItems: "stretch",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: "2.5rem",
           }}
         >
           {/* Market Hours */}
-          <div style={{ ...cardStyle, flex: "1 1 320px", minWidth: "300px" }}>
-            <h2 style={cardHeaderStyle}>🕰️ Market Hours</h2>
+          <div style={fancyCardStyle}>
+            <div style={styles.iconCircleStyle}>🕰️</div>
+            <h3 style={fancyCardHeaderStyle}>Market Hours</h3>
             <p style={paragraphStyle}>
               <strong>Saturdays (year-round):</strong> 9:00am – 4:00pm
               <br />
@@ -66,109 +65,337 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Location */}
-          <div style={{ ...cardStyle, flex: "1 1 320px", minWidth: "300px" }}>
-            <h2 style={cardHeaderStyle}>🗺️ Location</h2>
+          <div style={fancyCardStyle}>
+            <div style={styles.iconCircleStyle}>🗺️</div>
+            <h3 style={fancyCardHeaderStyle}>Location</h3>
+
             <p style={paragraphStyle}>
-              St. John’s Community Market
-              <br />
               245 Freshwater Road
               <br />
               St. John’s, NL A1B 1B3
               <br />
-              <a href="tel:+17092217536" style={linkStyle}>
+              <a href="tel:+17092217536" style={fancyLinkStyle}>
                 (709) 221-7536
               </a>
             </p>
+            <div
+              style={{
+                width: "100%",
+                borderRadius: "12px",
+                overflow: "hidden",
+                boxShadow: "0 2px 8px 0 rgba(10,140,140,0.08)",
+                marginTop: "0.7rem",
+              }}
+            >
+              <iframe
+                title="St. John's Farmers' Market Map"
+                src="https://www.google.com/maps?q=245+Freshwater+Road,+St.+John’s,+NL+A1B+1B3&output=embed"
+                width="100%"
+                height="180"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
-        </div>
-        <div
-          style={{
-            maxWidth: "1000px",
-            margin: "2rem auto 0 auto",
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "2rem",
-            justifyContent: "center",
-            alignItems: "stretch",
-          }}
-        >
+
           {/* Support the Market */}
-          <div style={{ ...cardStyle, flex: "2 1 400px", minWidth: "320px" }}>
-            <h2 style={cardHeaderStyle}>❤️ Support the Market</h2>
+          <div style={fancyCardStyle}>
+            <div style={styles.iconCircleStyle}>❤️</div>
+            <h3 style={fancyCardHeaderStyle}>Support the Market</h3>
             <p style={paragraphStyle}>
-              Support Local. Support the St. John’s Farmers’ Market. Since 2008,
-              we’ve offered a place to find local foods and connect with the
-              community. We’re a non-profit organization supporting local
-              farmers and fostering community bonds. Your support helps us
-              sustain a vibrant hub of delicious food and culture in St. John’s.
+              Since 2008, we’ve offered a place to find local foods and connect
+              with the community. We’re a non-profit supporting local farmers
+              and fostering community bonds. Your support helps us sustain a
+              vibrant hub of delicious food and culture in St. John’s.
             </p>
+            <a
+              href="mailto:info@sjfm.ca"
+              style={{
+                ...fancyLinkStyle,
+                display: "inline-block",
+                marginTop: "1rem",
+                background: "#0a8c8c",
+                color: "white",
+                padding: "0.6em 1.5em",
+                borderRadius: "999px",
+                fontWeight: 600,
+                textDecoration: "none",
+                boxShadow: "0 2px 8px 0 rgba(10,140,140,0.08)",
+                transition: "background 0.2s",
+              }}
+            >
+              Get Involved
+            </a>
           </div>
         </div>
+
+        {/* Staff & Volunteer Section */}
         <div
           style={{
-            maxWidth: "1000px",
-            margin: "2rem auto 0 auto",
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "2rem",
-            justifyContent: "center",
-            alignItems: "stretch",
+            maxWidth: "1100px",
+            margin: "3.5rem auto 0 auto",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+            gap: "2.5rem",
           }}
         >
           {/* Staff Contacts */}
-          <div style={{ ...cardStyle, flex: "1 1 350px", minWidth: "320px" }}>
-            <h2 style={cardHeaderStyle}>👥 Staff Contacts</h2>
-            <ul
+          <div
+            style={{
+              ...fancyCardStyle,
+              background: "linear-gradient(135deg, #e0f7fa 70%, #ffffff 100%)",
+              boxShadow: "0 8px 32px 0 rgba(18,100,108,0.10)",
+              border: "1.5px solid #b2ebf2",
+              padding: "2.8rem 2.2rem 2.2rem 2.2rem",
+              position: "relative",
+              overflow: "visible",
+            }}
+          >
+            <div
               style={{
-                fontSize: "1.1rem",
-                lineHeight: "1.8",
-                paddingLeft: "1.2em",
-                margin: 0,
+                ...styles.iconCircleStyle,
+                background:
+                  "linear-gradient(135deg, #0a8c8c 60%, #00bcd4 100%)",
+                boxShadow: "0 4px 16px 0 rgba(0,188,212,0.13)",
               }}
             >
-              <li>
-                <strong>Executive Director:</strong> Pam Anstey –{" "}
-                <a href="mailto:ed@sjfm.ca" style={linkStyle}>
-                  ed@sjfm.ca
-                </a>
-              </li>
-              <li>
-                <strong>Market Manager:</strong> Ricky Szabo –{" "}
-                <a href="mailto:marketmanager@sjfm.ca" style={linkStyle}>
-                  marketmanager@sjfm.ca
-                </a>
-              </li>
-              <li>
-                <strong>Administrative Assistant:</strong> Theresa Murphy –{" "}
-                <a href="mailto:info@sjfm.ca" style={linkStyle}>
-                  info@sjfm.ca
-                </a>
-              </li>
-              <li>
-                <strong>Events & Activities Coordinator:</strong> Cathie Reed –{" "}
-                <a href="mailto:eventsmanager@sjfm.ca" style={linkStyle}>
-                  eventsmanager@sjfm.ca
-                </a>
-              </li>
-            </ul>
+              👤
+            </div>
+            <h3
+              style={{
+                ...fancyCardHeaderStyle,
+                color: "#0a8c8c",
+                fontSize: "1.45rem",
+                letterSpacing: "-1px",
+                marginBottom: "1.2rem",
+              }}
+            >
+              Meet Our Team
+            </h3>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "1.3rem",
+                width: "100%",
+              }}
+            >
+              {/* Executive Director */}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1rem",
+                  background: "#ffffffcc",
+                  borderRadius: "12px",
+                  padding: "1rem 1.2rem",
+                  boxShadow: "0 2px 8px 0 rgba(10,140,140,0.06)",
+                }}
+              >
+                <span
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #0a8c8c 60%, #00bcd4 100%)",
+                    color: "white",
+                    borderRadius: "50%",
+                    width: "38px",
+                    height: "38px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "1.3rem",
+                    fontWeight: 700,
+                    flexShrink: 0,
+                  }}
+                >
+                  PA
+                </span>
+                <div>
+                  <div style={{ fontWeight: 600, color: "#14676c" }}>
+                    Pam Anstey
+                  </div>
+                  <div style={{ fontSize: "0.98rem", color: "#0a8c8c" }}>
+                    Executive Director
+                  </div>
+                  <a
+                    href="mailto:ed@sjfm.ca"
+                    style={{ ...fancyLinkStyle, fontSize: "0.97rem" }}
+                  >
+                    ed@sjfm.ca
+                  </a>
+                </div>
+              </div>
+              {/* Market Manager */}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1rem",
+                  background: "#ffffffcc",
+                  borderRadius: "12px",
+                  padding: "1rem 1.2rem",
+                  boxShadow: "0 2px 8px 0 rgba(10,140,140,0.06)",
+                }}
+              >
+                <span
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #0a8c8c 60%, #00bcd4 100%)",
+                    color: "white",
+                    borderRadius: "50%",
+                    width: "38px",
+                    height: "38px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "1.3rem",
+                    fontWeight: 700,
+                    flexShrink: 0,
+                  }}
+                >
+                  RS
+                </span>
+                <div>
+                  <div style={{ fontWeight: 600, color: "#14676c" }}>
+                    Ricky Szabo
+                  </div>
+                  <div style={{ fontSize: "0.98rem", color: "#0a8c8c" }}>
+                    Market Manager
+                  </div>
+                  <a
+                    href="mailto:marketmanager@sjfm.ca"
+                    style={{ ...fancyLinkStyle, fontSize: "0.97rem" }}
+                  >
+                    marketmanager@sjfm.ca
+                  </a>
+                </div>
+              </div>
+              {/* Administrative Assistant */}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1rem",
+                  background: "#ffffffcc",
+                  borderRadius: "12px",
+                  padding: "1rem 1.2rem",
+                  boxShadow: "0 2px 8px 0 rgba(10,140,140,0.06)",
+                }}
+              >
+                <span
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #0a8c8c 60%, #00bcd4 100%)",
+                    color: "white",
+                    borderRadius: "50%",
+                    width: "38px",
+                    height: "38px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "1.3rem",
+                    fontWeight: 700,
+                    flexShrink: 0,
+                  }}
+                >
+                  TM
+                </span>
+                <div>
+                  <div style={{ fontWeight: 600, color: "#14676c" }}>
+                    Theresa Murphy
+                  </div>
+                  <div style={{ fontSize: "0.98rem", color: "#0a8c8c" }}>
+                    Administrative Assistant
+                  </div>
+                  <a
+                    href="mailto:info@sjfm.ca"
+                    style={{ ...fancyLinkStyle, fontSize: "0.97rem" }}
+                  >
+                    info@sjfm.ca
+                  </a>
+                </div>
+              </div>
+              {/* Events & Activities Coordinator */}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1rem",
+                  background: "#ffffffcc",
+                  borderRadius: "12px",
+                  padding: "1rem 1.2rem",
+                  boxShadow: "0 2px 8px 0 rgba(10,140,140,0.06)",
+                }}
+              >
+                <span
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #0a8c8c 60%, #00bcd4 100%)",
+                    color: "white",
+                    borderRadius: "50%",
+                    width: "38px",
+                    height: "38px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "1.3rem",
+                    fontWeight: 700,
+                    flexShrink: 0,
+                  }}
+                >
+                  CR
+                </span>
+                <div>
+                  <div style={{ fontWeight: 600, color: "#14676c" }}>
+                    Cathie Reed
+                  </div>
+                  <div style={{ fontSize: "0.98rem", color: "#0a8c8c" }}>
+                    Events & Activities Coordinator
+                  </div>
+                  <a
+                    href="mailto:eventsmanager@sjfm.ca"
+                    style={{ ...fancyLinkStyle, fontSize: "0.97rem" }}
+                  >
+                    eventsmanager@sjfm.ca
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Volunteer */}
-          <div style={{ ...cardStyle, flex: "1 1 350px", minWidth: "320px" }}>
-            <h2 style={cardHeaderStyle}>🙌 Volunteer</h2>
+          <div style={fancyCardStyle}>
+            <div style={styles.iconCircleStyle}>🙌</div>
+            <h3 style={fancyCardHeaderStyle}>Volunteer</h3>
             <p style={paragraphStyle}>
               Volunteering is a great way to support the St. John’s Farmers’
               Market! By giving your time, you’ll help strengthen our community
-              and promote sustainable food systems. Volunteers are integral to
-              our success, with a variety of roles available.
+              and promote sustainable food systems.
             </p>
             <p style={paragraphStyle}>
-              Interested in volunteering? Email us at{" "}
-              <a href="mailto:volunteer@sjfm.ca" style={linkStyle}>
-                volunteer@sjfm.ca
-              </a>
-              .
+              Interested in volunteering? Click the button below to email us and
+              get started!
             </p>
+            <a
+              href="mailto:volunteer@sjfm.ca"
+              style={{
+                ...fancyLinkStyle,
+                display: "inline-block",
+                marginTop: "1rem",
+                background: "#14676c",
+                color: "white",
+                padding: "0.6em 1.5em",
+                borderRadius: "999px",
+                fontWeight: 600,
+                textDecoration: "none",
+                boxShadow: "0 2px 8px 0 rgba(20,103,108,0.08)",
+                transition: "background 0.2s",
+              }}
+            >
+              Become a Volunteer
+            </a>
           </div>
         </div>
       </div>
@@ -183,34 +410,33 @@ const paragraphStyle = {
   color: "#222",
 };
 
-const cardStyle: React.CSSProperties = {
-  background: "linear-gradient(135deg, #f5fafb 75%, #e9f2f2 100%)",
-  borderRadius: "18px",
-  boxShadow: "0 2px 12px 0 rgba(0,0,0,0.05)",
-  padding: "2rem 1.5rem",
-  margin: 0,
+const fancyCardStyle: React.CSSProperties = {
+  background: "white",
+  borderRadius: "22px",
+  boxShadow: "0 4px 24px 0 rgba(18,100,108,0.07)",
+  padding: "2.5rem 2rem 2rem 2rem",
   display: "flex",
   flexDirection: "column",
-  gap: "0.5rem",
-  minHeight: "180px",
+  alignItems: "flex-start",
+  position: "relative",
+  minHeight: "220px",
+  overflow: "hidden",
 };
 
-const cardHeaderStyle: React.CSSProperties = {
-  fontSize: "1.5rem",
+const fancyCardHeaderStyle: React.CSSProperties = {
+  fontSize: "1.35rem",
   fontWeight: 700,
   margin: 0,
-  marginBottom: "0.5rem",
+  marginBottom: "0.7rem",
   letterSpacing: "-0.5px",
   color: "#14676c",
-  display: "flex",
-  alignItems: "center",
-  gap: "0.5em",
 };
 
-const linkStyle: React.CSSProperties = {
+const fancyLinkStyle: React.CSSProperties = {
   color: "#0a8c8c",
   textDecoration: "underline",
   fontWeight: 500,
+  transition: "color 0.2s",
 };
 
 const styles = {
@@ -233,6 +459,19 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+  } as React.CSSProperties,
+  iconCircleStyle: {
+    width: "54px",
+    height: "54px",
+    borderRadius: "50%",
+    background: "linear-gradient(135deg, #0a8c8c 60%, #14676c 100%)",
+    color: "white",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "2rem",
+    marginBottom: "1.1rem",
+    boxShadow: "0 2px 10px 0 rgba(10,140,140,0.10)",
   } as React.CSSProperties,
 };
 
