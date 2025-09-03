@@ -1,16 +1,29 @@
 import SectionTitle from "./SectionTitle";
 import CustomButton from "./ui/CustomButton";
 import ROUTES from "../routes";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Welcome() {
   const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    setTimeout(() => setVisible(true), 300);
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div
+      ref={ref}
       style={{
         display: "flex",
         justifyContent: "center",
@@ -48,7 +61,6 @@ export default function Welcome() {
             gap: "24px",
           }}
         >
-          {/* Add a friendly icon */}
           <span
             style={{
               fontSize: "2.5rem",
