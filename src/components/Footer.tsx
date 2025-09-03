@@ -20,7 +20,7 @@ export default function Footer() {
         >
           {/* Left Side */}
           <div style={{ flex: 1, minWidth: "300px" }}>
-            <HoursLocation bgColor={"#1f1d1d"} />
+            <HoursLocation bgColorL={"#1f1d1d"} bgColorR={"#1f1d1d"} />
           </div>
 
           {/* Right Side - Newsletter */}
