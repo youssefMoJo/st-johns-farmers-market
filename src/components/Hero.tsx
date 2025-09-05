@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import Image from "react-bootstrap/Image";
 import Carousel from "react-bootstrap/Carousel";
 import { useTypewriter } from "./useTypewriter"; // Import the hook
-import homeHeroImg1 from "../assets/home-hero44.jpg";
-import homeHeroImg2 from "../assets/home-hero66.jpg";
-import homeHeroImg3 from "../assets/home-hero88.jpg";
+import homeHeroImg1 from "../assets/home-hero44.png";
+import homeHeroImg2 from "../assets/home-hero66.png";
+import homeHeroImg3 from "../assets/home-hero88.png";
 import { Container } from "react-bootstrap";
 import CustomButton from "./ui/CustomButton";
 import ROUTES from "../routes";
