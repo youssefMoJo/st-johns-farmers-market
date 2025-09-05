@@ -8,8 +8,8 @@ type HoursLocationProps = {
 };
 
 export default function HoursLocation({
-  bgColorL = "#14676c",
-  bgColorR = "#1cbbbbff",
+  bgColorL = "#c6252d",
+  bgColorR = "#76161c",
 }: HoursLocationProps) {
   return (
     <div
@@ -77,16 +77,12 @@ export default function HoursLocation({
           </h3>
           <div style={{ fontSize: "1.13rem", color: "#222", zIndex: 2 }}>
             <p style={{ marginBottom: "10px" }}>
-              <span style={{ fontWeight: 600, color: "#0a8c8c" }}>
-                🕘 Saturdays (Year-Round):
-              </span>{" "}
-              <span style={{ color: "#14676c" }}>9:00 AM – 4:00 PM</span>
+              <span>🕘 Saturdays (Year-Round):</span>{" "}
+              <span style={{ color: "#283132ff" }}>9:00 AM – 4:00 PM</span>
             </p>
             <p>
-              <span style={{ fontWeight: 600, color: "#0a8c8c" }}>
-                🌟 Select Sundays:
-              </span>{" "}
-              <span style={{ color: "#14676c" }}>
+              <span>🌟 Select Sundays:</span>{" "}
+              <span style={{ color: "#283132ff" }}>
                 Check our social media for updates!
               </span>
             </p>
@@ -141,8 +137,6 @@ export default function HoursLocation({
               <p
                 style={{
                   marginBottom: "10px",
-                  fontWeight: 600,
-                  color: "#0a8c8c",
                   letterSpacing: "0.5px",
                 }}
               >
@@ -150,7 +144,7 @@ export default function HoursLocation({
                 <br />
                 St. John's, NL A1B 1B3
               </p>
-              <a
+              {/* <a
                 href={EXTERNAL_LINKS.marketGoogleMap}
                 target="_blank"
                 rel="noreferrer"
@@ -187,7 +181,7 @@ export default function HoursLocation({
                   height={22}
                   style={{ filter: "drop-shadow(0 1px 2px #14676c)" }}
                 />
-              </a>
+              </a> */}
             </div>
           </div>
           {/* Right: Map */}
@@ -235,6 +229,7 @@ export default function HoursLocation({
               padding: 1.2rem !important;
               flex-direction: column !important;
               gap: 12px !important;
+              border-radius: 0 !important;
             }
             .hours-location .location-map {
               max-width: 100% !important;
