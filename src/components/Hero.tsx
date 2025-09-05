@@ -1,253 +1,272 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "react-bootstrap/Image";
+import Carousel from "react-bootstrap/Carousel";
+import { useTypewriter } from "./useTypewriter"; // Import the hook
 import homeHeroImg1 from "../assets/home-hero44.jpg";
 import homeHeroImg2 from "../assets/home-hero66.jpg";
 import homeHeroImg3 from "../assets/home-hero88.jpg";
 import { Container } from "react-bootstrap";
 import CustomButton from "./ui/CustomButton";
 import ROUTES from "../routes";
-import Carousel from "react-bootstrap/Carousel";
 
-const heroStyles: React.CSSProperties = {
+const slides = [
+  {
+    img: homeHeroImg1,
+    headline: "St. John’s Farmers’ Market",
+    tagline:
+      "Discover local food, art, and community every Saturday. Fresh. Local. Welcoming.",
+  },
+  {
+    img: homeHeroImg2,
+    headline: "Local Vendors, Big Flavours",
+    tagline:
+      "Meet the makers behind your favourite products. Support Local. Eat Well.",
+  },
+  {
+    img: homeHeroImg3,
+    headline: "Events & Community",
+    tagline: "Join us for workshops, music, and more. Fun for Everyone!",
+  },
+];
+
+const heroWrapper: React.CSSProperties = {
   width: "100%",
-  minHeight: "100vh",
-  overflow: "hidden",
-  position: "relative",
+  minHeight: "60vh",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  background: "linear-gradient(120deg, #e0f7fa 0%, #fff 100%)",
+  position: "relative",
+  overflow: "hidden",
 };
 
-const overlayStyles: React.CSSProperties = {
-  position: "absolute",
-  top: 0,
-  left: 0,
+const slideContainer: React.CSSProperties = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
   width: "100%",
-  height: "100vh",
-  background:
-    "linear-gradient(120deg, rgba(27,90,122,0.60) 0%, rgba(0, 0, 0, 0) 100%)",
-  zIndex: 1,
-  pointerEvents: "none",
+  maxWidth: "1200px",
+  minHeight: "420px",
+  padding: "2.5rem 1rem",
+  gap: "3vw",
 };
 
-const contentStyles: React.CSSProperties = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
+const heroTitle: React.CSSProperties = {
+  fontFamily: "'Montserrat', 'Segoe UI', Arial, sans-serif",
+  fontWeight: 900,
+  background: "linear-gradient(90deg, #1B5A7A, #26c6da)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  marginBottom: "0.1rem",
+  letterSpacing: "1px",
+  textShadow: "0 2px 16px rgba(27,90,122,0.10)",
+  lineHeight: 1.08,
+  minHeight: "2em",
+};
+
+const heroTagline: React.CSSProperties = {
+  color: "#333",
+  fontWeight: 600,
+  marginBottom: "2rem",
+  height: "3em",
+};
+
+const buttonRow: React.CSSProperties = {
+  display: "flex",
+  gap: "18px",
+  flexWrap: "wrap",
+  marginTop: "0.5rem",
+};
+
+const buttonStyle: React.CSSProperties = {
+  fontFamily: "'Montserrat', 'Segoe UI', Arial, sans-serif",
+  fontSize: "1rem",
+  padding: "0.6em 1.6em",
+  borderRadius: "999px",
+  fontWeight: 700,
+  boxShadow: "0 2px 12px rgba(27,90,122,0.13)",
+  border: "none",
+  background: "linear-gradient(90deg, #1B5A7A 60%, #26c6da 100%)",
+  color: "#fff",
+  letterSpacing: "0.5px",
+  transition: "background 0.2s, box-shadow 0.2s",
+  cursor: "pointer",
+};
+
+const outlineButtonStyle: React.CSSProperties = {
+  ...buttonStyle,
+  background: "#fff",
+  color: "#1B5A7A",
+  border: "2px solid transparent",
+  backgroundImage:
+    "linear-gradient(#fff, #fff), linear-gradient(90deg, #1B5A7A, #26c6da)",
+  backgroundOrigin: "border-box",
+  backgroundClip: "padding-box, border-box",
+  boxShadow: "0 2px 12px rgba(27,90,122,0.08)",
+};
+
+const heroContent: React.CSSProperties = {
+  flex: 1,
   display: "flex",
   flexDirection: "column",
+  alignItems: "flex-start",
   justifyContent: "center",
-  alignItems: "center",
-  gap: "22px",
-  zIndex: 2,
-  width: "100%",
-  maxWidth: "600px",
-  padding: "0 1.2rem",
+  minWidth: 0,
 };
 
-const titleStyles: React.CSSProperties = {
-  fontFamily: "'Montserrat', 'Segoe UI', Arial, sans-serif",
-  fontSize: "clamp(2.6rem, 8vw, 4.8rem)",
-  fontWeight: 800,
-  color: "#ffeb3b", // Changed to a vibrant yellow for high impact
-  textShadow: "0 4px 32px rgba(27,90,122,0.45), 0 1px 2px #1B5A7A",
-  letterSpacing: "1.5px",
-  marginBottom: "0.5rem",
-  textAlign: "center",
-  lineHeight: 1.05,
-  opacity: 1,
-  transform: "translateY(0) scale(1)",
-  transition:
-    "opacity 0.9s cubic-bezier(.4,2,.3,1), transform 0.9s cubic-bezier(.4,2,.3,1)",
-};
-
-const titleEnterStyles: React.CSSProperties = {
-  ...titleStyles,
-  opacity: 1,
-  transform: "translateY(0) scale(1.08)", // Slight scale up for entrance
-  transition:
-    "opacity 0.9s cubic-bezier(.4,2,.3,1), transform 0.9s cubic-bezier(.4,2,.3,1)",
-};
-
-const titleHiddenStyles: React.CSSProperties = {
-  ...titleStyles,
-  opacity: 0,
-  transform: "translateY(-60px) scale(0.92)", // Smoother exit
-  pointerEvents: "none",
-};
-
-const taglineStyles: React.CSSProperties = {
-  fontSize: "clamp(1.2rem, 3vw, 2rem)",
-  color: "#fff",
-  fontWeight: 600,
-  textAlign: "center",
-  marginBottom: "0.7rem",
-  textShadow: "0 2px 16px rgba(27,90,122,0.25)",
-  letterSpacing: "0.5px",
-  lineHeight: 1.3,
-  background: "rgba(27,90,122,0.18)",
-  borderRadius: "12px",
-  padding: "0.5em 1em",
-  display: "inline-block",
-  opacity: 1,
-  transition:
-    "opacity 0.8s cubic-bezier(.4,2,.3,1), transform 0.8s cubic-bezier(.4,2,.3,1)",
-};
-
-const taglineHiddenStyles: React.CSSProperties = {
-  ...taglineStyles,
-  opacity: 0,
-  transform: "translateY(40px) scale(0.95)",
-  pointerEvents: "none",
-};
-
-const highlightStyles: React.CSSProperties = {
-  color: "#ffe082",
-  background: "rgba(27,90,122,0.32)",
-  borderRadius: "8px",
-  padding: "0.1em 0.5em",
-  fontWeight: 700,
-  marginLeft: "0.3em",
-  boxShadow: "0 1px 8px rgba(27,90,122,0.10)",
-  display: "inline-block",
-};
-
-const buttonRowStyles: React.CSSProperties = {
-  display: "flex",
-  gap: "16px",
-  flexWrap: "wrap",
-  justifyContent: "center",
-  opacity: 1,
-  transition: "opacity 0.8s cubic-bezier(.4,2,.3,1)",
-};
-
-const buttonRowHiddenStyles: React.CSSProperties = {
-  ...buttonRowStyles,
-  opacity: 0,
-  pointerEvents: "none",
-};
+function BlinkingCursor() {
+  return (
+    <span
+      style={{
+        display: "inline-block",
+        width: "1ch",
+        animation: "blink 1s steps(2, start) infinite",
+        color: "#26c6da",
+        fontWeight: 900,
+      }}
+    >
+      |
+      <style>
+        {`
+          @keyframes blink {
+            to { opacity: 0; }
+          }
+        `}
+      </style>
+    </span>
+  );
+}
 
 export default function Hero() {
-  const [showTitle, setShowTitle] = useState(false);
-  const [hideTitle, setHideTitle] = useState(false);
+  const [index, setIndex] = useState(0);
+  const [typing, setTyping] = useState(true);
 
+  // Reset typing effect on slide change
   useEffect(() => {
-    // Entrance animation
-    const enterTimer = setTimeout(() => setShowTitle(true), 100);
-    // Exit animation
-    const exitTimer = setTimeout(() => {
-      setHideTitle(true);
-      setShowTitle(false);
-    }, 2200);
-    return () => {
-      clearTimeout(enterTimer);
-      clearTimeout(exitTimer);
-    };
-  }, []);
+    setTyping(false);
+    const timer = setTimeout(() => setTyping(true), 300);
+    return () => clearTimeout(timer);
+  }, [index]);
+
+  const { displayed: typedTitle, done: titleDone } = useTypewriter(
+    typing ? slides[index].headline : "",
+    40,
+    100
+  );
+  const { displayed: typedTagline } = useTypewriter(
+    titleDone ? slides[index].tagline : "",
+    24,
+    200
+  );
 
   return (
-    <div style={heroStyles} className="App">
-      {/* Overlay */}
-      <div style={overlayStyles} />
-
-      {/* Carousel */}
-      <Carousel
-        controls={false}
-        indicators={false}
-        interval={5000}
-        fade={false}
-        pause={false}
-        style={{ width: "100%", height: "100vh" }}
-      >
-        {[homeHeroImg1, homeHeroImg2, homeHeroImg3].map((img, idx) => (
-          <Carousel.Item key={idx}>
-            <Image
-              src={img}
-              fluid
-              className="w-100"
-              style={{
-                height: "100vh",
-                objectFit: "cover",
-                minHeight: 320,
-                transition: "transform 0.7s cubic-bezier(.4,2,.3,1)",
-              }}
-            />
-          </Carousel.Item>
-        ))}
-      </Carousel>
-
-      {/* Content */}
-      <Container style={contentStyles}>
-        <h1
-          style={
-            hideTitle
-              ? titleHiddenStyles
-              : showTitle
-              ? titleEnterStyles
-              : titleStyles
-          }
+    <div style={heroWrapper}>
+      <div style={slideContainer}>
+        {/* Image Carousel */}
+        <Carousel
+          activeIndex={index}
+          onSelect={setIndex}
+          controls={true}
+          indicators={true}
+          interval={4500}
+          slide={true}
+          fade={false}
+          style={{
+            maxWidth: "480px",
+            maxHeight: "480px",
+            width: "90%",
+            height: "90%",
+            minWidth: "320px",
+            minHeight: "320px",
+            borderRadius: "32px",
+            overflow: "hidden",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
-          St. John’s <span style={highlightStyles}>Farmers’ Market</span>
-        </h1>
-        <div style={showTitle ? taglineHiddenStyles : taglineStyles}>
-          <span style={{ color: "#ffe082", fontWeight: 700 }}>Discover</span>{" "}
-          local food, art, and community every Saturday.
-          <br />
-          <span style={highlightStyles}>Fresh. Local. Welcoming.</span>
+          {slides.map((slide, idx) => (
+            <Carousel.Item key={idx} interval={4500} style={{ height: "100%" }}>
+              <Image
+                src={slide.img}
+                alt="Farmers Market"
+                fluid
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  borderRadius: "32px",
+                }}
+              />
+            </Carousel.Item>
+          ))}
+        </Carousel>
+        {/* Typewriter Title/Tagline/Buttons */}
+        <div
+          style={{ ...heroContent, animation: "slideIn 0.6s ease forwards" }}
+        >
+          <Container>
+            <h1 style={heroTitle}>
+              {typedTitle}
+              <BlinkingCursor />
+            </h1>
+            <div style={heroTagline} className="hero-tagline">
+              {typedTagline}
+              {titleDone && <BlinkingCursor />}
+            </div>
+            <div style={buttonRow}>
+              <CustomButton href={ROUTES.MEET_OUR_VENDORS} style={buttonStyle}>
+                View Our Vendors
+              </CustomButton>
+              <CustomButton
+                variant="outline-alt"
+                href={ROUTES.SEE_EVENTS}
+                style={outlineButtonStyle}
+              >
+                See Upcoming Events
+              </CustomButton>
+            </div>
+          </Container>
         </div>
-        <div style={showTitle ? buttonRowHiddenStyles : buttonRowStyles}>
-          <CustomButton
-            href={ROUTES.MEET_OUR_VENDORS}
-            style={{
-              fontSize: "1.08rem",
-              padding: "0.8em 2em",
-              borderRadius: "999px",
-              boxShadow: "0 2px 12px rgba(27,90,122,0.13)",
-              fontWeight: 600,
-              background: "linear-gradient(90deg, #1B5A7A 60%, #4fc3f7 100%)",
-              color: "#fff",
-              border: "none",
-              transition: "background 0.2s",
-            }}
-          >
-            View Our Vendors
-          </CustomButton>
-          <CustomButton
-            variant={"outline-alt"}
-            href={ROUTES.SEE_EVENTS}
-            style={{
-              fontSize: "1.08rem",
-              padding: "0.8em 2em",
-              borderRadius: "999px",
-              fontWeight: 600,
-              border: "2px solid #fff",
-              color: "#fff",
-              background: "rgba(27,90,122,0.25)",
-              transition: "background 0.2s",
-            }}
-          >
-            See Upcoming Events
-          </CustomButton>
-        </div>
-      </Container>
-
+      </div>
       {/* Responsive styles */}
       <style>
         {`
-          @media (max-width: 600px) {
-            .App .hero-btn-container {
-              padding-top: 2.5rem;
-              gap: 18px !important;
+          @media (max-width: 900px) {
+            div[style*="display: flex"][style*="align-items: center"] {
+              flex-direction: column !important;
+              padding: 2rem 0 !important;
+              min-height: 320px !important;
             }
-            .App h1.hero-title {
+            .App .hero-title {
               font-size: 2.2rem !important;
-              margin-bottom: 0.5rem !important;
             }
-            .App .hero-btn-container > div {
+            .App .hero-img {
+              width: 220px !important;
+              height: 220px !important;
+              margin-bottom: 1.2rem !important;
+            }
+          }
+          @media (max-width: 600px) {
+            div[style*="display: flex"][style*="align-items: center"] {
+              flex-direction: column !important;
+              padding: 1.2rem 0 !important;
+            }
+            .App .hero-title {
+              font-size: 1.5rem !important;
+            }
+            .App .hero-btn-row {
               flex-direction: column !important;
               gap: 12px !important;
+              align-items: center !important;
             }
+            .App .hero-tagline {
+              margin-bottom: 0.8rem !important;
+            }
+          }
+          @keyframes slideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
           }
         `}
       </style>
