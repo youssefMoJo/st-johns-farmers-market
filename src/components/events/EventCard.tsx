@@ -77,25 +77,6 @@ export default function EventCard({ event }: EventProps) {
                   alt={event.title}
                 />
               )}
-
-              {event.multipleDates && (
-                <div
-                  style={{
-                    backgroundColor: "#17A0DB",
-                    color: "white",
-                    padding: "5px 10px",
-                    position: "absolute",
-                    top: "10px",
-                    right: "10px",
-                    borderRadius: "5px",
-                    fontWeight: "bold",
-                    fontSize: "13px",
-                    zIndex: 1,
-                  }}
-                >
-                  Multiple Dates
-                </div>
-              )}
             </div>
 
             <div style={{ textAlign: "left", marginBottom: "10px" }}>
@@ -112,7 +93,27 @@ export default function EventCard({ event }: EventProps) {
                 {event.location}
               </Card.Subtitle>
               <Card.Text>
-                <div>{event.date}</div>
+                <div>
+                  {event.date}{" "}
+                  {event.multipleDates && (
+                    <span
+                      style={{
+                        marginLeft: "8px",
+                        padding: "2px 8px",
+                        borderRadius: "12px",
+                        fontSize: "0.75rem",
+                        fontWeight: "600",
+                        color: "#fff",
+                        background: "linear-gradient(90deg, #FF7E5F, #FF6A00)",
+                        verticalAlign: "middle",
+                        display: "inline-block",
+                        lineHeight: "1.5",
+                      }}
+                    >
+                      Multiple Dates
+                    </span>
+                  )}
+                </div>
                 <div>{event.time}</div>
                 <div
                   style={{
@@ -127,7 +128,7 @@ export default function EventCard({ event }: EventProps) {
             </div>
           </div>
 
-          {/* <div style={{ marginTop: "auto", textAlign: "left" }}>
+          <div style={{ marginTop: "auto", textAlign: "left" }}>
             <Button
               href={`/events/${event.id}`}
               variant="dark"
@@ -140,7 +141,7 @@ export default function EventCard({ event }: EventProps) {
             >
               Learn more
             </Button>
-          </div> */}
+          </div>
         </Card.Body>
       </Card>
     </Col>
