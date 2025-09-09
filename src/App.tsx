@@ -18,6 +18,7 @@ import MainMarketHallDetails from "./pages/MainMarketHall";
 import WorkshopRoomDetails from "./pages/WorkshopRoom";
 import KitchenDetails from "./pages/Kitchen";
 import PlanYourVisit from "./pages/PlanYourVisit";
+import MarketMap from "./pages/MarketMap";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route path={ROUTES.WorkshopRoom} element={<WorkshopRoomDetails />} />
           <Route path={ROUTES.Kitchen} element={<KitchenDetails />} />
           <Route path={ROUTES.PLAN_VISIT} element={<PlanYourVisit />} />
+          <Route path={ROUTES.MARKET_MAP} element={<MarketMap />} />
         </Routes>
         <Footer />
       </div>
