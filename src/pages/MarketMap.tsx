@@ -34,6 +34,11 @@ const MarketMap: React.FC = () => {
   const hideTimeout = useRef<NodeJS.Timeout | null>(null);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   const [pressedDirection, setPressedDirection] = useState<string | null>(null);
+  const [infoBoxVisible, setInfoBoxVisible] = useState<boolean>(false);
+  const [infoBoxContent, setInfoBoxContent] = useState<{
+    title: string;
+    content: string;
+  }>({ title: "", content: "" });
 
   useEffect(() => {
     if (!viewerRef.current) return;
@@ -102,8 +107,8 @@ const MarketMap: React.FC = () => {
       const el = document.createElement("img");
       el.src = iconSrc;
       el.alt = altText;
-      el.style.width = "40px";
-      el.style.height = "40px";
+      el.style.width = "50px";
+      el.style.height = "50px";
       el.style.cursor = "pointer";
       el.style.userSelect = "none";
       el.style.filter = "drop-shadow(0 0 2px rgba(0,0,0,0.5))";
@@ -116,8 +121,8 @@ const MarketMap: React.FC = () => {
       const el = document.createElement("img");
       el.src = info;
       el.alt = "Info";
-      el.style.width = "32px";
-      el.style.height = "32px";
+      el.style.width = "50px";
+      el.style.height = "50px";
       el.style.cursor = "pointer";
       el.style.userSelect = "none";
       el.style.filter = "drop-shadow(0 0 2px rgba(0,0,0,0.5))";
@@ -144,7 +149,10 @@ const MarketMap: React.FC = () => {
       .hotspotContainer()
       .createHotspot(
         createInfoHotspotElement(() => {
-          alert("Welcome to the Entrance of the Market!");
+          showInfoBox(
+            "Entrance",
+            "Welcome to the St. John's Farmers Market! This is the main entrance where you'll find our friendly staff and information about the market. Here you can pick up maps, learn about our vendors, and get directions to different areas of the market."
+          );
         }),
         { yaw: Math.PI / 2, pitch: 0 }
       );
@@ -177,7 +185,10 @@ const MarketMap: React.FC = () => {
       .hotspotContainer()
       .createHotspot(
         createInfoHotspotElement(() => {
-          alert("You are now in the Hall area.");
+          showInfoBox(
+            "Main Market Hall",
+            "This is the heart of our farmers market! Here you'll find fresh local produce, artisanal goods, and handmade crafts from our local vendors. The hall features a beautiful open layout with natural lighting, making it the perfect place to shop and discover unique local products."
+          );
         }),
         { yaw: 0, pitch: 0.2 }
       );
@@ -199,7 +210,10 @@ const MarketMap: React.FC = () => {
       .hotspotContainer()
       .createHotspot(
         createInfoHotspotElement(() => {
-          alert("Welcome to the Foodcourt!");
+          showInfoBox(
+            "Food Court",
+            "Take a break and enjoy delicious meals at our food court! We feature a variety of local food vendors offering everything from fresh sandwiches and salads to hot meals and beverages. It's the perfect spot to refuel while exploring the market."
+          );
         }),
         { yaw: 0, pitch: 0 }
       );
@@ -208,7 +222,7 @@ const MarketMap: React.FC = () => {
 
     // Initialize autorotate
     autorotateRef.current = Marzipano.autorotate({
-      yawSpeed: 0.09,
+      yawSpeed: 0.03,
       targetPitch: 0,
       targetFov: Math.PI / 2,
       pauseOnInteraction: true,
@@ -390,6 +404,15 @@ const MarketMap: React.FC = () => {
     hideTimeout.current = setTimeout(() => {
       setControlsVisible(false);
     }, 5000);
+  };
+
+  const showInfoBox = (title: string, content: string) => {
+    setInfoBoxContent({ title, content });
+    setInfoBoxVisible(true);
+  };
+
+  const hideInfoBox = () => {
+    setInfoBoxVisible(false);
   };
 
   useEffect(() => {
@@ -610,6 +633,117 @@ const MarketMap: React.FC = () => {
               </button>
             ))}
         </div>
+
+        {/* Info Box */}
+        {infoBoxVisible && (
+          <>
+            {/* Backdrop - click outside to close */}
+            <div
+              onClick={hideInfoBox}
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                background: "rgba(0,0,0,0.3)",
+                zIndex: 199,
+                cursor: "pointer",
+              }}
+            />
+            {/* Info Box Content */}
+            <div
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: "320px",
+                maxWidth: "90vw",
+                background: "rgba(24,24,24,0.95)",
+                borderRadius: "12px",
+                padding: "20px",
+                zIndex: 200,
+                boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
+                backdropFilter: "blur(10px)",
+                border: "1px solid rgba(255,255,255,0.1)",
+              }}
+            >
+              {/* Close button */}
+              <button
+                onClick={hideInfoBox}
+                style={{
+                  position: "absolute",
+                  top: "12px",
+                  right: "12px",
+                  width: "24px",
+                  height: "24px",
+                  background: "rgba(255,255,255,0.1)",
+                  border: "none",
+                  borderRadius: "50%",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  transition: "background 0.2s",
+                  padding: 0,
+                }}
+                onMouseOver={(e) =>
+                  (e.currentTarget.style.background = "rgba(255,255,255,0.2)")
+                }
+                onMouseOut={(e) =>
+                  (e.currentTarget.style.background = "rgba(255,255,255,0.1)")
+                }
+                aria-label="Close info box"
+              >
+                <img
+                  src={close}
+                  alt="Close"
+                  style={{ width: 12, height: 12, pointerEvents: "none" }}
+                />
+              </button>
+
+              {/* Info icon */}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: "12px",
+                  gap: "8px",
+                }}
+              >
+                <img
+                  src={info}
+                  alt="Info"
+                  style={{ width: 20, height: 20, filter: "invert(1)" }}
+                />
+                <h3
+                  style={{
+                    color: "white",
+                    margin: 0,
+                    fontSize: "1.1rem",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {infoBoxContent.title}
+                </h3>
+              </div>
+
+              {/* Content */}
+              <p
+                style={{
+                  color: "rgba(255,255,255,0.9)",
+                  margin: 0,
+                  fontSize: "0.9rem",
+                  lineHeight: "1.4",
+                }}
+              >
+                {infoBoxContent.content}
+              </p>
+            </div>
+          </>
+        )}
 
         {/* Viewer */}
         <div
