@@ -289,9 +289,6 @@ const MainMarketHallDetails: React.FC = () => (
               <li>
                 <strong>Full Day</strong>: 5+ hours.
               </li>
-              <li>
-                <strong>Evening</strong>: Any time after 5 pm.
-              </li>
             </ul>
           </div>
         </div>
