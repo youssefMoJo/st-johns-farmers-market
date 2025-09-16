@@ -22,7 +22,7 @@ import MarketMap from "./pages/MarketMap";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/st-johns-farmers-market">
       <div className="App">
         <ScrollToTop />
         <NavBar />
