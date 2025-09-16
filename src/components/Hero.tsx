@@ -35,7 +35,7 @@ const heroWrapper: React.CSSProperties = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  background: "linear-gradient(120deg, #e0f7fa 0%, #fff 100%)",
+  background: "linear-gradient(120deg,rgb(255, 255, 255) 0%, #fff 100%)",
   position: "relative",
   overflow: "hidden",
 };
