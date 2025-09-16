@@ -2,6 +2,7 @@ import rightArrowIcon from "../../assets/Icons/black-right-arrow-icon.svg";
 import EventsGrid from "./EventsGrid";
 import SectionTitle from "../SectionTitle";
 import ROUTES from "../../routes";
+import { Link } from "react-router-dom";
 
 export default function UpcomingEvents() {
   return (
@@ -16,8 +17,8 @@ export default function UpcomingEvents() {
       <EventsGrid limit={3} />
 
       {/* Explore All Events Button */}
-      <a
-        href={ROUTES.SEE_EVENTS}
+      <Link
+        to={ROUTES.SEE_EVENTS}
         rel="noreferrer"
         style={{
           color: "black",
@@ -32,7 +33,7 @@ export default function UpcomingEvents() {
       >
         🔍 Explore All Events
         <img src={rightArrowIcon} alt="rightArrow" width={22} height={22} />
-      </a>
+      </Link>
     </div>
   );
 }
