@@ -10,7 +10,7 @@ const BecomeBusker: React.FC = () => {
       <div
         style={{
           background:
-            "linear-gradient(to bottom right, #12646C 65%, rgb(253, 243, 187) 100%)",
+            "linear-gradient(to bottom right,rgb(222, 110, 73) 65%, rgb(253, 243, 187) 100%)",
           padding: "4rem 1rem",
           color: "white",
         }}

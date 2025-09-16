@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
       <div
         style={{
           background:
-            "linear-gradient(to bottom right, #12646C 65%, rgb(240, 240, 240) 100%)",
+            "linear-gradient(to bottom right, #D46540 65%, rgb(240, 240, 240) 100%)",
           padding: "4rem 1rem",
           color: "white",
         }}

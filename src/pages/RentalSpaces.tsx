@@ -53,7 +53,7 @@ const RentalSpaces: React.FC = () => {
       <div
         style={{
           background:
-            "linear-gradient(to bottom right, #1B5A7A 65%, rgb(240, 240, 240) 100%)",
+            "linear-gradient(to bottom right, #D46540 65%, rgb(240, 240, 240) 100%)",
           padding: "4rem 1rem",
           color: "white",
         }}

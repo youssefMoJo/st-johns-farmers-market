@@ -10,7 +10,7 @@ const CommunityTable: React.FC = () => {
       <div
         style={{
           background:
-            "linear-gradient(to bottom right, #143C5D 65%, rgb(253, 243, 187) 100%)",
+            "linear-gradient(to bottom right, #D46540 65%, rgb(253, 243, 187) 100%)",
           padding: "4rem 1rem",
           color: "white",
         }}
