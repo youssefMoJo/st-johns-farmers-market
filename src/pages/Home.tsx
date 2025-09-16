@@ -4,36 +4,46 @@ import UpcommingEvents from "../components/events/UpcomingEvents";
 import Reviews from "../components/reviews/Reviews";
 import Welcome from "../components/Welcome";
 import { Link } from "react-router-dom";
+import SectionTitle from "../components/SectionTitle";
 
 export default function Home() {
   return (
     <div>
       <Hero />
       <HoursLocation />
-      <UpcommingEvents />
-      <Reviews />
-      <Welcome />
       <div
         style={{
           maxWidth: "900px",
           margin: "2.5rem auto",
           padding: "2rem",
-          background: "linear-gradient(120deg, #e0f7fa 60%, #fff 100%)",
+          background:
+            "radial-gradient(800px 260px at 70% -60px, rgba(20,103,108,0.18), rgba(20,103,108,0) 60%)," +
+            "radial-gradient(700px 240px at 0% 120%, rgba(71,195,247,0.15), rgba(71,195,247,0) 60%)," +
+            "linear-gradient(180deg, #ffffff 0%, #f7fbfd 100%)",
           borderRadius: "18px",
           boxShadow: "0 4px 24px rgba(27,90,122,0.09)",
           textAlign: "center",
         }}
       >
-        <h2
-          style={{
-            color: "#14676c",
-            fontWeight: 700,
-            fontSize: "2rem",
-            marginBottom: "0.7rem",
-          }}
-        >
-          🏢 Rental Spaces
-        </h2>
+        <div style={{ marginBottom: "0.5rem" }}>
+          <span
+            aria-label="building"
+            style={{
+              display: "inline-block",
+              fontSize: "1.6rem",
+              marginBottom: "0.2rem",
+              filter: "drop-shadow(0 2px 6px rgba(20,60,93,0.2))",
+            }}
+          >
+            🏢
+          </span>
+        </div>
+        <SectionTitle
+          parts={[
+            { text: "RENTAL", color: "#143C5D" },
+            { text: "SPACES", color: "#47C3F7" },
+          ]}
+        />
         <p
           style={{
             fontSize: "1.15rem",
@@ -62,6 +72,9 @@ export default function Home() {
           Explore Rental Spaces
         </Link>
       </div>
+      <UpcommingEvents />
+      <Reviews />
+      <Welcome />
     </div>
   );
 }

@@ -27,8 +27,11 @@ export default function Welcome() {
       style={{
         display: "flex",
         justifyContent: "center",
-        padding: "40px 0",
-        background: "linear-gradient(120deg, #e0f7fa 60%, #fff 100%)",
+        padding: "56px 0",
+        background:
+          "radial-gradient(1200px 400px at 50% -120px, rgba(71,195,247,0.18), rgba(71,195,247,0) 60%)," +
+          "radial-gradient(900px 320px at 10% 120%, rgba(20,60,93,0.12), rgba(20,60,93,0) 60%)," +
+          "linear-gradient(180deg, #ffffff 0%, #f7fbfd 100%)",
         transition: "background 0.5s",
       }}
     >
