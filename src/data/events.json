@@ -4,41 +4,35 @@
     "title": "Open Air Antique Fair",
     "shortDescription": "Discover vintage treasures in our outdoor market.",
     "description": "Come and explore a curated selection of antique and vintage vendors. A perfect event for collectors and curious minds alike! Featuring local sellers and live music.",
-    "date": "2025-06-17",
+    "dates": ["2025-09-17", "2025-09-19"],
     "time": "8:00 a.m – 3:00 p.m",
     "imageUrl": "../../assets/event.png",
-    "multipleDates": true,
-    "tags": ["main market hall", "outdoor"],
     "location": "Main Market Hall",
-    "createdAt": "2025-04-01T12:00:00Z",
-    "updatedAt": "2025-04-01T12:00:00Z"
+    "organizer": {
+      "name": "Open Air Antique Association",
+      "email": "apply@openairantiques.org",
+      "phone": "+1 (503) 555-0134",
+      "website": "https://openairantiques.org/apply"
+    }
   },
   {
     "id": "community-art-walk",
     "title": "Community Art Walk",
     "shortDescription": "A celebration of local art and culture.",
     "description": "Stroll through our market and see art from over 20 local creators. Live painting, music, and family-friendly workshops throughout the day!",
-    "date": "2026-07-05",
+    "dates": ["2026-07-05"],
     "time": "10:00 a.m – 5:00 p.m",
     "imageUrl": "",
-    "multipleDates": false,
-    "tags": ["community room", "art", "family"],
-    "location": "Community Room",
-    "createdAt": "2025-04-01T12:00:00Z",
-    "updatedAt": "2025-04-01T12:00:00Z"
+    "location": "Community Room"
   },
   {
     "id": "summer-camp",
     "title": "Kids' Summer Camp Day",
     "shortDescription": "Fun and learning for kids aged 5-12.",
     "description": "Join us for a day of crafts, gardening lessons, and cooking workshops designed just for kids. Lunch included. Parents welcome to stay or drop off.",
-    "date": "2025-08-09",
+    "dates": ["2025-08-09"],
     "time": "9:00 a.m – 5:00 p.m",
     "imageUrl": "/assets/event1.png",
-    "multipleDates": false,
-    "tags": ["kids", "workshop", "main market hall"],
-    "location": "Main Market Hall",
-    "createdAt": "2025-04-01T12:00:00Z",
-    "updatedAt": "2025-04-01T12:00:00Z"
+    "location": "Main Market Hall"
   }
 ]

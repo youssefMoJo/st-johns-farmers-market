@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Modal, Card, Row, Col, Badge } from "react-bootstrap";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import comingSoonEvent from "../../assets/lottie-files/comingSoonEvent.lottie";
@@ -12,16 +12,31 @@ type EventModalProps = {
     title: string;
     shortDescription: string;
     description: string;
-    date: string;
+    dates: string[];
     time: string;
     imageUrl: string;
-    multipleDates: boolean;
     location: string;
-    tags: string[];
+    organizer?: {
+      name?: string;
+      email?: string;
+      phone?: string;
+      website?: string;
+    };
   };
 };
 
 export default function EventModal({ show, onHide, event }: EventModalProps) {
+  const [showAllDates, setShowAllDates] = useState(false);
+
+  const formatDate = (isoDate: string) => {
+    const dt = new Date(isoDate);
+    return dt.toLocaleDateString(undefined, {
+      weekday: "short",
+      month: "short",
+      day: "numeric",
+    });
+  };
+
   return (
     <Modal
       show={show}
@@ -92,8 +107,14 @@ export default function EventModal({ show, onHide, event }: EventModalProps) {
               </h5>
 
               <div style={{ marginBottom: "15px" }}>
-                <strong>Date:</strong> {event.date}
-                {event.multipleDates && (
+                <strong>Date:</strong>{" "}
+                {(() => {
+                  const sortedDates = [...event.dates].sort(
+                    (a, b) => new Date(a).getTime() - new Date(b).getTime()
+                  );
+                  return sortedDates[0];
+                })()}
+                {event.dates.length > 1 && (
                   <Badge
                     style={{
                       marginLeft: "8px",
@@ -118,26 +139,91 @@ export default function EventModal({ show, onHide, event }: EventModalProps) {
                 <strong>Location:</strong> {event.location}
               </div>
 
-              <div style={{ marginBottom: "20px" }}>
-                <strong>Tags:</strong>
-                <div style={{ marginTop: "5px" }}>
-                  {event.tags.map((tag, index) => (
-                    <Badge
-                      key={index}
-                      style={{
-                        marginRight: "5px",
-                        marginBottom: "5px",
-                        padding: "4px 8px",
-                        backgroundColor: "#2C2C2C",
-                        color: "#fff",
-                        fontSize: "0.8rem",
-                      }}
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
+              {/* Multiple Dates Pills */}
+              {event.dates.length > 1 && (
+                <div style={{ marginBottom: "15px" }}>
+                  <strong>Other Dates:</strong>
+                  <div
+                    style={{
+                      marginTop: "8px",
+                      display: "flex",
+                      flexWrap: "wrap",
+                      gap: "8px",
+                    }}
+                  >
+                    {(() => {
+                      const sorted = [...event.dates].sort(
+                        (a, b) => new Date(a).getTime() - new Date(b).getTime()
+                      );
+                      const remaining = sorted.slice(1);
+                      const visible = showAllDates
+                        ? remaining
+                        : remaining.slice(0, 4);
+                      return (
+                        <>
+                          {visible.map((d, idx) => (
+                            <span
+                              key={`${d}-${idx}`}
+                              style={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                padding: "6px 10px",
+                                borderRadius: "16px",
+                                background:
+                                  "linear-gradient(90deg, rgba(23,160,219,0.12), rgba(13,110,253,0.12))",
+                                color: "#0d6efd",
+                                fontWeight: 600,
+                                fontSize: "0.85rem",
+                                border: "1px solid rgba(13,110,253,0.3)",
+                              }}
+                              title="Same time and location"
+                            >
+                              📅 {formatDate(d)}
+                            </span>
+                          ))}
+                          {remaining.length > 4 && !showAllDates && (
+                            <button
+                              onClick={() => setShowAllDates(true)}
+                              style={{
+                                background: "transparent",
+                                border: "none",
+                                color: "#0d6efd",
+                                fontWeight: 700,
+                                cursor: "pointer",
+                              }}
+                            >
+                              +{remaining.length - 4} more
+                            </button>
+                          )}
+                          {showAllDates && remaining.length > 4 && (
+                            <button
+                              onClick={() => setShowAllDates(false)}
+                              style={{
+                                background: "transparent",
+                                border: "none",
+                                color: "#0d6efd",
+                                fontWeight: 700,
+                                cursor: "pointer",
+                              }}
+                            >
+                              Show less
+                            </button>
+                          )}
+                        </>
+                      );
+                    })()}
+                  </div>
+                  <div
+                    style={{
+                      color: "#666",
+                      fontSize: "0.85rem",
+                      marginTop: "6px",
+                    }}
+                  >
+                    Same time and location for all dates
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </Col>
         </Row>
@@ -156,6 +242,70 @@ export default function EventModal({ show, onHide, event }: EventModalProps) {
             {event.description}
           </p>
         </div>
+
+        {/* Organizer Contact (below About section) */}
+        {event.organizer && (
+          <div
+            style={{
+              marginTop: "12px",
+              padding: "10px",
+              border: "1px solid #eee",
+              borderRadius: "10px",
+              background:
+                "linear-gradient(180deg, rgba(71,195,247,0.06), rgba(212,101,64,0.06))",
+            }}
+          >
+            <div style={{ fontWeight: "bold", marginBottom: "4px" }}>
+              Interested in selling at this event?
+            </div>
+            <div style={{ color: "#333", marginBottom: "6px" }}>
+              Please contact the organizer
+              {event.organizer.name ? `, ${event.organizer.name}` : ""}:
+            </div>
+            <div
+              style={{ display: "flex", flexDirection: "column", gap: "6px" }}
+            >
+              {event.organizer.email && (
+                <a
+                  href={`mailto:${event.organizer.email}`}
+                  style={{
+                    color: "#0d6efd",
+                    textDecoration: "none",
+                    fontWeight: 700,
+                  }}
+                >
+                  ✉️ {event.organizer.email}
+                </a>
+              )}
+              {event.organizer.phone && (
+                <a
+                  href={`tel:${event.organizer.phone}`}
+                  style={{
+                    color: "#198754",
+                    textDecoration: "none",
+                    fontWeight: 700,
+                  }}
+                >
+                  ☎️ {event.organizer.phone}
+                </a>
+              )}
+              {event.organizer.website && (
+                <a
+                  href={event.organizer.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    color: "#D46540",
+                    textDecoration: "none",
+                    fontWeight: 700,
+                  }}
+                >
+                  🌐 Organizer Website
+                </a>
+              )}
+            </div>
+          </div>
+        )}
       </Modal.Body>
       <Modal.Footer>
         <button

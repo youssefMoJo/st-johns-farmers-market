@@ -12,12 +12,10 @@ type EventProps = {
     title: string;
     shortDescription: string;
     description: string;
-    date: string;
+    dates: string[];
     time: string;
     imageUrl: string;
-    multipleDates: boolean;
     location: string;
-    tags: string[];
   };
 };
 
@@ -99,8 +97,13 @@ export default function EventCard({ event }: EventProps) {
               </Card.Subtitle>
               <Card.Text>
                 <div>
-                  {event.date}{" "}
-                  {event.multipleDates && (
+                  {(() => {
+                    const sortedDates = [...event.dates].sort(
+                      (a, b) => new Date(a).getTime() - new Date(b).getTime()
+                    );
+                    return sortedDates[0];
+                  })()}{" "}
+                  {event.dates.length > 1 && (
                     <span
                       style={{
                         marginLeft: "8px",

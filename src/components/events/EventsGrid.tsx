@@ -50,24 +50,34 @@ export default function EventsGrid({
 
   // 1️⃣ Sort events
   const sortedEvents = [...eventsData].sort((a, b) => {
-    const dateA = new Date(a.date).getTime();
-    const dateB = new Date(b.date).getTime();
+    const earliestA = Math.min(
+      ...a.dates.map((d: string) => new Date(d).getTime())
+    );
+    const earliestB = Math.min(
+      ...b.dates.map((d: string) => new Date(d).getTime())
+    );
+    const dateA = isFinite(earliestA) ? earliestA : Number.MAX_SAFE_INTEGER;
+    const dateB = isFinite(earliestB) ? earliestB : Number.MAX_SAFE_INTEGER;
     return sort === "asc" ? dateA - dateB : dateB - dateA;
   });
 
   // 2️⃣ Filter by year and month
   const monthFilteredEvents =
     selectedMonth === "All"
-      ? sortedEvents.filter(
-          (event) => new Date(event.date).getFullYear() === selectedYear
+      ? sortedEvents.filter((event) =>
+          event.dates.some(
+            (d: string) => new Date(d).getFullYear() === selectedYear
+          )
         )
-      : sortedEvents.filter((event) => {
-          const eventDate = new Date(event.date);
-          return (
-            eventDate.getFullYear() === selectedYear &&
-            months[eventDate.getMonth()] === selectedMonth
-          );
-        });
+      : sortedEvents.filter((event) =>
+          event.dates.some((d: string) => {
+            const eventDate = new Date(d);
+            return (
+              eventDate.getFullYear() === selectedYear &&
+              months[eventDate.getMonth()] === selectedMonth
+            );
+          })
+        );
 
   // 3️⃣ Apply limit if provided
   const displayedEvents = limit
@@ -76,15 +86,20 @@ export default function EventsGrid({
 
   // Compute months with events in the selected year
   const monthsWithEvents = months.filter((month) =>
-    sortedEvents.some(
-      (event) =>
-        new Date(event.date).getFullYear() === selectedYear &&
-        months[new Date(event.date).getMonth()] === month
+    sortedEvents.some((event) =>
+      event.dates.some((d: string) => {
+        const dt = new Date(d);
+        return (
+          dt.getFullYear() === selectedYear && months[dt.getMonth()] === month
+        );
+      })
     )
   );
 
   const yearsWithEvents = years.filter((year) =>
-    sortedEvents.some((event) => new Date(event.date).getFullYear() === year)
+    sortedEvents.some((event) =>
+      event.dates.some((d: string) => new Date(d).getFullYear() === year)
+    )
   );
 
   return (
