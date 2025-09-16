@@ -3,12 +3,15 @@ import Button from "react-bootstrap/Button";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import comingSoonEvent from "../../assets/lottie-files/comingSoonEvent.lottie";
 import eventPic from "../../assets/event.png";
+import { useState } from "react";
+import EventModal from "./EventModal";
 
 type EventProps = {
   event: {
     id: string;
     title: string;
     shortDescription: string;
+    description: string;
     date: string;
     time: string;
     imageUrl: string;
@@ -19,6 +22,8 @@ type EventProps = {
 };
 
 export default function EventCard({ event }: EventProps) {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     // <Col xs={12} sm={6} md={6} lg={4} className="mb-4">
     <Col xs={12} sm={6} md={6} lg={4} xl={4} className="mb-4">
@@ -130,7 +135,7 @@ export default function EventCard({ event }: EventProps) {
 
           <div style={{ marginTop: "auto", textAlign: "left" }}>
             <Button
-              href={`/events/${event.id}`}
+              onClick={() => setShowModal(true)}
               variant="dark"
               style={{
                 backgroundColor: "#2C2C2C",
@@ -144,6 +149,12 @@ export default function EventCard({ event }: EventProps) {
           </div>
         </Card.Body>
       </Card>
+
+      <EventModal
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        event={event}
+      />
     </Col>
   );
 }
