@@ -1,5 +1,6 @@
 import styles from "./CustomButton.module.css";
 import classNames from "classnames";
+import { Link } from "react-router-dom";
 
 type CustomButtonProps = {
   children: React.ReactNode;
@@ -23,7 +24,16 @@ export default function CustomButton({
     [styles.outlineAltButton]: variant === "outline-alt",
   });
 
+  // If href provided, decide between internal route (Link) or external anchor
   if (href) {
+    const isInternal = href.startsWith("/") && !href.startsWith("//");
+    if (isInternal) {
+      return (
+        <Link to={href} className={btnClass} style={style}>
+          {children}
+        </Link>
+      );
+    }
     return (
       <a href={href} className={btnClass} style={style}>
         {children}
