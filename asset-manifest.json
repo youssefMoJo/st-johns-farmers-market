@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/st-johns-farmers-market/static/css/main.cd8f6108.css",
-    "main.js": "/st-johns-farmers-market/static/js/main.f118e18c.js",
+    "main.js": "/st-johns-farmers-market/static/js/main.6752311c.js",
     "static/js/453.48cb2101.chunk.js": "/st-johns-farmers-market/static/js/453.48cb2101.chunk.js",
     "static/media/home-hero44.png": "/st-johns-farmers-market/static/media/home-hero44.dece5524f1ca7f781672.png",
     "static/media/home-hero88.png": "/st-johns-farmers-market/static/media/home-hero88.8cf23a5a8076f5efd642.png",
@@ -52,11 +52,11 @@
     "index.html": "/st-johns-farmers-market/index.html",
     "static/media/black-right-arrow-icon.svg": "/st-johns-farmers-market/static/media/black-right-arrow-icon.81525d4cd85eb6e47b459e7745389899.svg",
     "main.cd8f6108.css.map": "/st-johns-farmers-market/static/css/main.cd8f6108.css.map",
-    "main.f118e18c.js.map": "/st-johns-farmers-market/static/js/main.f118e18c.js.map",
+    "main.6752311c.js.map": "/st-johns-farmers-market/static/js/main.6752311c.js.map",
     "453.48cb2101.chunk.js.map": "/st-johns-farmers-market/static/js/453.48cb2101.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd8f6108.css",
-    "static/js/main.f118e18c.js"
+    "static/js/main.6752311c.js"
   ]
 }
