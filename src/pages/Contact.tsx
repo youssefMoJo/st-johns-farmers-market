@@ -430,7 +430,7 @@ const Contact: React.FC = () => {
                         background: "rgba(10,140,140,0.12)",
                       }}
                     >
-                      Events & Activities Coordinator
+                      Events Manager
                     </span>
                   </div>
                   <a
