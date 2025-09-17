@@ -215,8 +215,8 @@ export default function Hero() {
               {titleDone && <BlinkingCursor />}
             </div>
             <div style={buttonRow}>
-              <CustomButton href={ROUTES.MEET_OUR_VENDORS} style={buttonStyle}>
-                View Our Vendors
+              <CustomButton href={ROUTES.MARKET_MAP} style={buttonStyle}>
+                Explore the Market 360°
               </CustomButton>
               <CustomButton
                 variant="outline-alt"
