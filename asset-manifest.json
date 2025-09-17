@@ -1,22 +1,27 @@
 {
   "files": {
     "main.css": "/st-johns-farmers-market/static/css/main.cd8f6108.css",
-    "main.js": "/st-johns-farmers-market/static/js/main.d3fc6cb3.js",
+    "main.js": "/st-johns-farmers-market/static/js/main.f1c3d952.js",
     "static/js/453.48cb2101.chunk.js": "/st-johns-farmers-market/static/js/453.48cb2101.chunk.js",
     "static/media/home-hero44.png": "/st-johns-farmers-market/static/media/home-hero44.dece5524f1ca7f781672.png",
     "static/media/home-hero88.png": "/st-johns-farmers-market/static/media/home-hero88.8cf23a5a8076f5efd642.png",
     "static/media/home-hero66.png": "/st-johns-farmers-market/static/media/home-hero66.2ee0eb044f5bd1459cc4.png",
+    "static/media/test-panorama.jpg": "/st-johns-farmers-market/static/media/test-panorama.360f65ee8258350a2484.jpg",
     "static/media/foodcourt-360.jpg": "/st-johns-farmers-market/static/media/foodcourt-360.0fed2b7bd01b64e186b0.jpg",
+    "static/media/ETSY.png": "/st-johns-farmers-market/static/media/ETSY.df139cdb4d570e1ef4be.png",
     "static/media/entrance-360.jpg": "/st-johns-farmers-market/static/media/entrance-360.44037dfb64ca8a69eafa.jpg",
+    "static/media/event1.png": "/st-johns-farmers-market/static/media/event1.322a8b51fa75de55d918.png",
     "static/media/community-room-4.png": "/st-johns-farmers-market/static/media/community-room-4.a596721a4c7e77d3a9cf.png",
     "static/media/hall-360.jpg": "/st-johns-farmers-market/static/media/hall-360.90acd04b85fb1ca0918f.jpg",
     "static/media/reviews-sec-bg.png": "/st-johns-farmers-market/static/media/reviews-sec-bg.17bec17a582d7839bde7.png",
     "static/media/MarketParkingPlan-WEB-2.jpg": "/st-johns-farmers-market/static/media/MarketParkingPlan-WEB-2.40ab39afcd6193d84dbc.jpg",
+    "static/media/Tombolo.jpg": "/st-johns-farmers-market/static/media/Tombolo.5ff35db8077d7096f26d.jpg",
     "static/media/mainMarketHallImg.jpg": "/st-johns-farmers-market/static/media/mainMarketHallImg.bcdc07231cef3ad1a28d.jpg",
     "static/media/insta-icon.png": "/st-johns-farmers-market/static/media/insta-icon.b626cccde6c2611a4e55.png",
     "static/media/carParking.lottie": "/st-johns-farmers-market/static/media/carParking.be5082d719e6b1b7c133.lottie",
     "static/media/main-hall-1.jpg": "/st-johns-farmers-market/static/media/main-hall-1.0385a8438695abc92245.jpg",
     "static/media/commercialKitchenImg.jpg": "/st-johns-farmers-market/static/media/commercialKitchenImg.3f9cc42923b5f7095a12.jpg",
+    "static/media/BookFair.jpg": "/st-johns-farmers-market/static/media/BookFair.24848eebc47fef5639f4.jpg",
     "static/media/workshopRoomImg.jpg": "/st-johns-farmers-market/static/media/workshopRoomImg.0c8248822ef1803a0632.jpg",
     "static/media/main-hall-4.jpg": "/st-johns-farmers-market/static/media/main-hall-4.eac8fef848061e8132e9.jpg",
     "static/media/event.png": "/st-johns-farmers-market/static/media/event.73db2abfd1927f86a805.png",
@@ -37,6 +42,7 @@
     "static/media/communityTable.lottie": "/st-johns-farmers-market/static/media/communityTable.bb2ba6d3c9bb4b071377.lottie",
     "static/media/noData.lottie": "/st-johns-farmers-market/static/media/noData.35c42e4a4ddee64d5fd5.lottie",
     "static/media/faq.lottie": "/st-johns-farmers-market/static/media/faq.51e0cc37bcfe4ab85d7f.lottie",
+    "static/media/reviewStars.lottie": "/st-johns-farmers-market/static/media/reviewStars.05c9ee4ee809fedf7962.lottie",
     "static/media/link.png": "/st-johns-farmers-market/static/media/link.88b7b754f25377356733.png",
     "static/media/playingMusic.lottie": "/st-johns-farmers-market/static/media/playingMusic.51fc396ce31ae72f63fd.lottie",
     "static/media/contact.lottie": "/st-johns-farmers-market/static/media/contact.48c83c886e1525386eb8.lottie",
@@ -46,11 +52,11 @@
     "index.html": "/st-johns-farmers-market/index.html",
     "static/media/black-right-arrow-icon.svg": "/st-johns-farmers-market/static/media/black-right-arrow-icon.81525d4cd85eb6e47b459e7745389899.svg",
     "main.cd8f6108.css.map": "/st-johns-farmers-market/static/css/main.cd8f6108.css.map",
-    "main.d3fc6cb3.js.map": "/st-johns-farmers-market/static/js/main.d3fc6cb3.js.map",
+    "main.f1c3d952.js.map": "/st-johns-farmers-market/static/js/main.f1c3d952.js.map",
     "453.48cb2101.chunk.js.map": "/st-johns-farmers-market/static/js/453.48cb2101.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd8f6108.css",
-    "static/js/main.d3fc6cb3.js"
+    "static/js/main.f1c3d952.js"
   ]
 }
