@@ -1,38 +1,54 @@
 [
   {
-    "id": "open-air-antique-fair",
-    "title": "Open Air Antique Fair",
-    "shortDescription": "Discover vintage treasures in our outdoor market.",
-    "description": "Come and explore a curated selection of antique and vintage vendors. A perfect event for collectors and curious minds alike! Featuring local sellers and live music.",
-    "dates": ["2025-09-17", "2025-09-19"],
-    "time": "8:00 a.m – 3:00 p.m",
-    "imageUrl": "../../assets/event.png",
+    "id": "Tombolo-Multicultural-Market",
+    "title": "Tombolo Multicultural Market",
+    "shortDescription": "Multicultural Food and Craft Fair,",
+    "description": "Celebrate culture, community, and craftsmanship at our Multicultural Food and Craft Fair. Taste authentic dishes from around the world, browse unique handmade goods, and meet the local makers behind them. Enjoy live music, family-friendly activities, and a welcoming atmosphere where everyone can explore, connect, and support small businesses. Come hungry—and leave inspired!",
+    "dates": [
+      "2025-08-06",
+      "2025-08-08",
+      "2025-08-13",
+      "2025-08-15",
+      "2025-08-20",
+      "2025-08-22",
+      "2025-08-27",
+      "2025-08-29",
+      "2025-09-03",
+      "2025-09-05",
+      "2025-09-10",
+      "2025-09-12",
+      "2025-09-17",
+      "2025-09-19",
+      "2025-09-24",
+      "2025-09-26"
+    ],
+    "time": "5:00 p.m – 9:00 p.m",
+    "imageUrl": "../../assets/Tombolo.jpg",
     "location": "Main Market Hall",
     "organizer": {
-      "name": "Open Air Antique Association",
-      "email": "apply@openairantiques.org",
-      "phone": "+1 (503) 555-0134",
-      "website": "https://openairantiques.org/apply"
+      "name": "Tombolo Multicultural Festival",
+      "email": "tombolofestivalnl@gmail.com",
+      "website": "https://tombolomulticulturalfestivalnl.ca/"
     }
   },
   {
-    "id": "community-art-walk",
-    "title": "Community Art Walk",
-    "shortDescription": "A celebration of local art and culture.",
-    "description": "Stroll through our market and see art from over 20 local creators. Live painting, music, and family-friendly workshops throughout the day!",
-    "dates": ["2026-07-05"],
-    "time": "10:00 a.m – 5:00 p.m",
-    "imageUrl": "",
-    "location": "Community Room"
+    "id": "SJFM-Book-Fair",
+    "title": "SJFM Book Fair",
+    "shortDescription": "Get ready for an event that is all things books, stationary, and literature.",
+    "description": "Support local authors, publishers, book sellers, and makers at the St. John’s Farmers’ Market! There will be readings, author signings, give-a-ways, live demonstrations and workshops! Of course we will also have food, because you need a snack with a good book! No admission fee. Accessible space. All ages welcome. All-ages, accessible, gender inclusive, and totally excellent!",
+    "dates": ["2025-09-21"],
+    "time": "9:00 a.m – 3:00 p.m",
+    "imageUrl": "../../assets/BookFair.jpg",
+    "location": "Main Market Hall"
   },
   {
-    "id": "summer-camp",
-    "title": "Kids' Summer Camp Day",
-    "shortDescription": "Fun and learning for kids aged 5-12.",
-    "description": "Join us for a day of crafts, gardening lessons, and cooking workshops designed just for kids. Lunch included. Parents welcome to stay or drop off.",
-    "dates": ["2025-08-09"],
-    "time": "9:00 a.m – 5:00 p.m",
-    "imageUrl": "/assets/event1.png",
+    "id": "SEtsy-St.John’s",
+    "title": "Etsy St. John’s",
+    "shortDescription": "FREE admission. Family-friendly. Accessible venue with automatic doors, accessible washroom, and wide aisles. Licensed service animals welcome. Music and fragrances present.",
+    "description": "Shop from local Etsy makers & vintage sellers alongside popular farm & food vendors from St. John’s Farmers’ Market. FREE admission. Family-friendly. Licensed service animals permitted, all other pets are prohibited indoors. Accessibility: Automatic doors, accessible washroom, wide aisles, no steps. Fragrances will be present from 2-4 candle, bath & beauty vendors, but we otherwise discourage our vendors & customers from wearing strong scents and perfumes. Music will be playing during the market.",
+    "dates": ["2025-09-28"],
+    "time": "10:00 a.m – 4:00 p.m",
+    "imageUrl": "../../assets/ETSY.png",
     "location": "Main Market Hall"
   }
 ]

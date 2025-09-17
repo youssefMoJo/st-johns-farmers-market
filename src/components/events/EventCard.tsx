@@ -2,7 +2,7 @@ import { Card, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import comingSoonEvent from "../../assets/lottie-files/comingSoonEvent.lottie";
-import eventPic from "../../assets/event.png";
+import eventPic from "../../assets/Tombolo.jpg";
 import { useState } from "react";
 import EventModal from "./EventModal";
 
@@ -21,6 +21,28 @@ type EventProps = {
 
 export default function EventCard({ event }: EventProps) {
   const [showModal, setShowModal] = useState(false);
+
+  // Resolve image source: support absolute/public URLs, or files in src/assets via require.context
+  const images = (require as any).context("../../assets", true);
+  const resolveImageSrc = (path: string | undefined): string | undefined => {
+    if (!path || path.length === 0) return undefined;
+    const trimmed = path.trim();
+    if (
+      trimmed.startsWith("http://") ||
+      trimmed.startsWith("https://") ||
+      trimmed.startsWith("/")
+    ) {
+      return trimmed; // public URL or public/ path
+    }
+    try {
+      const relative = trimmed.replace(/^.*\/assets\//, "./");
+      return images(relative).default ?? images(relative);
+    } catch {
+      return undefined;
+    }
+  };
+
+  const imgSrc = resolveImageSrc(event.imageUrl);
 
   return (
     // <Col xs={12} sm={6} md={6} lg={4} className="mb-4">
@@ -58,7 +80,7 @@ export default function EventCard({ event }: EventProps) {
                 justifyContent: "center",
               }}
             >
-              {event.imageUrl.length === 0 ? (
+              {!imgSrc ? (
                 <DotLottieReact
                   src={comingSoonEvent}
                   loop
@@ -76,8 +98,13 @@ export default function EventCard({ event }: EventProps) {
                     height: "100%",
                     objectFit: "cover",
                   }}
-                  src={eventPic}
+                  src={imgSrc}
                   alt={event.title}
+                  onError={(e) => {
+                    // Fallback to placeholder if the provided URL fails to load
+                    (e.currentTarget as HTMLImageElement).src =
+                      eventPic as unknown as string;
+                  }}
                 />
               )}
             </div>
