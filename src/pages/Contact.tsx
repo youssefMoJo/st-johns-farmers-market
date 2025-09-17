@@ -145,9 +145,12 @@ const Contact: React.FC = () => {
           <div
             style={{
               ...fancyCardStyle,
-              background: "linear-gradient(135deg, #e0f7fa 70%, #ffffff 100%)",
-              boxShadow: "0 8px 32px 0 rgba(18,100,108,0.10)",
-              border: "1.5px solid #b2ebf2",
+              background:
+                "radial-gradient(900px 300px at 10% -40px, rgba(71,195,247,0.25), rgba(71,195,247,0) 60%)," +
+                "radial-gradient(800px 280px at 110% 20%, rgba(212,101,64,0.18), rgba(212,101,64,0) 60%)," +
+                "linear-gradient(180deg, #ffffff 0%, #f8fbfd 100%)",
+              boxShadow: "0 10px 36px 0 rgba(20,60,93,0.12)",
+              border: "1.5px solid rgba(71,195,247,0.45)",
               padding: "2.8rem 2.2rem 2.2rem 2.2rem",
               position: "relative",
               overflow: "visible",
@@ -157,8 +160,8 @@ const Contact: React.FC = () => {
               style={{
                 ...styles.iconCircleStyle,
                 background:
-                  "linear-gradient(135deg, #0a8c8c 60%, #00bcd4 100%)",
-                boxShadow: "0 4px 16px 0 rgba(0,188,212,0.13)",
+                  "linear-gradient(135deg, #0a8c8c 50%, #47C3F7 100%)",
+                boxShadow: "0 6px 18px 0 rgba(71,195,247,0.26)",
               }}
             >
               👤
@@ -167,7 +170,7 @@ const Contact: React.FC = () => {
               style={{
                 ...fancyCardHeaderStyle,
                 color: "#0a8c8c",
-                fontSize: "1.45rem",
+                fontSize: "1.55rem",
                 letterSpacing: "-1px",
                 marginBottom: "1.2rem",
               }}
@@ -178,7 +181,7 @@ const Contact: React.FC = () => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "1.3rem",
+                gap: "1.1rem",
                 width: "100%",
               }}
             >
@@ -188,10 +191,11 @@ const Contact: React.FC = () => {
                   display: "flex",
                   alignItems: "center",
                   gap: "1rem",
-                  background: "#ffffffcc",
-                  borderRadius: "12px",
+                  background:
+                    "linear-gradient(135deg, rgba(71,195,247,0.12), rgba(10,140,140,0.08))",
+                  borderRadius: "14px",
                   padding: "1rem 1.2rem",
-                  boxShadow: "0 2px 8px 0 rgba(10,140,140,0.06)",
+                  boxShadow: "0 2px 10px 0 rgba(10,140,140,0.06)",
                 }}
               >
                 <span
@@ -200,12 +204,12 @@ const Contact: React.FC = () => {
                       "linear-gradient(135deg, #0a8c8c 60%, #00bcd4 100%)",
                     color: "white",
                     borderRadius: "50%",
-                    width: "38px",
-                    height: "38px",
+                    width: "42px",
+                    height: "42px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: "1.3rem",
+                    fontSize: "1.15rem",
                     fontWeight: 700,
                     flexShrink: 0,
                   }}
@@ -213,11 +217,29 @@ const Contact: React.FC = () => {
                   PA
                 </span>
                 <div>
-                  <div style={{ fontWeight: 600, color: "#14676c" }}>
+                  <div style={{ fontWeight: 700, color: "#143C5D" }}>
                     Pam Anstey
                   </div>
-                  <div style={{ fontSize: "0.98rem", color: "#0a8c8c" }}>
-                    Executive Director
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        display: "inline-block",
+                        padding: "2px 8px",
+                        borderRadius: "999px",
+                        fontSize: "0.78rem",
+                        fontWeight: 700,
+                        color: "#0a8c8c",
+                        background: "rgba(10,140,140,0.12)",
+                      }}
+                    >
+                      Executive Director
+                    </span>
                   </div>
                   <a
                     href="mailto:ed@sjfm.ca"
@@ -233,10 +255,11 @@ const Contact: React.FC = () => {
                   display: "flex",
                   alignItems: "center",
                   gap: "1rem",
-                  background: "#ffffffcc",
-                  borderRadius: "12px",
+                  background:
+                    "linear-gradient(135deg, rgba(71,195,247,0.12), rgba(10,140,140,0.08))",
+                  borderRadius: "14px",
                   padding: "1rem 1.2rem",
-                  boxShadow: "0 2px 8px 0 rgba(10,140,140,0.06)",
+                  boxShadow: "0 2px 10px 0 rgba(10,140,140,0.06)",
                 }}
               >
                 <span
@@ -245,12 +268,12 @@ const Contact: React.FC = () => {
                       "linear-gradient(135deg, #0a8c8c 60%, #00bcd4 100%)",
                     color: "white",
                     borderRadius: "50%",
-                    width: "38px",
-                    height: "38px",
+                    width: "42px",
+                    height: "42px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: "1.3rem",
+                    fontSize: "1.15rem",
                     fontWeight: 700,
                     flexShrink: 0,
                   }}
@@ -258,11 +281,29 @@ const Contact: React.FC = () => {
                   RS
                 </span>
                 <div>
-                  <div style={{ fontWeight: 600, color: "#14676c" }}>
+                  <div style={{ fontWeight: 700, color: "#143C5D" }}>
                     Ricky Szabo
                   </div>
-                  <div style={{ fontSize: "0.98rem", color: "#0a8c8c" }}>
-                    Market Manager
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        display: "inline-block",
+                        padding: "2px 8px",
+                        borderRadius: "999px",
+                        fontSize: "0.78rem",
+                        fontWeight: 700,
+                        color: "#0a8c8c",
+                        background: "rgba(10,140,140,0.12)",
+                      }}
+                    >
+                      Market Manager
+                    </span>
                   </div>
                   <a
                     href="mailto:marketmanager@sjfm.ca"
@@ -278,10 +319,11 @@ const Contact: React.FC = () => {
                   display: "flex",
                   alignItems: "center",
                   gap: "1rem",
-                  background: "#ffffffcc",
-                  borderRadius: "12px",
+                  background:
+                    "linear-gradient(135deg, rgba(71,195,247,0.12), rgba(10,140,140,0.08))",
+                  borderRadius: "14px",
                   padding: "1rem 1.2rem",
-                  boxShadow: "0 2px 8px 0 rgba(10,140,140,0.06)",
+                  boxShadow: "0 2px 10px 0 rgba(10,140,140,0.06)",
                 }}
               >
                 <span
@@ -290,12 +332,12 @@ const Contact: React.FC = () => {
                       "linear-gradient(135deg, #0a8c8c 60%, #00bcd4 100%)",
                     color: "white",
                     borderRadius: "50%",
-                    width: "38px",
-                    height: "38px",
+                    width: "42px",
+                    height: "42px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: "1.3rem",
+                    fontSize: "1.15rem",
                     fontWeight: 700,
                     flexShrink: 0,
                   }}
@@ -303,11 +345,29 @@ const Contact: React.FC = () => {
                   TM
                 </span>
                 <div>
-                  <div style={{ fontWeight: 600, color: "#14676c" }}>
+                  <div style={{ fontWeight: 700, color: "#143C5D" }}>
                     Theresa Murphy
                   </div>
-                  <div style={{ fontSize: "0.98rem", color: "#0a8c8c" }}>
-                    Administrative Assistant
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        display: "inline-block",
+                        padding: "2px 8px",
+                        borderRadius: "999px",
+                        fontSize: "0.78rem",
+                        fontWeight: 700,
+                        color: "#0a8c8c",
+                        background: "rgba(10,140,140,0.12)",
+                      }}
+                    >
+                      Administrative Assistant
+                    </span>
                   </div>
                   <a
                     href="mailto:info@sjfm.ca"
@@ -323,10 +383,11 @@ const Contact: React.FC = () => {
                   display: "flex",
                   alignItems: "center",
                   gap: "1rem",
-                  background: "#ffffffcc",
-                  borderRadius: "12px",
+                  background:
+                    "linear-gradient(135deg, rgba(71,195,247,0.12), rgba(10,140,140,0.08))",
+                  borderRadius: "14px",
                   padding: "1rem 1.2rem",
-                  boxShadow: "0 2px 8px 0 rgba(10,140,140,0.06)",
+                  boxShadow: "0 2px 10px 0 rgba(10,140,140,0.06)",
                 }}
               >
                 <span
@@ -335,12 +396,12 @@ const Contact: React.FC = () => {
                       "linear-gradient(135deg, #0a8c8c 60%, #00bcd4 100%)",
                     color: "white",
                     borderRadius: "50%",
-                    width: "38px",
-                    height: "38px",
+                    width: "42px",
+                    height: "42px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: "1.3rem",
+                    fontSize: "1.15rem",
                     fontWeight: 700,
                     flexShrink: 0,
                   }}
@@ -348,11 +409,29 @@ const Contact: React.FC = () => {
                   CR
                 </span>
                 <div>
-                  <div style={{ fontWeight: 600, color: "#14676c" }}>
+                  <div style={{ fontWeight: 700, color: "#143C5D" }}>
                     Cathie Reed
                   </div>
-                  <div style={{ fontSize: "0.98rem", color: "#0a8c8c" }}>
-                    Events & Activities Coordinator
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        display: "inline-block",
+                        padding: "2px 8px",
+                        borderRadius: "999px",
+                        fontSize: "0.78rem",
+                        fontWeight: 700,
+                        color: "#0a8c8c",
+                        background: "rgba(10,140,140,0.12)",
+                      }}
+                    >
+                      Events & Activities Coordinator
+                    </span>
                   </div>
                   <a
                     href="mailto:eventsmanager@sjfm.ca"
